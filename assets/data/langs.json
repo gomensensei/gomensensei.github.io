@@ -1,0 +1,662 @@
+{
+  "zh-HK": {
+    "meta": {
+      "title": "Gomensensei AKB Fan Tools",
+      "description": "非官方 AKB48 粉絲工具合集，集中整理門票風格圖像、應援色表、座位圖、MBTI 參考與小遊戲。"
+    },
+    "siteName": "Gomensensei AKB Fan Tools",
+    "tagline": "非官方 AKB48 粉絲工具合集",
+    "nav": {
+      "home": "首頁",
+      "tools": "工具",
+      "guide": "教學",
+      "updates": "更新",
+      "about": "關於",
+      "disclaimer": "免責聲明",
+      "privacy": "私隱政策",
+      "terms": "使用條款",
+      "contact": "聯絡"
+    },
+    "common": {
+      "open": "開啟工具 →",
+      "backHome": "返回首頁",
+      "language": "語言",
+      "important": "重要聲明",
+      "fanMade": "非官方粉絲製作項目。與 AKB48、DH 或任何官方營運公司無關。",
+      "copyright": "© 2026 Gomensensei. Fan-made tools for creative and reference use."
+    },
+    "home": {
+      "eyebrow": "Gomensensei v3.0 Core Integrated",
+      "heroTitle": "AKB48 粉絲工具總站",
+      "heroLead": "將門票風格圖像生成、成員應援色整理、座位圖參考、性格資料與小遊戲集中成一個清晰入口。所有已傳開的舊網址繼續保留，不拆、不搬、不斷 link。",
+      "primaryCta": "查看工具",
+      "secondaryCta": "使用教學",
+      "notice": "本網站為非官方粉絲製作項目。所有 ticket-style 圖像只供粉絲創作、紀念及設計用途，並非真實門票、官方文件或入場憑證。",
+      "toolsTitle": "工具列表",
+      "toolsLead": "以下工具維持原本 GitHub Pages 網址，避免已分享出去的連結失效。",
+      "systemTitle": "v3.0 架構重點",
+      "systemLead": "此首頁已改用共用 core.css / core.js。視覺、互動、語系與擴充方式會同其他 Gomensensei Web App 保持一致。",
+      "systemItems": [
+        "Apple-level spatial glassmorphism 3D 卡片",
+        "45 度動態漸變背景與 hover glow",
+        "Vanilla JS + data-i18n + langs.json 語系分離",
+        "保留舊工具 URL，同時建立正式 fan tools hub",
+        "政策頁、免責聲明、SEO、sitemap 與 robots.txt 一併補齊"
+      ]
+    },
+    "tools": [
+      {
+        "name": "48 Ticket Generator",
+        "url": "/48-ticket-generator/",
+        "label": "主力工具",
+        "desc": "AKB48 劇場門票風格圖像生成器，用於粉絲創作、紀念圖與應援設計。"
+      },
+      {
+        "name": "Penlight List",
+        "url": "/penlightlist/",
+        "label": "應援色",
+        "desc": "成員推し色／螢光棒顏色表產生器，適合演唱會、公演與生誕企劃使用。"
+      },
+      {
+        "name": "AKB Seatmap",
+        "url": "/akb-seatmap/",
+        "label": "場地參考",
+        "desc": "非官方座位圖與立見區域視覺化工具，供粉絲理解場地分區與動線。"
+      },
+      {
+        "name": "AKB MBTI with Wota",
+        "url": "/AKB-MBTI-with-wota/",
+        "label": "資料實驗",
+        "desc": "成員性格、MBTI 與粉絲觀察資料整理，用作角色理解與創作參考。"
+      },
+      {
+        "name": "AKB Mini Games 2026",
+        "url": "/akb_mini_games_2026/",
+        "label": "遊戲原型",
+        "desc": "AKB 題材互動小遊戲與粉絲向實驗玩法。"
+      }
+    ],
+    "about": {
+      "title": "關於本網站",
+      "body": [
+        "Gomensensei AKB Fan Tools 是由香港 AKB48 粉絲製作的非官方工具合集，目標是將應援圖像製作、演出資料整理、座位區域參考與粉絲創作變得更方便。",
+        "本網站不是 AKB48、DH、唱片公司、主辦單位、場地或票務平台的官方網站。所有工具只供粉絲創作、資訊整理、設計練習與社群交流使用。",
+        "目前策略是保留各工具原有 GitHub Pages 網址，再用 gomensensei.github.io 作為正式總入口。"
+      ]
+    },
+    "guide": {
+      "title": "使用教學",
+      "sections": [
+        {
+          "heading": "1. 從首頁選擇工具",
+          "body": "首頁列出所有公開工具。按下卡片即可前往原本的 GitHub Pages 工具頁。"
+        },
+        {
+          "heading": "2. 使用工具前先看用途",
+          "body": "不同工具對應不同情境，例如門票風格圖、應援色表、座位圖參考或資料整理。請避免將粉絲創作誤當官方資料。"
+        },
+        {
+          "heading": "3. 下載與分享",
+          "body": "如工具支援 PNG、PDF 或圖片匯出，下載前請檢查文字、尺寸、配色與版面。公開分享時應清楚標示為 fan-made。"
+        },
+        {
+          "heading": "4. 回報問題",
+          "body": "若發現錯字、圖片錯位、手機版排版問題或連結失效，可透過 Contact 頁面提供工具名稱、截圖與瀏覽器資料。"
+        }
+      ]
+    },
+    "updates": {
+      "title": "更新紀錄",
+      "items": [
+        {
+          "date": "2026-05-02",
+          "title": "v3.0 Core Integrated 版",
+          "body": "首頁改為直接引用 Gomensensei core.css / core.js，統一視覺與互動規格。"
+        },
+        {
+          "date": "2026-05-02",
+          "title": "正式 fan tools hub",
+          "body": "gomensensei.github.io 重新定位為 AKB48 粉絲工具總入口。"
+        },
+        {
+          "date": "2026-05-02",
+          "title": "多語系與政策頁",
+          "body": "加入繁中、日文、英文、韓文，以及 Privacy、Terms、Disclaimer、Contact 等頁面。"
+        }
+      ]
+    },
+    "privacy": {
+      "title": "私隱政策",
+      "body": [
+        "本網站是一個靜態粉絲工具網站，一般情況下不要求註冊帳戶，也不主動收集姓名、電話、地址或身份證明資料。",
+        "網站可能使用 localStorage 保存語言偏好、顯示設定或工具操作狀態。這些資料通常只保存在用戶自己的瀏覽器。",
+        "若日後加入第三方廣告、分析或嵌入式服務，相關服務供應商可能透過 cookies 或類似技術收集瀏覽資料。",
+        "用戶可透過瀏覽器設定管理或停用 cookies。停用部分功能後，網站體驗可能受影響。",
+        "如你透過電郵或社交平台聯絡我們，我們只會用你提供的資料處理查詢、錯誤回報或移除要求。"
+      ]
+    },
+    "terms": {
+      "title": "使用條款",
+      "body": [
+        "使用本網站即代表你理解並同意本網站為非官方粉絲製作項目，只供個人、粉絲創作、資訊整理及設計參考用途。",
+        "你不得使用本網站生成的圖片或資料冒充官方門票、官方證明、官方公告或任何具有法律效力的文件。",
+        "你不得將生成內容用於欺詐、誤導、轉售、冒認身份、侵犯他人權利或任何非法用途。",
+        "本網站可能包含 AKB48 成員姓名、活動名稱、圖片連結或其他公開資料。相關權利屬其原權利人所有。",
+        "本網站會盡力維持資料準確及工具可用，但不保證所有內容即時、完整、無誤或永不中斷。"
+      ]
+    },
+    "disclaimer": {
+      "title": "免責聲明",
+      "body": [
+        "本網站與 AKB48、DH、唱片公司、場地、主辦單位、票務平台或任何官方機構沒有從屬、授權、贊助或合作關係。",
+        "Ticket-style 生成圖片只屬 fan art、紀念圖、設計練習或社群交流用途，並非真實門票，不具入場、換領、轉售或官方證明效力。",
+        "任何座位圖、區域示意、成員資料、應援色或 MBTI 內容均只供粉絲參考，實際安排應以官方公告及現場指示為準。",
+        "如本網站任何內容涉及不準確資料、權利疑慮或需要移除，請透過 Contact 頁面聯絡。"
+      ]
+    },
+    "contact": {
+      "title": "聯絡",
+      "body": [
+        "如需回報錯誤、提出功能建議、查詢授權或要求移除內容，可透過以下方式聯絡。",
+        "請在訊息中附上相關工具名稱、問題截圖、使用裝置及瀏覽器版本，方便排查。"
+      ],
+      "emailLabel": "Email",
+      "socialLabel": "Social"
+    }
+  },
+  "ja": {
+    "meta": {
+      "title": "Gomensensei AKB Fan Tools",
+      "description": "非公式 AKB48 ファンツール集。チケット風画像、ペンライトカラー、座席図、MBTI 参考資料、ミニゲームをまとめています。"
+    },
+    "siteName": "Gomensensei AKB Fan Tools",
+    "tagline": "非公式 AKB48 ファンツール集",
+    "nav": {
+      "home": "ホーム",
+      "tools": "ツール",
+      "guide": "使い方",
+      "updates": "更新",
+      "about": "概要",
+      "disclaimer": "免責事項",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "contact": "連絡"
+    },
+    "common": {
+      "open": "ツールを開く →",
+      "backHome": "ホームへ戻る",
+      "language": "言語",
+      "important": "重要なお知らせ",
+      "fanMade": "非公式ファンメイド企画です。AKB48、DH、公式運営会社とは関係ありません。",
+      "copyright": "© 2026 Gomensensei. Fan-made tools for creative and reference use."
+    },
+    "home": {
+      "eyebrow": "Gomensensei v3.0 Core Integrated",
+      "heroTitle": "AKB48 ファンツールハブ",
+      "heroLead": "チケット風画像生成、メンバーのペンライトカラー、座席図、性格データ、ミニゲームを一つの入口に整理しました。既存の URL はそのまま維持します。",
+      "primaryCta": "ツールを見る",
+      "secondaryCta": "使い方",
+      "notice": "本サイトは非公式のファンメイド企画です。生成画像はファンアート、記念、デザイン用途のみで、実際のチケット、公式書類、入場証明ではありません。",
+      "toolsTitle": "ツール一覧",
+      "toolsLead": "共有済みリンクを切らさないよう、既存 GitHub Pages URL を維持します。",
+      "systemTitle": "v3.0 構成ポイント",
+      "systemLead": "このホームページは共通の core.css / core.js を使用し、他の Gomensensei Web App と同じ視覚・操作仕様に合わせています。",
+      "systemItems": [
+        "Apple-level spatial glassmorphism 3D カード",
+        "45 度アニメーション背景と hover glow",
+        "Vanilla JS + data-i18n + langs.json",
+        "既存ツール URL を維持しつつ正式ハブ化",
+        "ポリシー、免責、SEO、sitemap、robots.txt を整備"
+      ]
+    },
+    "tools": [
+      {
+        "name": "48 Ticket Generator",
+        "url": "/48-ticket-generator/",
+        "label": "メイン",
+        "desc": "AKB48 劇場チケット風画像ジェネレーター。ファンアートや応援デザイン向け。"
+      },
+      {
+        "name": "Penlight List",
+        "url": "/penlightlist/",
+        "label": "ペンライト",
+        "desc": "メンバーの推しカラー／ペンライトカラー表を作成するツール。"
+      },
+      {
+        "name": "AKB Seatmap",
+        "url": "/akb-seatmap/",
+        "label": "会場参考",
+        "desc": "非公式の座席図・立見エリア可視化ツール。"
+      },
+      {
+        "name": "AKB MBTI with Wota",
+        "url": "/AKB-MBTI-with-wota/",
+        "label": "データ実験",
+        "desc": "メンバーの性格、MBTI、ファン観察を整理した参考プロジェクト。"
+      },
+      {
+        "name": "AKB Mini Games 2026",
+        "url": "/akb_mini_games_2026/",
+        "label": "ゲーム試作",
+        "desc": "AKB48 をテーマにしたファン向けミニゲーム。"
+      }
+    ],
+    "about": {
+      "title": "このサイトについて",
+      "body": [
+        "Gomensensei AKB Fan Tools は、香港の AKB48 ファンが制作した非公式ツール集です。",
+        "本サイトは AKB48、DH、レコード会社、主催者、会場、チケット販売会社を代表するものではありません。",
+        "既存の GitHub Pages URL を維持しながら、gomensensei.github.io を正式な入口として整理しています。"
+      ]
+    },
+    "guide": {
+      "title": "使い方",
+      "sections": [
+        {
+          "heading": "1. ホームからツールを選ぶ",
+          "body": "ホームに公開中のツールが表示されます。カードを押すと各ページへ移動します。"
+        },
+        {
+          "heading": "2. 用途を確認",
+          "body": "各ツールは、チケット風画像、ペンライトカラー、座席図、資料整理など用途が異なります。"
+        },
+        {
+          "heading": "3. 保存と共有",
+          "body": "公開共有する場合は、公式素材と誤解されないようご注意ください。"
+        },
+        {
+          "heading": "4. 不具合報告",
+          "body": "表示崩れやリンク切れは Contact ページから報告できます。"
+        }
+      ]
+    },
+    "updates": {
+      "title": "更新履歴",
+      "items": [
+        {
+          "date": "2026-05-02",
+          "title": "v3.0 Core Integrated",
+          "body": "core.css / core.js を直接読み込む構成に変更しました。"
+        },
+        {
+          "date": "2026-05-02",
+          "title": "正式ハブ化",
+          "body": "gomensensei.github.io を AKB48 ファンツールの入口として再構成しました。"
+        },
+        {
+          "date": "2026-05-02",
+          "title": "多言語とポリシーページ",
+          "body": "繁体字、日本語、英語、韓国語と各種ポリシーページを追加しました。"
+        }
+      ]
+    },
+    "privacy": {
+      "title": "プライバシーポリシー",
+      "body": [
+        "本サイトは静的なファンツールサイトです。通常、登録や個人情報の入力は不要です。",
+        "言語設定などの保存に localStorage を使用する場合があります。",
+        "将来的に広告や解析を導入する場合、第三者サービスが cookies を使用することがあります。",
+        "ユーザーはブラウザ設定で cookies を管理できます。",
+        "お問い合わせ時の情報は、問い合わせ対応や不具合確認のためにのみ使用します。"
+      ]
+    },
+    "terms": {
+      "title": "利用規約",
+      "body": [
+        "本サイトは非公式ファンメイドプロジェクトであり、個人利用、ファン創作、情報整理、デザイン参考を目的としています。",
+        "生成物を公式チケット、公式証明、公式発表として使用してはいけません。",
+        "詐欺、誤認誘導、転売、なりすまし、権利侵害、違法行為への使用を禁止します。",
+        "関連する名称、画像、情報の権利は各権利者に帰属します。",
+        "情報の正確性や継続的な可用性は保証しません。"
+      ]
+    },
+    "disclaimer": {
+      "title": "免責事項",
+      "body": [
+        "本サイトは AKB48、DH、会場、主催者、チケット販売会社とは関係ありません。",
+        "チケット風画像は fan art や記念用であり、実際のチケットではありません。",
+        "座席図、エリア図、メンバー情報、ペンライトカラー、MBTI はファン参考資料です。",
+        "削除依頼や権利上の懸念がある場合は Contact ページからご連絡ください。"
+      ]
+    },
+    "contact": {
+      "title": "連絡",
+      "body": [
+        "不具合報告、機能提案、権利関連の連絡、削除依頼は以下よりご連絡ください。",
+        "ツール名、スクリーンショット、端末、ブラウザ情報を添えると確認しやすくなります。"
+      ],
+      "emailLabel": "Email",
+      "socialLabel": "Social"
+    }
+  },
+  "en": {
+    "meta": {
+      "title": "Gomensensei AKB Fan Tools",
+      "description": "Unofficial AKB48 fan-made tools for ticket-style images, penlight colors, seat maps, MBTI references, and mini games."
+    },
+    "siteName": "Gomensensei AKB Fan Tools",
+    "tagline": "Unofficial AKB48 fan-made tools",
+    "nav": {
+      "home": "Home",
+      "tools": "Tools",
+      "guide": "Guide",
+      "updates": "Updates",
+      "about": "About",
+      "disclaimer": "Disclaimer",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "contact": "Contact"
+    },
+    "common": {
+      "open": "Open tool →",
+      "backHome": "Back home",
+      "language": "Language",
+      "important": "Important notice",
+      "fanMade": "Unofficial fan-made project. Not affiliated with AKB48, DH, or any official management company.",
+      "copyright": "© 2026 Gomensensei. Fan-made tools for creative and reference use."
+    },
+    "home": {
+      "eyebrow": "Gomensensei v3.0 Core Integrated",
+      "heroTitle": "AKB48 Fan Tools Hub",
+      "heroLead": "Ticket-style image generation, member penlight colors, seat map references, personality data, and fan mini games are now organised under one clear entry point. Existing URLs remain unchanged.",
+      "primaryCta": "Explore tools",
+      "secondaryCta": "Read guide",
+      "notice": "This is an unofficial fan-made project. Ticket-style images are for fan artwork, memorial, and design purposes only. They are not real tickets, official documents, or entry passes.",
+      "toolsTitle": "Tools",
+      "toolsLead": "Existing GitHub Pages URLs remain active to avoid breaking already shared links.",
+      "systemTitle": "v3.0 architecture",
+      "systemLead": "This homepage now uses shared core.css / core.js so its visual language and interactions align with other Gomensensei Web Apps.",
+      "systemItems": [
+        "Apple-level spatial glassmorphism 3D cards",
+        "45-degree animated gradient background and hover glow",
+        "Vanilla JS + data-i18n + langs.json",
+        "Existing tool URLs preserved under a formal hub",
+        "Policy pages, disclaimer, SEO, sitemap, and robots.txt included"
+      ]
+    },
+    "tools": [
+      {
+        "name": "48 Ticket Generator",
+        "url": "/48-ticket-generator/",
+        "label": "Main tool",
+        "desc": "AKB48 theater ticket-style image generator for fan artwork and support visuals."
+      },
+      {
+        "name": "Penlight List",
+        "url": "/penlightlist/",
+        "label": "Penlight colors",
+        "desc": "Member penlight color list generator for concerts, theater shows, and birthday projects."
+      },
+      {
+        "name": "AKB Seatmap",
+        "url": "/akb-seatmap/",
+        "label": "Venue reference",
+        "desc": "Unofficial seat map and standing area visualisation tool for fan reference."
+      },
+      {
+        "name": "AKB MBTI with Wota",
+        "url": "/AKB-MBTI-with-wota/",
+        "label": "Data experiment",
+        "desc": "Member personality, MBTI, and fan observation reference project."
+      },
+      {
+        "name": "AKB Mini Games 2026",
+        "url": "/akb_mini_games_2026/",
+        "label": "Game prototype",
+        "desc": "Experimental AKB48-themed mini games and fan interactions."
+      }
+    ],
+    "about": {
+      "title": "About this site",
+      "body": [
+        "Gomensensei AKB Fan Tools is an unofficial fan-made tools collection created by an AKB48 fan in Hong Kong.",
+        "This site does not represent AKB48, DH, record labels, organisers, venues, or ticketing platforms.",
+        "The current strategy is to keep existing GitHub Pages URLs alive while using gomensensei.github.io as the central hub."
+      ]
+    },
+    "guide": {
+      "title": "Guide",
+      "sections": [
+        {
+          "heading": "1. Choose a tool",
+          "body": "The homepage lists all public tools. Click a card to open the existing GitHub Pages tool."
+        },
+        {
+          "heading": "2. Check the intended use",
+          "body": "Each tool serves a different purpose: ticket-style images, penlight colors, seat maps, or data references."
+        },
+        {
+          "heading": "3. Download and share responsibly",
+          "body": "When sharing publicly, avoid implying that fan-made output is official material."
+        },
+        {
+          "heading": "4. Report issues",
+          "body": "For typos, layout bugs, mobile issues, or broken links, use the Contact page."
+        }
+      ]
+    },
+    "updates": {
+      "title": "Updates",
+      "items": [
+        {
+          "date": "2026-05-02",
+          "title": "v3.0 Core Integrated",
+          "body": "The homepage now directly uses Gomensensei core.css / core.js."
+        },
+        {
+          "date": "2026-05-02",
+          "title": "Formal fan tools hub",
+          "body": "gomensensei.github.io has been repositioned as the central AKB48 fan tools hub."
+        },
+        {
+          "date": "2026-05-02",
+          "title": "Multi-language and policy pages",
+          "body": "Traditional Chinese, Japanese, English, Korean, and key policy pages have been added."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "body": [
+        "This website is a static fan tools site. It generally does not require account registration or personal identity information.",
+        "The site may use localStorage to save language preference or display settings.",
+        "If third-party advertising or analytics are added in the future, those providers may use cookies or similar technologies.",
+        "Users can manage cookies through browser settings.",
+        "Information sent through email or social media will only be used for enquiries, bug reports, or removal requests."
+      ]
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "body": [
+        "This site is an unofficial fan-made project intended for personal use, fan creation, information organisation, and design reference.",
+        "Generated content must not be used as official tickets, certificates, announcements, or legal documents.",
+        "Generated content must not be used for fraud, misleading activity, resale, impersonation, rights infringement, or illegal activity.",
+        "Related names, images, and information belong to their respective rights holders.",
+        "We do not guarantee that all information is always current, complete, error-free, or uninterrupted."
+      ]
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "body": [
+        "This site is not affiliated with AKB48, DH, venues, organisers, or ticketing platforms.",
+        "Ticket-style generated images are fan art and memorial designs only. They are not real tickets.",
+        "Seat maps, member information, penlight colors, and MBTI references are fan reference materials only.",
+        "For removal requests or rights concerns, please contact us via the Contact page."
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "body": [
+        "For bug reports, feature suggestions, rights enquiries, or removal requests, please contact us using the information below.",
+        "Please include the tool name, screenshot, device, and browser details whenever possible."
+      ],
+      "emailLabel": "Email",
+      "socialLabel": "Social"
+    }
+  },
+  "ko": {
+    "meta": {
+      "title": "Gomensensei AKB Fan Tools",
+      "description": "비공식 AKB48 팬 도구 허브. 티켓 스타일 이미지, 펜라이트 컬러, 좌석도, MBTI 참고 자료, 미니게임을 제공합니다."
+    },
+    "siteName": "Gomensensei AKB Fan Tools",
+    "tagline": "비공식 AKB48 팬 제작 도구",
+    "nav": {
+      "home": "홈",
+      "tools": "도구",
+      "guide": "사용법",
+      "updates": "업데이트",
+      "about": "소개",
+      "disclaimer": "면책",
+      "privacy": "개인정보",
+      "terms": "약관",
+      "contact": "문의"
+    },
+    "common": {
+      "open": "도구 열기 →",
+      "backHome": "홈으로",
+      "language": "언어",
+      "important": "중요 고지",
+      "fanMade": "비공식 팬 제작 프로젝트입니다. AKB48, DH 또는 공식 운영사와 관련이 없습니다.",
+      "copyright": "© 2026 Gomensensei. Fan-made tools for creative and reference use."
+    },
+    "home": {
+      "eyebrow": "Gomensensei v3.0 Core Integrated",
+      "heroTitle": "AKB48 팬 도구 허브",
+      "heroLead": "티켓 스타일 이미지 생성, 멤버 펜라이트 컬러, 좌석도 참고, 성격 데이터, 팬 미니게임을 하나의 입구로 정리했습니다. 기존 URL은 그대로 유지됩니다.",
+      "primaryCta": "도구 보기",
+      "secondaryCta": "사용법 보기",
+      "notice": "이 사이트는 비공식 팬 제작 프로젝트입니다. 티켓 스타일 이미지는 팬아트, 기념, 디자인 용도일 뿐 실제 티켓이나 공식 문서가 아닙니다.",
+      "toolsTitle": "도구 목록",
+      "toolsLead": "이미 공유된 링크가 끊기지 않도록 기존 GitHub Pages URL을 유지합니다.",
+      "systemTitle": "v3.0 구조",
+      "systemLead": "이 홈페이지는 공통 core.css / core.js 를 사용해 다른 Gomensensei Web App 과 시각 및 상호작용을 맞춥니다.",
+      "systemItems": [
+        "Apple-level spatial glassmorphism 3D 카드",
+        "45도 애니메이션 그라데이션 배경과 hover glow",
+        "Vanilla JS + data-i18n + langs.json",
+        "기존 도구 URL 유지와 공식 허브 구축",
+        "정책 페이지, 면책, SEO, sitemap, robots.txt 포함"
+      ]
+    },
+    "tools": [
+      {
+        "name": "48 Ticket Generator",
+        "url": "/48-ticket-generator/",
+        "label": "주요 도구",
+        "desc": "팬아트와 응원 디자인용 AKB48 극장 티켓 스타일 이미지 생성기입니다."
+      },
+      {
+        "name": "Penlight List",
+        "url": "/penlightlist/",
+        "label": "펜라이트",
+        "desc": "콘서트, 극장 공연, 생탄 기획용 멤버 펜라이트 컬러 표 생성기입니다."
+      },
+      {
+        "name": "AKB Seatmap",
+        "url": "/akb-seatmap/",
+        "label": "좌석 참고",
+        "desc": "팬 참고용 비공식 좌석도 및 스탠딩 구역 시각화 도구입니다."
+      },
+      {
+        "name": "AKB MBTI with Wota",
+        "url": "/AKB-MBTI-with-wota/",
+        "label": "데이터 실험",
+        "desc": "멤버 성격, MBTI, 팬 관찰을 정리한 참고 프로젝트입니다."
+      },
+      {
+        "name": "AKB Mini Games 2026",
+        "url": "/akb_mini_games_2026/",
+        "label": "게임 프로토타입",
+        "desc": "AKB48 테마의 팬 미니게임과 인터랙션 실험입니다."
+      }
+    ],
+    "about": {
+      "title": "사이트 소개",
+      "body": [
+        "Gomensensei AKB Fan Tools 는 홍콩의 AKB48 팬이 만든 비공식 팬 도구 모음입니다.",
+        "이 사이트는 AKB48, DH, 음반사, 주최자, 공연장 또는 티켓 플랫폼을 대표하지 않습니다.",
+        "현재는 기존 GitHub Pages URL을 유지하면서 gomensensei.github.io 를 중앙 허브로 정리하고 있습니다."
+      ]
+    },
+    "guide": {
+      "title": "사용법",
+      "sections": [
+        {
+          "heading": "1. 도구 선택",
+          "body": "홈페이지에 공개 도구가 표시됩니다. 카드를 클릭하면 기존 GitHub Pages 도구로 이동합니다."
+        },
+        {
+          "heading": "2. 용도 확인",
+          "body": "각 도구는 티켓 스타일 이미지, 펜라이트 컬러, 좌석도, 자료 참고 등 용도가 다릅니다."
+        },
+        {
+          "heading": "3. 저장과 공유",
+          "body": "공개 공유 시 팬 제작 결과물이 공식 자료로 오해되지 않도록 주의하세요."
+        },
+        {
+          "heading": "4. 문제 신고",
+          "body": "오타, 레이아웃 오류, 모바일 문제, 깨진 링크는 Contact 페이지로 알려주세요."
+        }
+      ]
+    },
+    "updates": {
+      "title": "업데이트",
+      "items": [
+        {
+          "date": "2026-05-02",
+          "title": "v3.0 Core Integrated",
+          "body": "홈페이지가 Gomensensei core.css / core.js 를 직접 사용하도록 변경되었습니다."
+        },
+        {
+          "date": "2026-05-02",
+          "title": "공식 팬 도구 허브",
+          "body": "gomensensei.github.io 를 AKB48 팬 도구 중앙 허브로 재구성했습니다."
+        },
+        {
+          "date": "2026-05-02",
+          "title": "다국어와 정책 페이지",
+          "body": "번체 중국어, 일본어, 영어, 한국어와 주요 정책 페이지를 추가했습니다."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "개인정보 처리방침",
+      "body": [
+        "이 웹사이트는 정적 팬 도구 사이트이며 일반적으로 계정 등록이나 신원 정보를 요구하지 않습니다.",
+        "언어 설정이나 표시 설정 저장을 위해 localStorage 를 사용할 수 있습니다.",
+        "향후 광고나 분석이 추가될 경우 제3자 서비스가 cookies 를 사용할 수 있습니다.",
+        "사용자는 브라우저 설정에서 cookies 를 관리할 수 있습니다.",
+        "이메일 또는 소셜 미디어로 보낸 정보는 문의, 오류 확인, 삭제 요청 처리에만 사용됩니다."
+      ]
+    },
+    "terms": {
+      "title": "이용약관",
+      "body": [
+        "이 사이트는 개인 이용, 팬 창작, 정보 정리, 디자인 참고를 위한 비공식 팬 제작 프로젝트입니다.",
+        "생성 콘텐츠를 공식 티켓, 증명서, 공지 또는 법적 문서로 사용할 수 없습니다.",
+        "사기, 오해 유도, 재판매, 사칭, 권리 침해 또는 불법 행위에 사용할 수 없습니다.",
+        "관련 이름, 이미지, 정보의 권리는 각 권리자에게 있습니다.",
+        "모든 정보가 항상 최신, 완전, 무오류 또는 중단 없음임을 보장하지 않습니다."
+      ]
+    },
+    "disclaimer": {
+      "title": "면책 고지",
+      "body": [
+        "이 사이트는 AKB48, DH, 공연장, 주최자 또는 티켓 플랫폼과 관련이 없습니다.",
+        "티켓 스타일 생성 이미지는 팬아트와 기념 디자인일 뿐 실제 티켓이 아닙니다.",
+        "좌석도, 멤버 정보, 펜라이트 컬러, MBTI 는 팬 참고 자료입니다.",
+        "삭제 요청 또는 권리 관련 문의는 Contact 페이지를 통해 연락해 주세요."
+      ]
+    },
+    "contact": {
+      "title": "문의",
+      "body": [
+        "오류 신고, 기능 제안, 권리 문의 또는 삭제 요청은 아래 정보를 통해 연락해 주세요.",
+        "가능하면 도구 이름, 스크린샷, 기기 및 브라우저 정보를 포함해 주세요."
+      ],
+      "emailLabel": "Email",
+      "socialLabel": "Social"
+    }
+  }
+}
