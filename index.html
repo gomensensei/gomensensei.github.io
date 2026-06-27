@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-title>Gomensensei AKB Fan Tools</title>
-    <meta name="description" content="Unofficial AKB48 fan-made tool launcher for ticket-style images, penlight colors, seat references, data notes, and mini games." data-meta-description>
+    <meta name="description" content="Unofficial AKB48 fan-made tool launcher for ticket-style images, penlight colors, seat references, garapon logs, data notes, and mini games." data-meta-description>
     <meta name="theme-color" content="#FF4081">
     <meta property="og:title" content="Gomensensei AKB Fan Tools">
     <meta property="og:description" content="Unofficial AKB48 fan-made tools for fans and event support.">
@@ -19,8 +19,8 @@
     <meta name="google-adsense-account" content="ca-pub-xxxxxxxxxxxxxxxx">
     -->
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/css/core.css?v=20260628b">
-    <link rel="stylesheet" href="assets/css/app.css?v=20260628b">
+    <link rel="stylesheet" href="assets/css/core.css?v=20260628c">
+    <link rel="stylesheet" href="assets/css/app.css?v=20260628c">
 </head>
 <body class="native-feel">
     <a href="#main" class="skip-link">Skip to content</a>
@@ -30,7 +30,7 @@
         <span class="brand-mark">G</span>
         <span class="brand-text">
             <strong data-i18n="siteName">Gomensensei AKB Fan Tools</strong>
-            <small data-i18n="tagline">Unofficial AKB48 fan tools</small>
+            <small data-i18n="tagline">非官方 AKB48 fan tools</small>
         </span>
     </a>
 
@@ -39,14 +39,14 @@
     </button>
 
     <nav id="siteNav" class="site-nav" aria-label="Primary navigation">
-        <a href="index.html" data-nav="home" data-i18n="nav.home">Home</a>
-        <a href="#tools" data-i18n="nav.tools">Tools</a>
-        <a href="privacy.html" data-nav="privacy" data-i18n="nav.privacy">About & Privacy</a>
-        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="index.html" data-nav="home" data-i18n="nav.home">首頁</a>
+        <a href="#tools" data-i18n="nav.tools">工具</a>
+        <a href="privacy.html" data-nav="privacy" data-i18n="nav.privacy">關於及私隱</a>
+        <a href="#contact" data-i18n="nav.contact">聯絡</a>
     </nav>
 
     <label class="lang-wrap">
-        <span class="sr-only" data-i18n="common.language">Language</span>
+        <span class="sr-only" data-i18n="common.language">語言</span>
         <select id="langSelect" aria-label="Language">
             <option value="zh-HK">繁中</option>
             <option value="ja">日本語</option>
@@ -61,54 +61,39 @@
         <div class="hero-copy">
             <p class="eyebrow" data-i18n="home.eyebrow">AKB48 fan utilities</p>
             <h1 data-i18n="home.heroTitle">AKB48 fan tools</h1>
-            <p class="hero-lead" data-i18n="home.heroLead">Ticket-style images, penlight colors, seat references, data notes, and mini games gathered in one quick launcher.</p>
+            <p class="hero-lead" data-i18n="home.heroLead">票券風圖片、penlight 顏色、座位參考、garapon 紀錄、資料筆記及小遊戲，集中一頁即時使用。</p>
             <div class="cta-row">
-                <a class="app-button primary hover-glow" href="#tools" data-i18n="home.primaryCta">Choose a tool</a>
-                <a class="app-button secondary hover-glow" href="privacy.html" data-i18n="home.secondaryCta">Privacy notes</a>
+                <a class="app-button primary hover-glow" href="#tools" data-i18n="home.primaryCta">選擇工具</a>
+                <a class="app-button secondary hover-glow" href="privacy.html" data-i18n="home.secondaryCta">私隱說明</a>
             </div>
         </div>
 
-        <aside class="hero-panel" aria-label="Quick tool links">
-            <a class="mini-tile" href="/48-ticket-generator/"><span>Ticket</span><small>Generator</small></a>
-            <a class="mini-tile" href="/penlightlist/"><span>Light</span><small>Penlight</small></a>
-            <a class="mini-tile" href="/akb-seatmap/"><span>Seat</span><small>Map</small></a>
-            <a class="mini-tile" href="/AKB-MBTI-with-wota/"><span>MBTI</span><small>Data</small></a>
-            <a class="mini-tile wide" href="/akb_mini_games_2026/"><span>Games</span><small>Mini games</small></a>
-        </aside>
+        <aside id="tools" class="hero-panel" aria-label="Quick tool links" data-quick-tools></aside>
     </section>
 
     <section class="notice-box">
-        <p class="eyebrow" data-i18n="common.important">Important</p>
-        <p data-i18n="home.notice">This is an unofficial fan-made site. Ticket-style images are for fan artwork and memories only, not real tickets or official documents.</p>
-    </section>
-
-    <section id="tools" class="section-block">
-        <div class="section-head compact-head">
-            <p class="eyebrow">Fan Tools</p>
-            <h2 data-i18n="home.toolsTitle">Tools</h2>
-            <p data-i18n="home.toolsLead">Each card opens a tool directly. Existing URLs stay active for shared links.</p>
-        </div>
-        <div class="tools-grid" data-tools-grid></div>
+        <p class="eyebrow" data-i18n="common.important">重要提醒</p>
+        <p data-i18n="home.notice">本站為非官方 fan-made 網站。Ticket-style 圖片只供應援創作、紀念及設計參考，並非真票、官方文件或入場證明。</p>
     </section>
 
     <section id="how" class="section-block slim-section">
         <div class="section-head compact-head">
             <p class="eyebrow">Notes</p>
-            <h2 data-i18n="home.howTitle">Before using</h2>
-            <p data-i18n="home.howLead">For most fans, only three things matter: what the tools are for, how data is handled, and how to contact me.</p>
+            <h2 data-i18n="home.howTitle">使用前須知</h2>
+            <p data-i18n="home.howLead">這些工具只供 fan creation、個人紀錄及參考用途。將來若加入帳戶或公開統計，會清楚標示資料用途。</p>
         </div>
         <ul class="info-list">
-            <li data-i18n="home.howItems.0">The tools are for fan creation, personal records, and reference only.</li>
-            <li data-i18n="home.howItems.1">Current settings mostly stay in your browser; account saving may be added later.</li>
-            <li data-i18n="home.howItems.2">Future public statistics should only use anonymous data when you actively opt in.</li>
+            <li data-i18n="home.howItems.0">所有工具均非官方資料，使用及分享時請避免令人誤會為官方內容。</li>
+            <li data-i18n="home.howItems.1">現時設定主要儲存在你的瀏覽器；日後如加入帳戶功能，會先說明儲存內容。</li>
+            <li data-i18n="home.howItems.2">不記名公開資料必須由你主動勾選同意，否則個人紀錄不會公開。</li>
         </ul>
     </section>
 
     <section id="contact" class="contact-strip">
         <div>
             <p class="eyebrow">Contact</p>
-            <h2 data-i18n="home.contactTitle">Contact</h2>
-            <p data-i18n="home.contactLead">For bugs, data updates, removal requests, or collaboration, DM X: @sorrysir_gomen.</p>
+            <h2 data-i18n="home.contactTitle">聯絡</h2>
+            <p data-i18n="home.contactLead">如需回報錯誤、更新資料、提出移除要求或合作查詢，請 DM X: @sorrysir_gomen。</p>
         </div>
         <a class="app-button primary" href="https://x.com/sorrysir_gomen" target="_blank" rel="noopener">@sorrysir_gomen</a>
     </section>
@@ -117,16 +102,16 @@
 <footer class="footer-shell">
     <div>
         <strong>Gomensensei AKB Fan Tools</strong>
-        <p data-i18n="common.fanMade">Unofficial fan-made project. Not affiliated with AKB48, DH, venues, organisers, or ticketing platforms.</p>
+        <p data-i18n="common.fanMade">非官方 fan-made project，與 AKB48、DH、場地、主辦或票務平台無關。</p>
     </div>
     <div class="footer-links">
-        <a href="privacy.html" data-i18n="nav.privacy">About & Privacy</a>
-        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="privacy.html" data-i18n="nav.privacy">關於及私隱</a>
+        <a href="#contact" data-i18n="nav.contact">聯絡</a>
     </div>
     <p class="copyright" data-i18n="common.copyright">© 2026 Gomensensei. Fan-made tools for creative and reference use.</p>
 </footer>
 
-    <script src="assets/js/core.js?v=20260628b" defer></script>
-    <script src="assets/js/app.js?v=20260628b" defer></script>
+    <script src="assets/js/core.js?v=20260628c" defer></script>
+    <script src="assets/js/app.js?v=20260628c" defer></script>
 </body>
 </html>

@@ -100,8 +100,8 @@ http://127.0.0.1:4173/
   **[EN]** Landing layout, tool cards, mobile density, and infographic styles.
 
 * `assets/js/app.js`  
-  **[ZH]** 語言切換、工具卡 render、頁面文字注入。  
-  **[EN]** Language switching, tool-card rendering, and page text injection.
+  **[ZH]** 語言切換、右側 6 格工具入口 render、頁面文字注入。  
+  **[EN]** Language switching, six-card launcher rendering, and page text injection.
 
 * `assets/data/langs.json`  
   **[ZH]** 多語言文字、工具 URL、描述、visual key。  
