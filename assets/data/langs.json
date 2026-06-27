@@ -2,7 +2,7 @@
   "zh-HK": {
     "meta": {
       "title": "Gomensensei AKB Fan Tools",
-      "description": "非官方 AKB48 fan-made 工具入口：票券風圖片、penlight 顏色、座位參考、資料筆記同小遊戲。"
+      "description": "非官方 AKB48 fan-made 工具入口：票券風圖片、penlight 顏色、座位參考、garapon 紀錄、資料筆記及小遊戲。"
     },
     "siteName": "Gomensensei AKB Fan Tools",
     "tagline": "非官方 AKB48 fan tools",
@@ -22,77 +22,88 @@
     "home": {
       "eyebrow": "AKB48 fan utilities",
       "heroTitle": "AKB48 fan tools",
-      "heroLead": "票券風圖片、penlight 顏色、座位參考、資料筆記同小遊戲，集中一頁即刻用。",
-      "primaryCta": "揀工具",
+      "heroLead": "票券風圖片、penlight 顏色、座位參考、garapon 紀錄、資料筆記及小遊戲，集中一頁即時使用。",
+      "primaryCta": "選擇工具",
       "secondaryCta": "私隱說明",
-      "notice": "本站係非官方 fan-made 網站。Ticket-style 圖片只供應援創作、紀念同設計參考，唔係真票、官方文件或入場證明。",
-      "toolsTitle": "工具列表",
-      "toolsLead": "每張卡都係直接入口。舊有工具 URL 會繼續保留，方便已分享出去嘅連結。",
-      "howTitle": "使用前知道",
-      "howLead": "一般 fan 需要知嘅只係三件事：呢啲工具做咩、資料點處理、有問題點搵我。",
+      "notice": "本站為非官方 fan-made 網站。Ticket-style 圖片只供應援創作、紀念及設計參考，並非真票、官方文件或入場證明。",
+      "howTitle": "使用前須知",
+      "howLead": "這些工具只供 fan creation、個人紀錄及參考用途。將來若加入帳戶或公開統計，會清楚標示資料用途。",
       "howItems": [
-        "工具只供 fan creation、個人紀錄同參考，唔代表官方資訊。",
-        "現時設定主要存在你自己瀏覽器；將來有帳戶功能先會登入儲存。",
-        "如果日後有公開統計，只會係你主動 tick 同意後，用不記名方式公開。"
+        "所有工具均非官方資料，使用及分享時請避免令人誤會為官方內容。",
+        "現時設定主要儲存在你的瀏覽器；日後如加入帳戶功能，會先說明儲存內容。",
+        "不記名公開資料必須由你主動勾選同意，否則個人紀錄不會公開。"
       ],
       "contactTitle": "聯絡",
-      "contactLead": "Bug、資料更新、移除要求或合作查詢，直接 DM X: @sorrysir_gomen。"
+      "contactLead": "如需回報錯誤、更新資料、提出移除要求或合作查詢，請 DM X: @sorrysir_gomen。"
     },
     "tools": [
       {
         "name": "48 Ticket Generator",
+        "shortName": "Ticket",
         "url": "/48-ticket-generator/",
         "label": "票券風圖片",
         "visual": "ticket",
-        "desc": "製作 theater ticket-style fan art，適合紀念圖、應援圖同分享用。"
+        "desc": "製作 theater ticket-style fan art，適合紀念圖、應援圖及分享用途。"
       },
       {
         "name": "Penlight List",
+        "shortName": "Penlight",
         "url": "/penlightlist/",
         "label": "應援顏色",
         "visual": "light",
-        "desc": "查成員 penlight 顏色，演唱會、劇場、生誕企劃前快速確認。"
+        "desc": "查閱成員 penlight 顏色，適合演唱會、劇場及生誕企劃前確認。"
       },
       {
         "name": "AKB Seatmap",
+        "shortName": "Seatmap",
         "url": "/akb-seatmap/",
         "label": "座位參考",
         "visual": "seat",
-        "desc": "非官方座位同企位參考，方便記錄位置同理解場地視角。"
+        "desc": "非官方座位及企位參考，方便記錄位置及理解場地視角。"
+      },
+      {
+        "name": "AKB Garapon",
+        "shortName": "Garapon",
+        "url": "/akb-garapon/",
+        "label": "抽選紀錄",
+        "visual": "garapon",
+        "desc": "記錄劇場 garapon 嘗試、結果、花費及個人回憶。"
       },
       {
         "name": "AKB MBTI with Wota",
+        "shortName": "MBTI",
         "url": "/AKB-MBTI-with-wota/",
         "label": "資料筆記",
         "visual": "data",
-        "desc": "整理成員 MBTI、觀察資料同 fan 討論用參考。"
+        "desc": "整理成員 MBTI、觀察資料及 fan 討論用參考。"
       },
       {
         "name": "AKB Mini Games 2026",
+        "shortName": "Games",
         "url": "/akb_mini_games_2026/",
         "label": "小遊戲",
         "visual": "game",
-        "desc": "AKB48 主題嘅實驗性小遊戲同 fan interaction。"
+        "desc": "AKB48 主題的實驗性小遊戲及 fan interaction。"
       }
     ],
     "privacy": {
       "title": "關於及私隱",
       "body": [
-        "Gomensensei AKB Fan Tools 係非官方 fan-made 網站，主要用作 fan 創作、資料整理、個人紀錄同活動前後參考。",
-        "本站同 AKB48、DH、唱片公司、場地、主辦或票務平台無關。Ticket-style 圖片、seatmap、penlight 顏色、MBTI 或其他資料都只係 fan reference。",
-        "現時大部分工具唔需要帳戶。語言、顯示設定或部分工具狀態可能會存在你自己瀏覽器嘅 localStorage，方便下次繼續使用。",
-        "將來如果加入帳戶功能，seatmap、garapon 或其他工具可能會讓你登入後儲存自己資料，例如座位紀錄、抽選紀錄、garapon 紀錄、偏好設定或個人備註。使用前會清楚標示保存內容同用途。",
-        "將來如果提供不記名公開資料功能，例如公開統計、座位/抽選/garapon 匯總或社群參考，會採用 opt-in：你要主動 tick 同意先會公開。公開資料會盡量避免包含可直接識別你身份嘅內容。",
-        "如果你唔 tick 公開，你嘅個人紀錄應只用於你自己帳戶或你自己瀏覽器內。你亦應該可以取消公開、刪除或更正相關資料。",
-        "日後如果加入 Google 廣告或基本流量統計，第三方服務可能使用 cookies 或類似技術。你可以透過瀏覽器設定管理 cookies。",
-        "資料更正、刪除、移除要求或其他查詢，請 DM X: @sorrysir_gomen。"
+        "Gomensensei AKB Fan Tools 是非官方 fan-made 網站，主要用作 fan 創作、資料整理、個人紀錄及活動前後參考。",
+        "本站與 AKB48、DH、唱片公司、場地、主辦或票務平台無關。Ticket-style 圖片、seatmap、penlight 顏色、MBTI 或其他資料均只屬 fan reference。",
+        "現時大部分工具不需要帳戶。語言、顯示設定或部分工具狀態可能會透過 localStorage 儲存在你的瀏覽器內，方便下次繼續使用。",
+        "日後如加入帳戶功能，seatmap、garapon 或其他工具可能會讓你登入後儲存自己的資料，例如座位紀錄、抽選紀錄、garapon 紀錄、偏好設定或個人備註。使用前會清楚標示保存內容及用途。",
+        "日後如提供不記名公開資料功能，例如公開統計、座位／抽選／garapon 匯總或社群參考，會採用 opt-in 方式處理：你必須主動勾選同意，相關資料才會公開。",
+        "如你沒有勾選公開，個人紀錄應只保留於你的帳戶或瀏覽器內。你亦應可取消公開、刪除或更正相關資料。",
+        "日後如加入 Google 廣告或基本流量統計，第三方服務可能使用 cookies 或類似技術。你可以透過瀏覽器設定管理 cookies。",
+        "如需更正資料、刪除資料、提出移除要求或其他查詢，請 DM X: @sorrysir_gomen。"
       ]
     }
   },
   "en": {
     "meta": {
       "title": "Gomensensei AKB Fan Tools",
-      "description": "Unofficial AKB48 fan-made tool launcher for ticket-style images, penlight colors, seat references, data notes, and mini games."
+      "description": "Unofficial AKB48 fan-made tool launcher for ticket-style images, penlight colors, seat references, garapon logs, data notes, and mini games."
     },
     "siteName": "Gomensensei AKB Fan Tools",
     "tagline": "Unofficial AKB48 fan tools",
@@ -112,28 +123,27 @@
     "home": {
       "eyebrow": "AKB48 fan utilities",
       "heroTitle": "AKB48 fan tools",
-      "heroLead": "Ticket-style images, penlight colors, seat references, data notes, and mini games gathered in one quick launcher.",
+      "heroLead": "Ticket-style images, penlight colors, seat references, garapon logs, data notes, and mini games gathered in one quick launcher.",
       "primaryCta": "Choose a tool",
       "secondaryCta": "Privacy notes",
       "notice": "This is an unofficial fan-made site. Ticket-style images are for fan artwork, memories, and design reference only; they are not real tickets or official documents.",
-      "toolsTitle": "Tools",
-      "toolsLead": "Each card opens a tool directly. Existing URLs stay active for links that have already been shared.",
       "howTitle": "Before using",
-      "howLead": "For most fans, only three things matter: what the tools are for, how data is handled, and how to contact me.",
+      "howLead": "These tools are for fan creation, personal records, and reference. If accounts or public statistics are added later, data usage will be clearly explained.",
       "howItems": [
-        "The tools are for fan creation, personal records, and reference only.",
-        "Current settings mostly stay in your browser; account saving may be added later.",
-        "Future public statistics should only use anonymous data when you actively opt in."
+        "All tools are unofficial references. Please avoid presenting fan-made output as official material.",
+        "Current settings mostly stay in your browser. If account features are added later, saved data will be explained first.",
+        "Anonymous public data must be actively opted in. Personal records will not be public unless you choose that option."
       ],
       "contactTitle": "Contact",
       "contactLead": "For bugs, data updates, removal requests, or collaboration, DM X: @sorrysir_gomen."
     },
     "tools": [
-      { "name": "48 Ticket Generator", "url": "/48-ticket-generator/", "label": "Ticket art", "visual": "ticket", "desc": "Create theater ticket-style fan art for memories, support visuals, and sharing." },
-      { "name": "Penlight List", "url": "/penlightlist/", "label": "Penlight colors", "visual": "light", "desc": "Check member penlight colors before shows, theater visits, or birthday projects." },
-      { "name": "AKB Seatmap", "url": "/akb-seatmap/", "label": "Seat reference", "visual": "seat", "desc": "Unofficial seat and standing-position reference for recording locations and view context." },
-      { "name": "AKB MBTI with Wota", "url": "/AKB-MBTI-with-wota/", "label": "Data notes", "visual": "data", "desc": "Member MBTI, observation notes, and fan discussion reference." },
-      { "name": "AKB Mini Games 2026", "url": "/akb_mini_games_2026/", "label": "Mini games", "visual": "game", "desc": "Experimental AKB48-themed mini games and fan interactions." }
+      { "name": "48 Ticket Generator", "shortName": "Ticket", "url": "/48-ticket-generator/", "label": "Ticket art", "visual": "ticket", "desc": "Create theater ticket-style fan art for memories, support visuals, and sharing." },
+      { "name": "Penlight List", "shortName": "Penlight", "url": "/penlightlist/", "label": "Penlight colors", "visual": "light", "desc": "Check member penlight colors before shows, theater visits, or birthday projects." },
+      { "name": "AKB Seatmap", "shortName": "Seatmap", "url": "/akb-seatmap/", "label": "Seat reference", "visual": "seat", "desc": "Unofficial seat and standing-position reference for recording locations and view context." },
+      { "name": "AKB Garapon", "shortName": "Garapon", "url": "/akb-garapon/", "label": "Draw log", "visual": "garapon", "desc": "Record theater garapon attempts, results, spending, and memories." },
+      { "name": "AKB MBTI with Wota", "shortName": "MBTI", "url": "/AKB-MBTI-with-wota/", "label": "Data notes", "visual": "data", "desc": "Member MBTI, observation notes, and fan discussion reference." },
+      { "name": "AKB Mini Games 2026", "shortName": "Games", "url": "/akb_mini_games_2026/", "label": "Mini games", "visual": "game", "desc": "Experimental AKB48-themed mini games and fan interactions." }
     ],
     "privacy": {
       "title": "About & Privacy",
@@ -152,120 +162,118 @@
   "ja": {
     "meta": {
       "title": "Gomensensei AKB Fan Tools",
-      "description": "AKB48 ファン向け非公式ツール入口。チケット風画像、ペンライト色、座席参考、データメモ、ミニゲーム。"
+      "description": "AKB48 ファン向け非公式ツール入口。チケット風画像、ペンライト色、座席参考、ガラポン記録、データメモ、ミニゲーム。"
     },
     "siteName": "Gomensensei AKB Fan Tools",
-    "tagline": "Unofficial AKB48 fan tools",
+    "tagline": "非公式 AKB48 ファンツール",
     "nav": {
-      "home": "Home",
-      "tools": "Tools",
-      "privacy": "About & Privacy",
-      "contact": "Contact"
+      "home": "ホーム",
+      "tools": "ツール",
+      "privacy": "概要・プライバシー",
+      "contact": "連絡"
     },
     "common": {
-      "open": "Open",
-      "language": "Language",
-      "important": "Important",
-      "fanMade": "Unofficial fan-made project. Not affiliated with AKB48, DH, venues, organisers, or ticketing platforms.",
+      "open": "開く",
+      "language": "言語",
+      "important": "重要なお知らせ",
+      "fanMade": "非公式 fan-made project です。AKB48、DH、会場、主催、チケットサービスとは関係ありません。",
       "copyright": "© 2026 Gomensensei. Fan-made tools for creative and reference use."
     },
     "home": {
       "eyebrow": "AKB48 fan utilities",
       "heroTitle": "AKB48 fan tools",
-      "heroLead": "Ticket-style images, penlight colors, seat references, data notes, and mini games gathered in one quick launcher.",
-      "primaryCta": "Choose a tool",
-      "secondaryCta": "Privacy notes",
-      "notice": "This is an unofficial fan-made site. Ticket-style images are for fan artwork and memories only, not real tickets or official documents.",
-      "toolsTitle": "Tools",
-      "toolsLead": "Each card opens a tool directly. Existing URLs stay active for shared links.",
-      "howTitle": "Before using",
-      "howLead": "A short note for normal users, not a technical architecture section.",
+      "heroLead": "チケット風画像、ペンライト色、座席参考、ガラポン記録、データメモ、ミニゲームをひとつの入口にまとめています。",
+      "primaryCta": "ツールを選ぶ",
+      "secondaryCta": "プライバシー",
+      "notice": "このサイトは非公式 fan-made サイトです。チケット風画像はファンアート、記念、デザイン参考用であり、本物のチケットや公式書類ではありません。",
+      "howTitle": "利用前の注意",
+      "howLead": "各ツールはファン制作、個人記録、参考用途のためのものです。今後アカウント機能や公開統計を追加する場合は、データの用途を明示します。",
       "howItems": [
-        "The tools are for fan creation, personal records, and reference only.",
-        "Current settings mostly stay in your browser; account saving may be added later.",
-        "Future public statistics should only use anonymous data when you actively opt in."
+        "すべてのツールは非公式の参考情報です。公式情報と誤解される使い方は避けてください。",
+        "現在の設定は主にブラウザ内に保存されます。将来アカウント機能を追加する場合は、保存内容を事前に説明します。",
+        "匿名の公開データは、利用者が明示的に同意した場合のみ公開されます。"
       ],
-      "contactTitle": "Contact",
-      "contactLead": "For bugs, data updates, removal requests, or collaboration, DM X: @sorrysir_gomen."
+      "contactTitle": "連絡",
+      "contactLead": "不具合、データ更新、削除依頼、協力の相談は X: @sorrysir_gomen まで DM してください。"
     },
     "tools": [
-      { "name": "48 Ticket Generator", "url": "/48-ticket-generator/", "label": "Ticket art", "visual": "ticket", "desc": "Create theater ticket-style fan art for memories and sharing." },
-      { "name": "Penlight List", "url": "/penlightlist/", "label": "Colors", "visual": "light", "desc": "Check member penlight colors before shows or projects." },
-      { "name": "AKB Seatmap", "url": "/akb-seatmap/", "label": "Seats", "visual": "seat", "desc": "Unofficial seat and standing-position reference." },
-      { "name": "AKB MBTI with Wota", "url": "/AKB-MBTI-with-wota/", "label": "Data", "visual": "data", "desc": "Member MBTI and fan observation reference." },
-      { "name": "AKB Mini Games 2026", "url": "/akb_mini_games_2026/", "label": "Games", "visual": "game", "desc": "Experimental AKB48-themed mini games." }
+      { "name": "48 Ticket Generator", "shortName": "Ticket", "url": "/48-ticket-generator/", "label": "チケット風画像", "visual": "ticket", "desc": "劇場チケット風のファンアートを作成します。" },
+      { "name": "Penlight List", "shortName": "Penlight", "url": "/penlightlist/", "label": "ペンライト色", "visual": "light", "desc": "公演や企画前にメンバーのペンライト色を確認できます。" },
+      { "name": "AKB Seatmap", "shortName": "Seatmap", "url": "/akb-seatmap/", "label": "座席参考", "visual": "seat", "desc": "座席や立ち位置を記録するための非公式参考ツールです。" },
+      { "name": "AKB Garapon", "shortName": "Garapon", "url": "/akb-garapon/", "label": "抽選記録", "visual": "garapon", "desc": "劇場ガラポンの回数、結果、費用、思い出を記録します。" },
+      { "name": "AKB MBTI with Wota", "shortName": "MBTI", "url": "/AKB-MBTI-with-wota/", "label": "データメモ", "visual": "data", "desc": "メンバー MBTI や観察メモの参考ページです。" },
+      { "name": "AKB Mini Games 2026", "shortName": "Games", "url": "/akb_mini_games_2026/", "label": "ミニゲーム", "visual": "game", "desc": "AKB48 テーマの実験的なミニゲームです。" }
     ],
     "privacy": {
-      "title": "About & Privacy",
+      "title": "概要・プライバシー",
       "body": [
-        "This is an unofficial fan-made site for fan creation and reference.",
-        "It is not affiliated with AKB48, DH, venues, organisers, or ticketing platforms.",
-        "Most current tools do not require an account. Some settings may be saved locally in your browser.",
-        "Future account features may let users save seatmap, garapon, preference, or note data after login.",
-        "Future anonymous public statistics should be opt-in. Users should actively consent before data is made public.",
-        "If users do not opt in, personal records should remain private to their own browser or account.",
-        "Future Google ads or analytics may use cookies or similar technologies.",
-        "For requests, DM X: @sorrysir_gomen."
+        "Gomensensei AKB Fan Tools は、ファン制作、情報整理、個人記録、イベント前後の参考を目的とした非公式 fan-made サイトです。",
+        "このサイトは AKB48、DH、会場、主催、チケットサービスとは関係ありません。チケット風画像、座席図、ペンライト色、MBTI メモなどはファン向け参考情報です。",
+        "現在、多くのツールはアカウントを必要としません。言語、表示設定、ツールの状態などは localStorage に保存される場合があります。",
+        "将来アカウント機能を追加する場合、seatmap や garapon などで自分の記録、抽選ログ、ガラポン記録、設定、メモを保存できるようにする可能性があります。利用前に保存内容と用途を説明します。",
+        "匿名の公開データ機能を追加する場合、公開統計や集計データは opt-in 方式にします。利用者が明示的に同意した場合のみ公開します。",
+        "同意しない場合、個人記録は自分のアカウントまたはブラウザ内にのみ保持されます。公開の取り消し、削除、修正もできるようにする方針です。",
+        "将来 Google 広告やアクセス解析を追加する場合、第三者サービスが cookies 等を使用する可能性があります。",
+        "修正、削除、問い合わせは X: @sorrysir_gomen まで DM してください。"
       ]
     }
   },
   "ko": {
     "meta": {
       "title": "Gomensensei AKB Fan Tools",
-      "description": "Unofficial AKB48 fan-made tool launcher."
+      "description": "AKB48 팬을 위한 비공식 도구 모음: 티켓 스타일 이미지, 펜라이트 색상, 좌석 참고, 가라폰 기록, 데이터 메모, 미니 게임."
     },
     "siteName": "Gomensensei AKB Fan Tools",
-    "tagline": "Unofficial AKB48 fan tools",
+    "tagline": "비공식 AKB48 팬 도구",
     "nav": {
-      "home": "Home",
-      "tools": "Tools",
-      "privacy": "About & Privacy",
-      "contact": "Contact"
+      "home": "홈",
+      "tools": "도구",
+      "privacy": "소개 및 개인정보",
+      "contact": "연락"
     },
     "common": {
-      "open": "Open",
-      "language": "Language",
-      "important": "Important",
-      "fanMade": "Unofficial fan-made project. Not affiliated with AKB48, DH, venues, organisers, or ticketing platforms.",
+      "open": "열기",
+      "language": "언어",
+      "important": "중요 안내",
+      "fanMade": "비공식 fan-made project입니다. AKB48, DH, 공연장, 주최자, 티켓 플랫폼과 관련이 없습니다.",
       "copyright": "© 2026 Gomensensei. Fan-made tools for creative and reference use."
     },
     "home": {
       "eyebrow": "AKB48 fan utilities",
       "heroTitle": "AKB48 fan tools",
-      "heroLead": "Ticket-style images, penlight colors, seat references, data notes, and mini games gathered in one quick launcher.",
-      "primaryCta": "Choose a tool",
-      "secondaryCta": "Privacy notes",
-      "notice": "This is an unofficial fan-made site. Ticket-style images are for fan artwork and memories only, not real tickets or official documents.",
-      "toolsTitle": "Tools",
-      "toolsLead": "Each card opens a tool directly. Existing URLs stay active for shared links.",
-      "howTitle": "Before using",
-      "howLead": "A short note for normal users, not a technical architecture section.",
+      "heroLead": "티켓 스타일 이미지, 펜라이트 색상, 좌석 참고, 가라폰 기록, 데이터 메모, 미니 게임을 한 곳에 모았습니다.",
+      "primaryCta": "도구 선택",
+      "secondaryCta": "개인정보 안내",
+      "notice": "이 사이트는 비공식 fan-made 사이트입니다. 티켓 스타일 이미지는 팬아트, 기념, 디자인 참고용이며 실제 티켓이나 공식 문서가 아닙니다.",
+      "howTitle": "사용 전 안내",
+      "howLead": "이 도구들은 팬 창작, 개인 기록, 참고 용도입니다. 향후 계정 기능이나 공개 통계가 추가될 경우 데이터 용도를 명확히 안내합니다.",
       "howItems": [
-        "The tools are for fan creation, personal records, and reference only.",
-        "Current settings mostly stay in your browser; account saving may be added later.",
-        "Future public statistics should only use anonymous data when you actively opt in."
+        "모든 도구는 비공식 참고 자료입니다. 공식 자료로 오해될 수 있는 사용은 피해 주세요.",
+        "현재 설정은 주로 브라우저에 저장됩니다. 향후 계정 기능이 추가되면 저장 내용을 먼저 안내합니다.",
+        "익명 공개 데이터는 사용자가 직접 동의한 경우에만 공개됩니다."
       ],
-      "contactTitle": "Contact",
-      "contactLead": "For bugs, data updates, removal requests, or collaboration, DM X: @sorrysir_gomen."
+      "contactTitle": "연락",
+      "contactLead": "버그, 데이터 수정, 삭제 요청, 협업 문의는 X: @sorrysir_gomen 으로 DM 주세요."
     },
     "tools": [
-      { "name": "48 Ticket Generator", "url": "/48-ticket-generator/", "label": "Ticket art", "visual": "ticket", "desc": "Create theater ticket-style fan art for memories and sharing." },
-      { "name": "Penlight List", "url": "/penlightlist/", "label": "Colors", "visual": "light", "desc": "Check member penlight colors before shows or projects." },
-      { "name": "AKB Seatmap", "url": "/akb-seatmap/", "label": "Seats", "visual": "seat", "desc": "Unofficial seat and standing-position reference." },
-      { "name": "AKB MBTI with Wota", "url": "/AKB-MBTI-with-wota/", "label": "Data", "visual": "data", "desc": "Member MBTI and fan observation reference." },
-      { "name": "AKB Mini Games 2026", "url": "/akb_mini_games_2026/", "label": "Games", "visual": "game", "desc": "Experimental AKB48-themed mini games." }
+      { "name": "48 Ticket Generator", "shortName": "Ticket", "url": "/48-ticket-generator/", "label": "티켓 이미지", "visual": "ticket", "desc": "극장 티켓 스타일 팬아트를 만들 수 있습니다." },
+      { "name": "Penlight List", "shortName": "Penlight", "url": "/penlightlist/", "label": "펜라이트 색상", "visual": "light", "desc": "공연이나 생탄 기획 전에 멤버 펜라이트 색상을 확인합니다." },
+      { "name": "AKB Seatmap", "shortName": "Seatmap", "url": "/akb-seatmap/", "label": "좌석 참고", "visual": "seat", "desc": "좌석과 스탠딩 위치를 기록하기 위한 비공식 참고 도구입니다." },
+      { "name": "AKB Garapon", "shortName": "Garapon", "url": "/akb-garapon/", "label": "추첨 기록", "visual": "garapon", "desc": "극장 가라폰 시도, 결과, 지출, 추억을 기록합니다." },
+      { "name": "AKB MBTI with Wota", "shortName": "MBTI", "url": "/AKB-MBTI-with-wota/", "label": "데이터 메모", "visual": "data", "desc": "멤버 MBTI와 팬 관찰 메모 참고 페이지입니다." },
+      { "name": "AKB Mini Games 2026", "shortName": "Games", "url": "/akb_mini_games_2026/", "label": "미니 게임", "visual": "game", "desc": "AKB48 테마의 실험적인 미니 게임입니다." }
     ],
     "privacy": {
-      "title": "About & Privacy",
+      "title": "소개 및 개인정보",
       "body": [
-        "This is an unofficial fan-made site for fan creation and reference.",
-        "It is not affiliated with AKB48, DH, venues, organisers, or ticketing platforms.",
-        "Most current tools do not require an account. Some settings may be saved locally in your browser.",
-        "Future account features may let users save seatmap, garapon, preference, or note data after login.",
-        "Future anonymous public statistics should be opt-in. Users should actively consent before data is made public.",
-        "If users do not opt in, personal records should remain private to their own browser or account.",
-        "Future Google ads or analytics may use cookies or similar technologies.",
-        "For requests, DM X: @sorrysir_gomen."
+        "Gomensensei AKB Fan Tools는 팬 창작, 정보 정리, 개인 기록, 이벤트 참고를 위한 비공식 fan-made 사이트입니다.",
+        "이 사이트는 AKB48, DH, 공연장, 주최자, 티켓 플랫폼과 관련이 없습니다. 티켓 스타일 이미지, 좌석도, 펜라이트 색상, MBTI 메모 등은 팬 참고 자료입니다.",
+        "현재 대부분의 도구는 계정이 필요하지 않습니다. 언어, 표시 설정, 도구 상태는 localStorage를 통해 브라우저에 저장될 수 있습니다.",
+        "향후 계정 기능이 추가되면 seatmap, garapon 등에서 자신의 좌석 기록, 추첨 기록, 가라폰 기록, 설정, 메모를 저장할 수 있게 될 수 있습니다. 사용 전에 저장 내용과 용도를 설명합니다.",
+        "익명 공개 데이터 기능이 추가될 경우 공개 통계나 집계 데이터는 opt-in 방식으로 처리합니다. 사용자가 명시적으로 동의한 경우에만 공개됩니다.",
+        "동의하지 않은 경우 개인 기록은 자신의 계정 또는 브라우저 안에만 보관됩니다. 공개 취소, 삭제, 수정도 가능하도록 할 예정입니다.",
+        "향후 Google 광고나 분석 기능이 추가될 경우 제3자 서비스가 cookies 등을 사용할 수 있습니다.",
+        "수정, 삭제, 문의는 X: @sorrysir_gomen 으로 DM 주세요."
       ]
     }
   }
