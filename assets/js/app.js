@@ -72,7 +72,7 @@
 
     async function init() {
         const [langData] = await Promise.all([
-            fetchJsonSafe("assets/data/langs.json", {})
+            fetchJsonSafe("assets/data/langs.json?v=20260628c", {})
         ]);
 
         langs = langData;
@@ -170,83 +170,28 @@
         if (pageTitle && data[page]?.title) pageTitle.textContent = data[page].title;
 
         if (page === "home") {
-            renderTools(data);
-            renderSystemList(data);
-            return;
-        }
-
-        if (page === "guide") {
-            renderGuide(data);
-            return;
-        }
-
-        if (page === "updates") {
-            renderUpdates(data);
-            return;
-        }
-
-        if (page === "contact") {
-            renderBodyList(data.contact);
-            const emailLabel = document.querySelector("[data-contact-email-label]");
-            const socialLabel = document.querySelector("[data-contact-social-label]");
-            if (emailLabel) emailLabel.textContent = data.contact.emailLabel;
-            if (socialLabel) socialLabel.textContent = data.contact.socialLabel;
+            renderQuickTools(data);
             return;
         }
 
         if (data[page]) renderBodyList(data[page]);
     }
 
-    function renderTools(data) {
-        const root = document.querySelector("[data-tools-grid]");
+    function renderQuickTools(data) {
+        const root = document.querySelector("[data-quick-tools]");
         if (!root) return;
 
         root.innerHTML = data.tools.map((tool) => `
-            <a class="tool-card apple-glass-3d hover-glow cq-card" href="${escapeHtml(tool.url)}">
-                <span class="label">${escapeHtml(tool.label)}</span>
-                <h3>${escapeHtml(tool.name)}</h3>
-                <p>${escapeHtml(tool.desc)}</p>
-                <span class="open">${escapeHtml(data.common.open)}</span>
+            <a class="quick-tool quick-tool-${escapeHtml(tool.visual || "default")}" href="${escapeHtml(tool.url)}" aria-label="${escapeHtml(data.common.open)} ${escapeHtml(tool.name)}">
+                <span class="quick-icon tool-visual tool-visual-${escapeHtml(tool.visual || "default")}" aria-hidden="true">
+                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                </span>
+                <span class="quick-copy">
+                    <strong>${escapeHtml(tool.shortName || tool.name)}</strong>
+                    <small>${escapeHtml(tool.label)}</small>
+                </span>
             </a>
         `).join("");
-
-        // Rebind core glass effect for dynamically rendered cards.
-        if (typeof initSpatialGlass === "function") initSpatialGlass();
-    }
-
-    function renderSystemList(data) {
-        const root = document.querySelector("[data-system-list]");
-        if (!root) return;
-        root.innerHTML = data.home.systemItems
-            .map(item => `<li>${escapeHtml(item)}</li>`)
-            .join("");
-    }
-
-    function renderGuide(data) {
-        const root = document.querySelector("[data-guide-list]");
-        if (!root) return;
-        root.innerHTML = data.guide.sections.map((section) => `
-            <article class="stack-card apple-glass-3d hover-glow">
-                <h2>${escapeHtml(section.heading)}</h2>
-                <p>${escapeHtml(section.body)}</p>
-            </article>
-        `).join("");
-        if (typeof initSpatialGlass === "function") initSpatialGlass();
-    }
-
-    function renderUpdates(data) {
-        const root = document.querySelector("[data-update-list]");
-        if (!root) return;
-        root.innerHTML = data.updates.items.map((item) => `
-            <article class="timeline-card apple-glass-3d hover-glow">
-                <div class="timeline-date">${escapeHtml(item.date)}</div>
-                <div>
-                    <h2>${escapeHtml(item.title)}</h2>
-                    <p>${escapeHtml(item.body)}</p>
-                </div>
-            </article>
-        `).join("");
-        if (typeof initSpatialGlass === "function") initSpatialGlass();
     }
 
     function renderBodyList(pageData) {
