@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-title>Gomensensei AKB Fan Tools</title>
-    <meta name="description" content="Unofficial AKB48 fan-made tools for ticket-style images, penlight colors, seat maps, data notes, and mini games." data-meta-description>
+    <meta name="description" content="Unofficial AKB48 fan-made tool launcher for ticket-style images, penlight colors, seat references, data notes, and mini games." data-meta-description>
     <meta name="theme-color" content="#FF4081">
     <meta property="og:title" content="Gomensensei AKB Fan Tools">
     <meta property="og:description" content="Unofficial AKB48 fan-made tools for fans and event support.">
@@ -15,17 +15,17 @@
     <meta name="twitter:title" content="Gomensensei AKB Fan Tools">
     <meta name="twitter:description" content="Unofficial AKB48 fan-made tools for fans and event support.">
     <meta name="twitter:image" content="https://gomensensei.github.io/assets/img/og-image.png">
-    <!-- Add AdSense ownership meta here after your AdSense site is ready:
+    <!-- Add after AdSense approval:
     <meta name="google-adsense-account" content="ca-pub-xxxxxxxxxxxxxxxx">
     -->
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/css/core.css?v=20260628">
-    <link rel="stylesheet" href="assets/css/app.css?v=20260628">
+    <link rel="stylesheet" href="assets/css/core.css?v=20260628b">
+    <link rel="stylesheet" href="assets/css/app.css?v=20260628b">
 </head>
 <body class="native-feel">
     <a href="#main" class="skip-link">Skip to content</a>
 
-<header class="top-shell apple-glass-3d">
+<header class="top-shell">
     <a class="brand-lockup" href="index.html" aria-label="Gomensensei AKB Fan Tools">
         <span class="brand-mark">G</span>
         <span class="brand-text">
@@ -40,10 +40,9 @@
 
     <nav id="siteNav" class="site-nav" aria-label="Primary navigation">
         <a href="index.html" data-nav="home" data-i18n="nav.home">Home</a>
-        <a href="index.html#tools" data-i18n="nav.tools">Tools</a>
-        <a href="guide.html" data-nav="guide" data-i18n="nav.guide">Guide</a>
+        <a href="#tools" data-i18n="nav.tools">Tools</a>
         <a href="privacy.html" data-nav="privacy" data-i18n="nav.privacy">About & Privacy</a>
-        <a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
 
     <label class="lang-wrap">
@@ -60,79 +59,74 @@
 <main id="main" class="page-shell">
     <section class="hero-grid">
         <div class="hero-copy">
-            <p class="eyebrow" data-i18n="home.eyebrow">Fan-made AKB48 utilities</p>
-            <h1 data-i18n="home.heroTitle">AKB48 fan tools, gathered in one place.</h1>
-            <p class="hero-lead" data-i18n="home.heroLead">Ticket-style image maker, penlight colors, seat references, data notes, and small fan games - cleanly grouped for quick use on phone or desktop.</p>
+            <p class="eyebrow" data-i18n="home.eyebrow">AKB48 fan utilities</p>
+            <h1 data-i18n="home.heroTitle">AKB48 fan tools</h1>
+            <p class="hero-lead" data-i18n="home.heroLead">Ticket-style images, penlight colors, seat references, data notes, and mini games gathered in one quick launcher.</p>
             <div class="cta-row">
-                <a class="app-button primary hover-glow" href="#tools" data-i18n="home.primaryCta">Explore tools</a>
-                <a class="app-button secondary hover-glow" href="privacy.html" data-i18n="home.secondaryCta">About & privacy</a>
+                <a class="app-button primary hover-glow" href="#tools" data-i18n="home.primaryCta">Choose a tool</a>
+                <a class="app-button secondary hover-glow" href="privacy.html" data-i18n="home.secondaryCta">Privacy notes</a>
             </div>
         </div>
-        <aside class="hero-panel apple-glass-3d" aria-label="Quick tool links">
-            <div class="device-top">
-                <span></span><span></span><span></span>
-            </div>
-            <div class="mini-dashboard">
-                <a class="mini-tile cq-card" href="/48-ticket-generator/">
-                    <span class="cq-title">Ticket</span>
-                    <small>Generator</small>
-                </a>
-                <a class="mini-tile cq-card" href="/penlightlist/">
-                    <span class="cq-title">Light</span>
-                    <small>Penlight</small>
-                </a>
-                <a class="mini-tile cq-card" href="/akb-seatmap/">
-                    <span class="cq-title">Seat</span>
-                    <small>Map</small>
-                </a>
-                <a class="mini-tile cq-card" href="/AKB-MBTI-with-wota/">
-                    <span class="cq-title">MBTI</span>
-                    <small>Data</small>
-                </a>
-            </div>
+
+        <aside class="hero-panel" aria-label="Quick tool links">
+            <a class="mini-tile" href="/48-ticket-generator/"><span>Ticket</span><small>Generator</small></a>
+            <a class="mini-tile" href="/penlightlist/"><span>Light</span><small>Penlight</small></a>
+            <a class="mini-tile" href="/akb-seatmap/"><span>Seat</span><small>Map</small></a>
+            <a class="mini-tile" href="/AKB-MBTI-with-wota/"><span>MBTI</span><small>Data</small></a>
+            <a class="mini-tile wide" href="/akb_mini_games_2026/"><span>Games</span><small>Mini games</small></a>
         </aside>
     </section>
 
-    <section class="notice-box apple-glass-3d">
+    <section class="notice-box">
         <p class="eyebrow" data-i18n="common.important">Important</p>
-        <p data-i18n="home.notice">Unofficial fan-made site. Generated ticket-style images are for fan artwork and memories only, not real tickets or official documents.</p>
+        <p data-i18n="home.notice">This is an unofficial fan-made site. Ticket-style images are for fan artwork and memories only, not real tickets or official documents.</p>
     </section>
 
     <section id="tools" class="section-block">
-        <div class="section-head">
+        <div class="section-head compact-head">
             <p class="eyebrow">Fan Tools</p>
             <h2 data-i18n="home.toolsTitle">Tools</h2>
-            <p data-i18n="home.toolsLead">Pick the thing you need and jump straight in. Existing tool URLs stay alive while this page becomes the cleaner front door.</p>
+            <p data-i18n="home.toolsLead">Each card opens a tool directly. Existing URLs stay active for shared links.</p>
         </div>
         <div class="tools-grid" data-tools-grid></div>
     </section>
 
-    <section class="system-grid">
-        <article class="apple-glass-3d content-panel hover-glow">
-            <p class="eyebrow">What this is for</p>
-            <h2 data-i18n="home.systemTitle">Made for quick fan moments.</h2>
-            <p data-i18n="home.systemLead">Before a show, after a theater draw, or when you are sharing fan-made visuals, the page should get out of the way and send you to the right tool fast.</p>
-        </article>
-        <article class="apple-glass-3d content-panel hover-glow">
-            <ul class="check-list" data-system-list></ul>
-        </article>
+    <section id="how" class="section-block slim-section">
+        <div class="section-head compact-head">
+            <p class="eyebrow">Notes</p>
+            <h2 data-i18n="home.howTitle">Before using</h2>
+            <p data-i18n="home.howLead">For most fans, only three things matter: what the tools are for, how data is handled, and how to contact me.</p>
+        </div>
+        <ul class="info-list">
+            <li data-i18n="home.howItems.0">The tools are for fan creation, personal records, and reference only.</li>
+            <li data-i18n="home.howItems.1">Current settings mostly stay in your browser; account saving may be added later.</li>
+            <li data-i18n="home.howItems.2">Future public statistics should only use anonymous data when you actively opt in.</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact-strip">
+        <div>
+            <p class="eyebrow">Contact</p>
+            <h2 data-i18n="home.contactTitle">Contact</h2>
+            <p data-i18n="home.contactLead">For bugs, data updates, removal requests, or collaboration, DM X: @sorrysir_gomen.</p>
+        </div>
+        <a class="app-button primary" href="https://x.com/sorrysir_gomen" target="_blank" rel="noopener">@sorrysir_gomen</a>
     </section>
 </main>
 
-<footer class="footer-shell apple-glass-3d">
+<footer class="footer-shell">
     <div>
         <strong>Gomensensei AKB Fan Tools</strong>
         <p data-i18n="common.fanMade">Unofficial fan-made project. Not affiliated with AKB48, DH, venues, organisers, or ticketing platforms.</p>
     </div>
     <div class="footer-links">
         <a href="privacy.html" data-i18n="nav.privacy">About & Privacy</a>
-        <a href="terms.html" data-i18n="nav.terms">Terms</a>
-        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
     </div>
     <p class="copyright" data-i18n="common.copyright">© 2026 Gomensensei. Fan-made tools for creative and reference use.</p>
 </footer>
 
-    <script src="assets/js/core.js?v=20260628" defer></script>
-    <script src="assets/js/app.js?v=20260628" defer></script>
+    <script src="assets/js/core.js?v=20260628b" defer></script>
+    <script src="assets/js/app.js?v=20260628b" defer></script>
 </body>
 </html>
