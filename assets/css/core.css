@@ -2,7 +2,7 @@
    1. Gomensensei Core UI - Variables & Base (45度動態漸變)
    ========================================= */
 :root {
-    --bg-grad-1: #e0eafc; --bg-grad-2: #cfdef3; --bg-grad-3: #FFB6C1; --bg-grad-4: #f8bbd0;
+    --bg-grad-1: #eef7ff; --bg-grad-2: #dcf7ee; --bg-grad-3: #fff5d8; --bg-grad-4: #eceaff;
     --primary: #FF4081; --primary-hover: #E91E63;
     --text-main: #2C3E50; --text-sec: #7F8C8D;
 }
@@ -41,11 +41,11 @@ body {
 
 /* 圖像/卡片懸浮反光與放大 */
 .hover-glow {
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .hover-glow:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(255, 64, 129, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(255, 64, 129, 0.16);
     z-index: 2;
 }
 
@@ -58,7 +58,7 @@ body {
     box-shadow: inset 1.5px 1.5px 2px rgba(255, 255, 255, 0.4), inset -1px -1px 3px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.1);
     transform-style: preserve-3d;
     transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-    transition: transform 0.1s ease-out; overflow: hidden; will-change: transform;
+    transition: transform 0.12s ease-out; overflow: hidden; will-change: transform;
 }
 .apple-glass-3d::before {
     content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
