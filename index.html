@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-title>Gomensensei AKB Fan Tools</title>
-    <meta name="description" content="Unofficial AKB48 fan-made tool launcher for ticket-style images, penlight colors, seat references, garapon logs, data notes, and mini games." data-meta-description>
+    <title data-title>Tool48</title>
+    <meta name="description" content="Tool48 is an unofficial AKB48 Theater Day logbook and fan tools hub." data-meta-description>
     <meta name="theme-color" content="#FF4081">
-    <meta property="og:title" content="Gomensensei AKB Fan Tools">
-    <meta property="og:description" content="Unofficial AKB48 fan-made tools for fans and event support.">
+    <meta property="og:title" content="Tool48">
+    <meta property="og:description" content="Unofficial AKB48 Theater Day Logbook & Fan Tools.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gomensensei.github.io/">
     <meta property="og:image" content="https://gomensensei.github.io/assets/img/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gomensensei AKB Fan Tools">
-    <meta name="twitter:description" content="Unofficial AKB48 fan-made tools for fans and event support.">
+    <meta name="twitter:title" content="Tool48">
+    <meta name="twitter:description" content="Unofficial AKB48 Theater Day Logbook & Fan Tools.">
     <meta name="twitter:image" content="https://gomensensei.github.io/assets/img/og-image.png">
     <!-- Add after AdSense approval:
     <meta name="google-adsense-account" content="ca-pub-xxxxxxxxxxxxxxxx">
     -->
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/css/core.css?v=20260628c">
-    <link rel="stylesheet" href="assets/css/app.css?v=20260628c">
+    <link rel="stylesheet" href="assets/css/core.css?v=20260628d">
+    <link rel="stylesheet" href="assets/css/app.css?v=20260628d">
 </head>
 <body class="native-feel">
     <a href="#main" class="skip-link">Skip to content</a>
 
 <header class="top-shell">
-    <a class="brand-lockup" href="index.html" aria-label="Gomensensei AKB Fan Tools">
-        <span class="brand-mark">G</span>
+    <a class="brand-lockup" href="index.html" aria-label="Tool48">
+        <span class="brand-mark">48</span>
         <span class="brand-text">
-            <strong data-i18n="siteName">Gomensensei AKB Fan Tools</strong>
-            <small data-i18n="tagline">非官方 AKB48 fan tools</small>
+            <strong data-i18n="siteName">Tool48</strong>
+            <small data-i18n="tagline">AKB48 Theater Day Logbook & Fan Tools</small>
         </span>
     </a>
 
@@ -40,8 +40,9 @@
 
     <nav id="siteNav" class="site-nav" aria-label="Primary navigation">
         <a href="index.html" data-nav="home" data-i18n="nav.home">首頁</a>
+        <a href="#timeline" data-i18n="nav.timeline">劇場日流程</a>
         <a href="#tools" data-i18n="nav.tools">工具</a>
-        <a href="privacy.html" data-nav="privacy" data-i18n="nav.privacy">關於及私隱</a>
+        <a href="privacy.html" data-nav="privacy" data-i18n="nav.privacy">私隱與說明</a>
         <a href="#contact" data-i18n="nav.contact">聯絡</a>
     </nav>
 
@@ -59,41 +60,47 @@
 <main id="main" class="page-shell">
     <section class="hero-grid">
         <div class="hero-copy">
-            <p class="eyebrow" data-i18n="home.eyebrow">AKB48 fan utilities</p>
-            <h1 data-i18n="home.heroTitle">AKB48 fan tools</h1>
-            <p class="hero-lead" data-i18n="home.heroLead">票券風圖片、penlight 顏色、座位參考、garapon 紀錄、資料筆記及小遊戲，集中一頁即時使用。</p>
+            <p class="eyebrow" data-i18n="home.eyebrow">AKB48 Theater Day</p>
+            <h1 data-i18n="home.heroTitle">Tool48</h1>
+            <p class="hero-kicker" data-i18n="home.heroKicker">AKB48 Theater Day Logbook & Fan Tools</p>
+            <p class="hero-lead" data-i18n="home.heroLead">由查應援色、抽選紀錄、座位備忘到紀念票券，一頁整理劇場日前後常用工具。</p>
             <div class="cta-row">
                 <a class="app-button primary hover-glow" href="#tools" data-i18n="home.primaryCta">選擇工具</a>
-                <a class="app-button secondary hover-glow" href="privacy.html" data-i18n="home.secondaryCta">私隱說明</a>
+                <a class="app-button secondary hover-glow" href="privacy.html" data-i18n="home.secondaryCta">資料與私隱</a>
             </div>
         </div>
 
         <aside id="tools" class="hero-panel" aria-label="Quick tool links" data-quick-tools></aside>
     </section>
 
-    <section class="notice-box">
-        <p class="eyebrow" data-i18n="common.important">重要提醒</p>
-        <p data-i18n="home.notice">本站為非官方 fan-made 網站。Ticket-style 圖片只供應援創作、紀念及設計參考，並非真票、官方文件或入場證明。</p>
+    <section id="timeline" class="timeline-section">
+        <div class="section-head compact-head">
+            <p class="eyebrow" data-i18n="timeline.eyebrow">Theater Day Timeline</p>
+            <h2 data-i18n="timeline.title">以劇場日流程選工具</h2>
+            <p data-i18n="timeline.lead">按實際使用場景排列：出發前、等候中、入場後、完場後。</p>
+        </div>
+        <ol class="timeline-list" data-timeline></ol>
     </section>
 
-    <section id="how" class="section-block slim-section">
+    <section class="notice-box">
+        <p class="eyebrow" data-i18n="common.important">重要說明</p>
+        <p data-i18n="home.notice">本站是非官方 fan-made 網站。票券風圖片只供應援創作、紀念及設計參考，並非真實票券、官方文件或入場憑證。</p>
+    </section>
+
+    <section class="privacy-note">
         <div class="section-head compact-head">
-            <p class="eyebrow">Notes</p>
-            <h2 data-i18n="home.howTitle">使用前須知</h2>
-            <p data-i18n="home.howLead">這些工具只供 fan creation、個人紀錄及參考用途。將來若加入帳戶或公開統計，會清楚標示資料用途。</p>
+            <p class="eyebrow" data-i18n="privacyNote.eyebrow">Data Direction</p>
+            <h2 data-i18n="privacyNote.title">日後資料功能方向</h2>
+            <p data-i18n="privacyNote.lead">目前工具維持免登入使用。日後如加入帳戶、雲端保存或公開統計，會以清楚提示及主動選擇為前提。</p>
         </div>
-        <ul class="info-list">
-            <li data-i18n="home.howItems.0">所有工具均非官方資料，使用及分享時請避免令人誤會為官方內容。</li>
-            <li data-i18n="home.howItems.1">現時設定主要儲存在你的瀏覽器；日後如加入帳戶功能，會先說明儲存內容。</li>
-            <li data-i18n="home.howItems.2">不記名公開資料必須由你主動勾選同意，否則個人紀錄不會公開。</li>
-        </ul>
+        <ul class="info-list" data-privacy-points></ul>
     </section>
 
     <section id="contact" class="contact-strip">
         <div>
             <p class="eyebrow">Contact</p>
             <h2 data-i18n="home.contactTitle">聯絡</h2>
-            <p data-i18n="home.contactLead">如需回報錯誤、更新資料、提出移除要求或合作查詢，請 DM X: @sorrysir_gomen。</p>
+            <p data-i18n="home.contactLead">錯誤回報、資料修正、移除要求或合作查詢，請直接 DM X: @sorrysir_gomen。</p>
         </div>
         <a class="app-button primary" href="https://x.com/sorrysir_gomen" target="_blank" rel="noopener">@sorrysir_gomen</a>
     </section>
@@ -101,17 +108,19 @@
 
 <footer class="footer-shell">
     <div>
-        <strong>Gomensensei AKB Fan Tools</strong>
-        <p data-i18n="common.fanMade">非官方 fan-made project，與 AKB48、DH、場地、主辦或票務平台無關。</p>
+        <strong data-i18n="siteName">Tool48</strong>
+        <p data-i18n="common.fanMade">非官方 fan-made project，與 AKB48、DH、場地、主辦單位或票務平台無關。</p>
     </div>
     <div class="footer-links">
-        <a href="privacy.html" data-i18n="nav.privacy">關於及私隱</a>
+        <a href="index.html" data-i18n="nav.home">首頁</a>
+        <a href="#tools" data-i18n="nav.tools">工具</a>
+        <a href="privacy.html" data-i18n="nav.privacy">私隱與說明</a>
         <a href="#contact" data-i18n="nav.contact">聯絡</a>
     </div>
-    <p class="copyright" data-i18n="common.copyright">© 2026 Gomensensei. Fan-made tools for creative and reference use.</p>
+    <p class="copyright" data-i18n="common.copyright">© 2026 Tool48 / Gomensensei. Unofficial fan-made tools.</p>
 </footer>
 
-    <script src="assets/js/core.js?v=20260628c" defer></script>
-    <script src="assets/js/app.js?v=20260628c" defer></script>
+    <script src="assets/js/core.js?v=20260628d" defer></script>
+    <script src="assets/js/app.js?v=20260628d" defer></script>
 </body>
 </html>
