@@ -2,7 +2,7 @@
   "zh-HK": {
     "meta": {
       "title": "Tool48",
-      "description": "Tool48 是非官方 AKB48 Theater Day Logbook & Fan Tools，集中整理劇場日前後常用的 fan-made 工具。"
+      "description": "Tool48 是非官方 AKB48 Theater Day fan tools hub；所有工具免登入可用，Tool48 Account 只作可選雲端保存、跨裝置備份及匿名公開統計。"
     },
     "siteName": "Tool48",
     "tagline": "AKB48 Theater Day Logbook & Fan Tools",
@@ -18,16 +18,16 @@
       "language": "語言",
       "important": "重要說明",
       "fanMade": "非官方 fan-made project，與 AKB48、DH、場地、主辦單位或票務平台無關。",
-      "copyright": "© 2026 Tool48 / Gomensensei. Unofficial fan-made tools."
+      "copyright": "本非官方粉絲網站由粉絲 Gomen Sensei (gomensensei) 製作。圖片及相關素材版權屬於 AKB48 與 DH Co., Ltd."
     },
     "home": {
       "eyebrow": "AKB48 Theater Day",
       "heroTitle": "Tool48",
       "heroKicker": "AKB48 Theater Day Logbook & Fan Tools",
-      "heroLead": "由查應援色、抽選紀錄、座位備忘到紀念票券，一頁整理劇場日前後常用工具。",
+      "heroLead": "由查應援色、抽選紀錄、座位備忘到紀念票券，一頁整理劇場日前後常用工具；全部免登入可用，Tool48 Account 只係可選雲端備份。",
       "primaryCta": "選擇工具",
       "secondaryCta": "資料與私隱",
-      "notice": "本站是非官方 fan-made 網站。票券風圖片只供應援創作、紀念及設計參考，並非真實票券、官方文件或入場憑證。",
+      "notice": "本站是非官方 fan-made 網站。所有工具均可本機使用而無需登入；雲端保存、跨裝置同步及匿名公開統計只會在你選擇使用相關功能時啟用。",
       "contactTitle": "聯絡",
       "contactLead": "錯誤回報、資料修正、移除要求或合作查詢，請直接 DM X: @sorrysir_gomen。"
     },
@@ -36,30 +36,97 @@
       "title": "以劇場日流程選工具",
       "lead": "按實際使用場景排列：出發前、等候中、入場後、完場後。",
       "steps": [
-        { "phase": "公演前", "title": "查應援色", "text": "出發前先確認成員 penlight 顏色。", "tool": "Penlight List" },
-        { "phase": "劇場附近", "title": "記錄 Garapon", "text": "整理抽選次數、結果、花費與備註。", "tool": "Garapon Log" },
-        { "phase": "等候時間", "title": "輕量互動", "text": "用 MBTI 或小遊戲消磨等候時間。", "tool": "MBTI / Mini Games" },
-        { "phase": "入場後", "title": "保存座位", "text": "記下座位或立見位置，方便日後回顧。", "tool": "Seatmap" },
-        { "phase": "完場後", "title": "製作紀念票券", "text": "把當日公演整理成可保存的 ticket-style 圖片。", "tool": "Ticket Generator" }
+        {
+          "phase": "公演前",
+          "title": "查應援色",
+          "text": "出發前先確認成員 penlight 顏色。",
+          "tool": "Penlight List"
+        },
+        {
+          "phase": "劇場附近",
+          "title": "記錄 Garapon",
+          "text": "整理抽選次數、結果、花費與備註。",
+          "tool": "Garapon Log"
+        },
+        {
+          "phase": "等候時間",
+          "title": "輕量互動",
+          "text": "用 MBTI 或小遊戲消磨等候時間。",
+          "tool": "MBTI / Mini Games"
+        },
+        {
+          "phase": "入場後",
+          "title": "保存座位",
+          "text": "記下座位或立見位置，方便日後回顧。",
+          "tool": "Seatmap"
+        },
+        {
+          "phase": "完場後",
+          "title": "製作紀念票券",
+          "text": "把當日公演整理成可保存的 ticket-style 圖片。",
+          "tool": "Ticket Generator"
+        }
       ]
     },
     "privacyNote": {
       "eyebrow": "Data Direction",
-      "title": "日後資料功能方向",
-      "lead": "目前工具維持免登入使用。日後如加入帳戶、雲端保存或公開統計，會以清楚提示及主動選擇為前提。",
+      "title": "Tool48 Account 與本機優先",
+      "lead": "所有工具仍然免登入可用。Tool48 Account 只係可選雲端保存／跨裝置備份；未登入時，資料會留喺你瀏覽器的 localStorage。",
       "points": [
-        "現有工具不設登入牆；舊有工具 URL 會繼續保留。",
-        "日後 seatmap、garapon 等工具可能支援登入後保存個人資料。",
-        "不記名公開統計或社群參考資料必須由用戶主動勾選同意。"
+        "Penlight、Garapon、Seatmap、Ticket、MBTI 同 Mini Games 均保留本機流程，現有工具 URL 繼續可用。",
+        "支援雲端的工具會以 Tool48 Account 作可選備份：Ticket 最多 3 個 cloud slots；Mini Games 可保存 level、XP、成員圖鑑進度。",
+        "Garapon / Seatmap 的公開統計只使用匿名、已同意資料；私人紀錄、email 或未公開內容不會放入公開統計。"
       ]
     },
     "tools": [
-      { "name": "Penlight List", "shortName": "Penlight", "url": "/penlightlist/", "label": "應援色", "visual": "light", "desc": "公演前查閱成員 penlight 顏色。" },
-      { "name": "AKB Garapon", "shortName": "Garapon", "url": "/akb-garapon/", "label": "抽選紀錄", "visual": "garapon", "desc": "記錄劇場 garapon 嘗試、結果、花費及個人備註。" },
-      { "name": "AKB Seatmap", "shortName": "Seatmap", "url": "/akb-seatmap/", "label": "座位備忘", "visual": "seat", "desc": "保存座位或立見位置，方便回顧劇場視角。" },
-      { "name": "48 Ticket Generator", "shortName": "Ticket", "url": "/48-ticket-generator/", "label": "紀念票券", "visual": "ticket", "desc": "製作 ticket-style 圖片，作紀念及應援創作。" },
-      { "name": "AKB MBTI with Wota", "shortName": "MBTI", "url": "/AKB-MBTI-with-wota/", "label": "Fan MBTI", "visual": "data", "desc": "整理成員 MBTI 與 fan 討論用資料。" },
-      { "name": "AKB Mini Games 2026", "shortName": "Games", "url": "/akb_mini_games_2026/", "label": "等候小遊戲", "visual": "game", "desc": "AKB48 主題的小型互動遊戲。" }
+      {
+        "name": "Penlight List",
+        "shortName": "Penlight",
+        "url": "/penlightlist/",
+        "label": "Cloud save 可選",
+        "visual": "light",
+        "desc": "查閱成員 penlight 顏色；可本機保存清單，登入後可選擇雲端備份。"
+      },
+      {
+        "name": "AKB Garapon",
+        "shortName": "Garapon",
+        "url": "/akb-garapon/",
+        "label": "Cloud + 匿名統計",
+        "visual": "garapon",
+        "desc": "記錄 garapon 嘗試、結果與花費；本機優先，登入後可自動備份，公開統計只收匿名同意資料。"
+      },
+      {
+        "name": "AKB Seatmap",
+        "shortName": "Seatmap",
+        "url": "/akb-seatmap/",
+        "label": "Cloud + Entry Dashboard",
+        "visual": "seat",
+        "desc": "保存座位／立見備忘與 Entry Lottery Dashboard；可選雲端保存及匿名公開統計。"
+      },
+      {
+        "name": "48 Ticket Generator",
+        "shortName": "Ticket",
+        "url": "/48-ticket-generator/",
+        "label": "3-slot Cloud Save",
+        "visual": "ticket",
+        "desc": "製作 ticket-style 圖片；免登入可匯出，登入後可保存最多 3 個 cloud slots。"
+      },
+      {
+        "name": "AKB MBTI with Wota",
+        "shortName": "MBTI",
+        "url": "/AKB-MBTI-with-wota/",
+        "label": "Cloud result 可選",
+        "visual": "data",
+        "desc": "整理成員 MBTI 與 fan 討論資料；測驗結果可本機保存，登入後可選擇雲端備份。"
+      },
+      {
+        "name": "AKB Mini Games 2026",
+        "shortName": "Games",
+        "url": "/akb_mini_games_2026/",
+        "label": "Level / XP Cloud Save",
+        "visual": "game",
+        "desc": "AKB48 主題小遊戲；本機遊玩，登入後可備份 level、XP 與成員圖鑑進度。"
+      }
     ],
     "privacy": {
       "eyebrow": "About / Privacy / Disclaimer",
@@ -67,10 +134,10 @@
       "body": [
         "Tool48 是非官方 fan-made 網站，主要用作 fan 創作、資料整理、個人紀錄及活動前後參考。",
         "本站與 AKB48、DH、場地、主辦單位、票務平台或任何官方機構無關。票券風圖片、座位圖、penlight 顏色、MBTI 筆記及其他資料只屬 fan reference。",
-        "現階段工具不需要帳戶。語言、顯示設定或部分工具狀態可能透過 localStorage 保存在你的瀏覽器內。",
-        "日後如加入帳戶功能，seatmap、garapon 或其他工具可能支援登入後儲存自己的資料，例如座位紀錄、抽選紀錄、garapon 紀錄、偏好設定或個人備註。相關功能會在使用前說明保存內容及用途。",
-        "日後如提供不記名公開資料功能，例如公開統計、座位或抽選匯總、garapon 匯總或社群參考，會採用 opt-in 方式處理。你必須主動勾選同意，相關資料才會公開。",
-        "如未選擇公開，你的個人紀錄應只供自己的帳戶或瀏覽器使用。日後如有雲端資料功能，也應提供修正、刪除或取消公開的途徑。",
+        "所有工具均可免登入使用。語言、顯示設定、保存內容或遊戲進度可能透過 localStorage 保存在你的瀏覽器內。",
+        "Tool48 Account 只係可選功能，用於雲端保存、跨裝置備份或同步。Penlight、Garapon、Seatmap、Ticket、MBTI 同 Mini Games 的本機流程不會因未登入而被鎖住。",
+        "支援雲端的工具會在介面中說明保存內容；例如 Ticket 最多 3 個 cloud slots，Mini Games 可保存 level、XP、成員圖鑑進度，Garapon / Seatmap 可保存個人紀錄。",
+        "公開匿名資料只會在有明示同意的工具中使用，例如 Garapon 或 Seatmap 的公開統計。未選擇公開的個人紀錄只供自己的帳戶或瀏覽器使用。",
         "日後如加入 Google 廣告或分析工具，可能會使用 cookies 或類似技術；你可透過瀏覽器設定管理 cookies。",
         "如需更正資料、刪除資料、移除內容或查詢，請 DM X: @sorrysir_gomen。"
       ]
@@ -79,7 +146,7 @@
   "en": {
     "meta": {
       "title": "Tool48",
-      "description": "Tool48 is an unofficial AKB48 Theater Day logbook and fan tools hub."
+      "description": "Tool48 is an unofficial AKB48 Theater Day fan tools hub. Every tool works without login; Tool48 Account is optional cloud save, cross-device backup, and anonymous public stats."
     },
     "siteName": "Tool48",
     "tagline": "AKB48 Theater Day Logbook & Fan Tools",
@@ -95,16 +162,16 @@
       "language": "Language",
       "important": "Important",
       "fanMade": "Unofficial fan-made project. Not affiliated with AKB48, DH, venues, organisers, or ticketing platforms.",
-      "copyright": "© 2026 Tool48 / Gomensensei. Unofficial fan-made tools."
+      "copyright": "This unofficial fan site is created by fan Gomen Sensei (gomensensei). Images and related materials are © AKB48 and DH Co., Ltd."
     },
     "home": {
       "eyebrow": "AKB48 Theater Day",
       "heroTitle": "Tool48",
       "heroKicker": "AKB48 Theater Day Logbook & Fan Tools",
-      "heroLead": "A compact hub for penlight colors, garapon records, seat memos, memorial tickets, MBTI notes, and mini games around theater days.",
+      "heroLead": "A compact hub for penlight colors, garapon records, seat memos, memorial tickets, MBTI notes, and mini games. Everything works without login; Tool48 Account is optional backup.",
       "primaryCta": "Choose a tool",
       "secondaryCta": "Data & privacy",
-      "notice": "This is an unofficial fan-made site. Ticket-style images are for fan artwork, memories, and design reference only; they are not real tickets or official documents.",
+      "notice": "This is an unofficial fan-made site. Every tool remains usable locally without login; cloud save, cross-device sync, and anonymous public stats only run when you choose those features.",
       "contactTitle": "Contact",
       "contactLead": "For bugs, data corrections, removal requests, or collaboration, DM X: @sorrysir_gomen."
     },
@@ -113,30 +180,97 @@
       "title": "Pick tools by theater-day moment",
       "lead": "This section follows real fan usage, not the technical structure: before departure, while waiting, after entry, and after the show.",
       "steps": [
-        { "phase": "Before show", "title": "Check colors", "text": "Confirm member penlight colors before leaving.", "tool": "Penlight List" },
-        { "phase": "Around theater", "title": "Log Garapon", "text": "Record draw count, results, spending, and notes.", "tool": "Garapon Log" },
-        { "phase": "Waiting time", "title": "Light interaction", "text": "Use MBTI or mini games while waiting.", "tool": "MBTI / Mini Games" },
-        { "phase": "After entry", "title": "Save seat memo", "text": "Keep your seat or standing position for later reference.", "tool": "Seatmap" },
-        { "phase": "After show", "title": "Create a ticket memory", "text": "Turn the performance into a ticket-style image to keep.", "tool": "Ticket Generator" }
+        {
+          "phase": "Before show",
+          "title": "Check colors",
+          "text": "Confirm member penlight colors before leaving.",
+          "tool": "Penlight List"
+        },
+        {
+          "phase": "Around theater",
+          "title": "Log Garapon",
+          "text": "Record draw count, results, spending, and notes.",
+          "tool": "Garapon Log"
+        },
+        {
+          "phase": "Waiting time",
+          "title": "Light interaction",
+          "text": "Use MBTI or mini games while waiting.",
+          "tool": "MBTI / Mini Games"
+        },
+        {
+          "phase": "After entry",
+          "title": "Save seat memo",
+          "text": "Keep your seat or standing position for later reference.",
+          "tool": "Seatmap"
+        },
+        {
+          "phase": "After show",
+          "title": "Create a ticket memory",
+          "text": "Turn the performance into a ticket-style image to keep.",
+          "tool": "Ticket Generator"
+        }
       ]
     },
     "privacyNote": {
       "eyebrow": "Data Direction",
-      "title": "Future data direction",
-      "lead": "Current tools stay usable without login. If accounts, cloud saves, or public stats are added later, they should be clearly explained and choice-based.",
+      "title": "Tool48 Account and local-first use",
+      "lead": "Every tool remains usable without login. Tool48 Account is optional cloud save and cross-device backup; without login, data stays in your browser localStorage.",
       "points": [
-        "Existing tools will remain usable without a login wall, and current URLs will stay available.",
-        "Future seatmap, garapon, or other tools may support account-saved personal records.",
-        "Anonymous public statistics or community reference data must require active opt-in consent."
+        "Penlight, Garapon, Seatmap, Ticket, MBTI, and Mini Games keep their local flow, and existing tool URLs stay available.",
+        "Cloud-enabled tools use Tool48 Account as optional backup: Ticket has up to 3 cloud slots; Mini Games can save level, XP, and member dex progress.",
+        "Garapon / Seatmap public stats use only anonymous, consented data; private records, email, and unpublished content are not included."
       ]
     },
     "tools": [
-      { "name": "Penlight List", "shortName": "Penlight", "url": "/penlightlist/", "label": "Penlight colors", "visual": "light", "desc": "Check member penlight colors before shows." },
-      { "name": "AKB Garapon", "shortName": "Garapon", "url": "/akb-garapon/", "label": "Draw log", "visual": "garapon", "desc": "Record theater garapon attempts, results, spending, and notes." },
-      { "name": "AKB Seatmap", "shortName": "Seatmap", "url": "/akb-seatmap/", "label": "Seat memo", "visual": "seat", "desc": "Save seat or standing-position context for later." },
-      { "name": "48 Ticket Generator", "shortName": "Ticket", "url": "/48-ticket-generator/", "label": "Memorial ticket", "visual": "ticket", "desc": "Create ticket-style images for memories and fan artwork." },
-      { "name": "AKB MBTI with Wota", "shortName": "MBTI", "url": "/AKB-MBTI-with-wota/", "label": "Fan MBTI", "visual": "data", "desc": "Member MBTI notes and fan discussion reference." },
-      { "name": "AKB Mini Games 2026", "shortName": "Games", "url": "/akb_mini_games_2026/", "label": "Waiting games", "visual": "game", "desc": "Small AKB48-themed interactive games." }
+      {
+        "name": "Penlight List",
+        "shortName": "Penlight",
+        "url": "/penlightlist/",
+        "label": "Optional cloud save",
+        "visual": "light",
+        "desc": "Check member penlight colors; save lists locally, with optional cloud backup after login."
+      },
+      {
+        "name": "AKB Garapon",
+        "shortName": "Garapon",
+        "url": "/akb-garapon/",
+        "label": "Cloud + anonymous stats",
+        "visual": "garapon",
+        "desc": "Record garapon attempts, results, and spending; local-first, optional auto backup, and public stats from anonymous consented data only."
+      },
+      {
+        "name": "AKB Seatmap",
+        "shortName": "Seatmap",
+        "url": "/akb-seatmap/",
+        "label": "Cloud + Entry Dashboard",
+        "visual": "seat",
+        "desc": "Save seat / standing memos and Entry Lottery Dashboard data, with optional cloud save and anonymous public stats."
+      },
+      {
+        "name": "48 Ticket Generator",
+        "shortName": "Ticket",
+        "url": "/48-ticket-generator/",
+        "label": "3-slot Cloud Save",
+        "visual": "ticket",
+        "desc": "Create ticket-style images without login; after login, save up to 3 cloud slots."
+      },
+      {
+        "name": "AKB MBTI with Wota",
+        "shortName": "MBTI",
+        "url": "/AKB-MBTI-with-wota/",
+        "label": "Optional result cloud save",
+        "visual": "data",
+        "desc": "Member MBTI notes and fan discussion reference; results can stay local or be backed up after login."
+      },
+      {
+        "name": "AKB Mini Games 2026",
+        "shortName": "Games",
+        "url": "/akb_mini_games_2026/",
+        "label": "Level / XP cloud save",
+        "visual": "game",
+        "desc": "Small AKB48-themed games; play locally and optionally back up level, XP, and member dex progress."
+      }
     ],
     "privacy": {
       "eyebrow": "About / Privacy / Disclaimer",
@@ -144,10 +278,10 @@
       "body": [
         "Tool48 is an unofficial fan-made site for fan creation, information organisation, personal records, and event reference.",
         "This site is not affiliated with AKB48, DH, venues, organisers, ticketing platforms, or any official organisation. Ticket-style images, seat maps, penlight colors, MBTI notes, and other data are fan references only.",
-        "Current tools do not require an account. Language, display settings, or tool state may be saved locally in your browser through localStorage.",
-        "If account features are added later, tools such as seatmap, garapon, or other tools may let you save your own records, draw logs, preferences, or notes after login. Each feature should explain what is saved before use.",
-        "If anonymous public-data features are added, such as public statistics, seat or draw summaries, garapon summaries, or community references, they should be opt-in. You should need to actively tick consent before any data is made public.",
-        "If you do not opt in, your personal records should remain for your own account or browser only. Future cloud-data features should also provide ways to correct, delete, or unpublish relevant data.",
+        "Every tool can be used without login. Language, display settings, saved content, or game progress may be stored locally in your browser through localStorage.",
+        "Tool48 Account is optional and is used for cloud save, cross-device backup, or sync. Penlight, Garapon, Seatmap, Ticket, MBTI, and Mini Games are not locked behind login.",
+        "Cloud-enabled tools explain what they save in the interface; for example, Ticket supports up to 3 cloud slots, Mini Games can save level, XP, and member dex progress, and Garapon / Seatmap can save personal records.",
+        "Anonymous public data is used only in tools where you explicitly consent, such as Garapon or Seatmap public stats. Records that are not made public remain for your own account or browser only.",
         "Future Google ads or analytics may use cookies or similar technologies. You can manage cookies through browser settings.",
         "For corrections, deletion, removal requests, or enquiries, DM X: @sorrysir_gomen."
       ]
@@ -156,7 +290,7 @@
   "ja": {
     "meta": {
       "title": "Tool48",
-      "description": "Tool48 は、AKB48 の劇場日に使う非公式ファンメイドの記録・ツールハブです。"
+      "description": "Tool48 は AKB48 劇場日の非公式ファンツールハブです。全ツールはログインなしで利用でき、Tool48 Account は任意のクラウド保存、端末間バックアップ、匿名公開統計に使います。"
     },
     "siteName": "Tool48",
     "tagline": "AKB48 Theater Day Logbook & Fan Tools",
@@ -172,16 +306,16 @@
       "language": "言語",
       "important": "重要なお知らせ",
       "fanMade": "非公式のファンメイド project です。AKB48、DH、会場、主催者、チケットサービスとは関係ありません。",
-      "copyright": "© 2026 Tool48 / Gomensensei. Unofficial fan-made tools."
+      "copyright": "この非公式ファンサイトは、ファンの Gomen Sensei (gomensensei) が制作しています。画像および関連素材の権利は AKB48 と DH Co., Ltd. に帰属します。"
     },
     "home": {
       "eyebrow": "AKB48 Theater Day",
       "heroTitle": "Tool48",
       "heroKicker": "AKB48 Theater Day Logbook & Fan Tools",
-      "heroLead": "ペンライトカラー、ガラポン記録、座席メモ、記念チケット、MBTI メモ、ミニゲームを劇場日前後の流れに合わせてまとめた入口です。",
+      "heroLead": "ペンライトカラー、ガラポン記録、座席メモ、記念チケット、MBTI メモ、ミニゲームをまとめた入口です。すべてログインなしで利用でき、Tool48 Account は任意のバックアップです。",
       "primaryCta": "ツールを選ぶ",
       "secondaryCta": "データとプライバシー",
-      "notice": "本サイトは非公式の fan-made サイトです。チケット風画像はファンアート、記念、デザイン参考用であり、実際のチケットや公式書類ではありません。",
+      "notice": "本サイトは非公式の fan-made サイトです。全ツールはログインなしでローカル利用できます。クラウド保存、端末間同期、匿名公開統計は利用者が選択した場合のみ有効になります。",
       "contactTitle": "連絡",
       "contactLead": "不具合、データ修正、削除依頼、協力の相談は X: @sorrysir_gomen へ DM してください。"
     },
@@ -190,30 +324,97 @@
       "title": "劇場日の場面でツールを選ぶ",
       "lead": "技術構成ではなく、出発前、待機中、入場後、終演後という実際の利用場面に合わせています。",
       "steps": [
-        { "phase": "公演前", "title": "カラー確認", "text": "出発前にメンバーのペンライトカラーを確認します。", "tool": "Penlight List" },
-        { "phase": "劇場周辺", "title": "ガラポン記録", "text": "回数、結果、費用、メモを残します。", "tool": "Garapon Log" },
-        { "phase": "待機時間", "title": "軽い遊び", "text": "MBTI やミニゲームを待ち時間に使えます。", "tool": "MBTI / Mini Games" },
-        { "phase": "入場後", "title": "座席メモ", "text": "座席や立見位置を後から見返せるよう保存します。", "tool": "Seatmap" },
-        { "phase": "終演後", "title": "記念チケット", "text": "その日の公演をチケット風画像として残します。", "tool": "Ticket Generator" }
+        {
+          "phase": "公演前",
+          "title": "カラー確認",
+          "text": "出発前にメンバーのペンライトカラーを確認します。",
+          "tool": "Penlight List"
+        },
+        {
+          "phase": "劇場周辺",
+          "title": "ガラポン記録",
+          "text": "回数、結果、費用、メモを残します。",
+          "tool": "Garapon Log"
+        },
+        {
+          "phase": "待機時間",
+          "title": "軽い遊び",
+          "text": "MBTI やミニゲームを待ち時間に使えます。",
+          "tool": "MBTI / Mini Games"
+        },
+        {
+          "phase": "入場後",
+          "title": "座席メモ",
+          "text": "座席や立見位置を後から見返せるよう保存します。",
+          "tool": "Seatmap"
+        },
+        {
+          "phase": "終演後",
+          "title": "記念チケット",
+          "text": "その日の公演をチケット風画像として残します。",
+          "tool": "Ticket Generator"
+        }
       ]
     },
     "privacyNote": {
       "eyebrow": "Data Direction",
-      "title": "今後のデータ機能方針",
-      "lead": "現在のツールはログインなしで利用できます。将来アカウント、クラウド保存、公開統計を追加する場合は、内容を明示し、選択制にします。",
+      "title": "Tool48 Account とローカル優先",
+      "lead": "全ツールはログインなしで利用できます。Tool48 Account は任意のクラウド保存／端末間バックアップで、未ログイン時のデータはブラウザの localStorage に残ります。",
       "points": [
-        "既存ツールはログインなしで使える状態を維持し、現在の URL も残します。",
-        "将来 seatmap、garapon などでアカウント保存に対応する可能性があります。",
-        "匿名の公開統計やコミュニティ参考データは、利用者の明示的な opt-in を必要とします。"
+        "Penlight、Garapon、Seatmap、Ticket、MBTI、Mini Games はローカル利用を維持し、既存 URL も残します。",
+        "クラウド対応ツールは Tool48 Account を任意バックアップとして使います。Ticket は最大 3 cloud slots、Mini Games は level、XP、メンバー図鑑進捗を保存できます。",
+        "Garapon / Seatmap の公開統計は匿名かつ同意済みデータのみを使用し、非公開記録、email、未公開内容は含めません。"
       ]
     },
     "tools": [
-      { "name": "Penlight List", "shortName": "Penlight", "url": "/penlightlist/", "label": "ペンライト", "visual": "light", "desc": "公演前にメンバーのペンライトカラーを確認します。" },
-      { "name": "AKB Garapon", "shortName": "Garapon", "url": "/akb-garapon/", "label": "抽選記録", "visual": "garapon", "desc": "劇場ガラポンの回数、結果、費用、メモを記録します。" },
-      { "name": "AKB Seatmap", "shortName": "Seatmap", "url": "/akb-seatmap/", "label": "座席メモ", "visual": "seat", "desc": "座席や立見位置を保存し、劇場の記憶を見返します。" },
-      { "name": "48 Ticket Generator", "shortName": "Ticket", "url": "/48-ticket-generator/", "label": "記念チケット", "visual": "ticket", "desc": "記念やファンアート用のチケット風画像を作成します。" },
-      { "name": "AKB MBTI with Wota", "shortName": "MBTI", "url": "/AKB-MBTI-with-wota/", "label": "Fan MBTI", "visual": "data", "desc": "メンバー MBTI とファン同士の参考メモを整理します。" },
-      { "name": "AKB Mini Games 2026", "shortName": "Games", "url": "/akb_mini_games_2026/", "label": "待機ゲーム", "visual": "game", "desc": "AKB48 テーマの小さなインタラクティブゲームです。" }
+      {
+        "name": "Penlight List",
+        "shortName": "Penlight",
+        "url": "/penlightlist/",
+        "label": "任意クラウド保存",
+        "visual": "light",
+        "desc": "メンバーのペンライトカラーを確認し、リストをローカル保存。ログイン後は任意でクラウドバックアップできます。"
+      },
+      {
+        "name": "AKB Garapon",
+        "shortName": "Garapon",
+        "url": "/akb-garapon/",
+        "label": "Cloud + 匿名統計",
+        "visual": "garapon",
+        "desc": "ガラポンの回数、結果、費用を記録。ローカル優先で、任意の自動バックアップと同意済み匿名統計に対応します。"
+      },
+      {
+        "name": "AKB Seatmap",
+        "shortName": "Seatmap",
+        "url": "/akb-seatmap/",
+        "label": "Cloud + Entry Dashboard",
+        "visual": "seat",
+        "desc": "座席／立見メモと Entry Lottery Dashboard を保存。任意クラウド保存と匿名公開統計に対応します。"
+      },
+      {
+        "name": "48 Ticket Generator",
+        "shortName": "Ticket",
+        "url": "/48-ticket-generator/",
+        "label": "3-slot Cloud Save",
+        "visual": "ticket",
+        "desc": "ログインなしでチケット風画像を作成。ログイン後は最大 3 cloud slots に保存できます。"
+      },
+      {
+        "name": "AKB MBTI with Wota",
+        "shortName": "MBTI",
+        "url": "/AKB-MBTI-with-wota/",
+        "label": "任意の結果クラウド保存",
+        "visual": "data",
+        "desc": "メンバー MBTI とファン向け参考メモ。結果はローカル保存またはログイン後にバックアップできます。"
+      },
+      {
+        "name": "AKB Mini Games 2026",
+        "shortName": "Games",
+        "url": "/akb_mini_games_2026/",
+        "label": "Level / XP cloud save",
+        "visual": "game",
+        "desc": "AKB48 テーマの小さなゲーム。ローカルで遊び、level、XP、メンバー図鑑進捗を任意でバックアップできます。"
+      }
     ],
     "privacy": {
       "eyebrow": "About / Privacy / Disclaimer",
@@ -221,10 +422,10 @@
       "body": [
         "Tool48 は、ファン制作、情報整理、個人記録、イベント前後の参考を目的とした非公式 fan-made サイトです。",
         "本サイトは AKB48、DH、会場、主催者、チケットサービス、その他の公式組織とは関係ありません。チケット風画像、座席図、ペンライトカラー、MBTI メモ、その他のデータはファン向け参考情報です。",
-        "現在のツールはアカウントを必要としません。言語、表示設定、ツールの状態は localStorage により利用者のブラウザ内に保存される場合があります。",
-        "将来アカウント機能を追加する場合、seatmap、garapon、その他のツールで、自分の座席記録、抽選記録、ガラポン記録、設定、メモをログイン後に保存できるようにする可能性があります。利用前に保存内容と用途を説明します。",
-        "匿名の公開データ機能を追加する場合、公開統計、座席や抽選の集計、ガラポン集計、コミュニティ参考データなどは opt-in 方式にします。公開前に利用者が明示的に同意する必要があります。",
-        "公開を選ばない場合、個人記録は自分のアカウントまたはブラウザ内でのみ使われるべきです。将来クラウド保存を追加する場合も、修正、削除、公開解除の方法を用意します。",
+        "全ツールはログインなしで利用できます。言語、表示設定、保存内容、ゲーム進捗は localStorage により利用者のブラウザ内に保存される場合があります。",
+        "Tool48 Account は任意機能で、クラウド保存、端末間バックアップ、同期に使います。Penlight、Garapon、Seatmap、Ticket、MBTI、Mini Games はログインなしでも使えます。",
+        "クラウド対応ツールは保存内容を画面上で説明します。Ticket は最大 3 cloud slots、Mini Games は level、XP、メンバー図鑑進捗、Garapon / Seatmap は個人記録を保存できます。",
+        "匿名公開データは、Garapon や Seatmap の公開統計など、利用者が明示的に同意した機能でのみ使います。公開しない記録は自分のアカウントまたはブラウザ内でのみ利用します。",
         "将来 Google 広告や分析ツールを追加する場合、cookies または類似技術を使用する可能性があります。cookies はブラウザ設定で管理できます。",
         "修正、削除、掲載取り下げ、問い合わせは X: @sorrysir_gomen へ DM してください。"
       ]
@@ -233,7 +434,7 @@
   "ko": {
     "meta": {
       "title": "Tool48",
-      "description": "Tool48은 AKB48 극장일에 쓰는 비공식 팬메이드 기록 및 도구 허브입니다."
+      "description": "Tool48은 AKB48 극장일용 비공식 팬 도구 허브입니다. 모든 도구는 로그인 없이 사용할 수 있으며 Tool48 Account는 선택형 클라우드 저장, 기기 간 백업, 익명 공개 통계에만 사용됩니다."
     },
     "siteName": "Tool48",
     "tagline": "AKB48 Theater Day Logbook & Fan Tools",
@@ -249,16 +450,16 @@
       "language": "언어",
       "important": "중요 안내",
       "fanMade": "비공식 fan-made project입니다. AKB48, DH, 공연장, 주최자, 티켓 플랫폼과 관련이 없습니다.",
-      "copyright": "© 2026 Tool48 / Gomensensei. Unofficial fan-made tools."
+      "copyright": "이 비공식 팬 사이트는 팬 Gomen Sensei (gomensensei)가 제작했습니다. 이미지 및 관련 자료의 권리는 AKB48 및 DH Co., Ltd.에 있습니다."
     },
     "home": {
       "eyebrow": "AKB48 Theater Day",
       "heroTitle": "Tool48",
       "heroKicker": "AKB48 Theater Day Logbook & Fan Tools",
-      "heroLead": "펜라이트 색상, 가라폰 기록, 좌석 메모, 기념 티켓, MBTI 메모, 미니 게임을 극장일 전후 흐름에 맞춰 모은 허브입니다.",
+      "heroLead": "펜라이트 색상, 가라폰 기록, 좌석 메모, 기념 티켓, MBTI 메모, 미니 게임을 모은 허브입니다. 모든 도구는 로그인 없이 사용할 수 있고 Tool48 Account는 선택형 백업입니다.",
       "primaryCta": "도구 선택",
       "secondaryCta": "데이터와 개인정보",
-      "notice": "이 사이트는 비공식 fan-made 사이트입니다. 티켓 스타일 이미지는 팬아트, 추억, 디자인 참고용이며 실제 티켓이나 공식 문서가 아닙니다.",
+      "notice": "이 사이트는 비공식 fan-made 사이트입니다. 모든 도구는 로그인 없이 로컬로 사용할 수 있으며, 클라우드 저장, 기기 간 동기화, 익명 공개 통계는 사용자가 선택한 경우에만 작동합니다.",
       "contactTitle": "연락",
       "contactLead": "버그, 데이터 수정, 삭제 요청, 협업 문의는 X: @sorrysir_gomen 으로 DM 해 주세요."
     },
@@ -267,30 +468,97 @@
       "title": "극장일 상황에 맞춰 도구 선택",
       "lead": "기술 구조가 아니라 출발 전, 대기 중, 입장 후, 공연 후라는 실제 사용 흐름에 맞춘 구성입니다.",
       "steps": [
-        { "phase": "공연 전", "title": "색상 확인", "text": "출발 전에 멤버 펜라이트 색상을 확인합니다.", "tool": "Penlight List" },
-        { "phase": "극장 주변", "title": "가라폰 기록", "text": "횟수, 결과, 비용, 메모를 남깁니다.", "tool": "Garapon Log" },
-        { "phase": "대기 시간", "title": "가벼운 이용", "text": "대기 중 MBTI나 미니 게임을 사용할 수 있습니다.", "tool": "MBTI / Mini Games" },
-        { "phase": "입장 후", "title": "좌석 메모", "text": "좌석이나 스탠딩 위치를 나중에 볼 수 있게 저장합니다.", "tool": "Seatmap" },
-        { "phase": "공연 후", "title": "기념 티켓", "text": "그날의 공연을 티켓 스타일 이미지로 남깁니다.", "tool": "Ticket Generator" }
+        {
+          "phase": "공연 전",
+          "title": "색상 확인",
+          "text": "출발 전에 멤버 펜라이트 색상을 확인합니다.",
+          "tool": "Penlight List"
+        },
+        {
+          "phase": "극장 주변",
+          "title": "가라폰 기록",
+          "text": "횟수, 결과, 비용, 메모를 남깁니다.",
+          "tool": "Garapon Log"
+        },
+        {
+          "phase": "대기 시간",
+          "title": "가벼운 이용",
+          "text": "대기 중 MBTI나 미니 게임을 사용할 수 있습니다.",
+          "tool": "MBTI / Mini Games"
+        },
+        {
+          "phase": "입장 후",
+          "title": "좌석 메모",
+          "text": "좌석이나 스탠딩 위치를 나중에 볼 수 있게 저장합니다.",
+          "tool": "Seatmap"
+        },
+        {
+          "phase": "공연 후",
+          "title": "기념 티켓",
+          "text": "그날의 공연을 티켓 스타일 이미지로 남깁니다.",
+          "tool": "Ticket Generator"
+        }
       ]
     },
     "privacyNote": {
       "eyebrow": "Data Direction",
-      "title": "향후 데이터 기능 방향",
-      "lead": "현재 도구는 로그인 없이 사용할 수 있습니다. 나중에 계정, 클라우드 저장, 공개 통계를 추가할 경우 내용을 명확히 알리고 선택 기반으로 처리합니다.",
+      "title": "Tool48 Account와 로컬 우선 사용",
+      "lead": "모든 도구는 로그인 없이 사용할 수 있습니다. Tool48 Account는 선택형 클라우드 저장과 기기 간 백업이며, 로그인하지 않은 데이터는 브라우저 localStorage에 남습니다.",
       "points": [
-        "기존 도구는 로그인 장벽 없이 사용할 수 있게 유지하며 현재 URL도 보존합니다.",
-        "향후 seatmap, garapon 등에서 계정 기반 개인 기록 저장을 지원할 수 있습니다.",
-        "익명 공개 통계나 커뮤니티 참고 데이터는 사용자의 명시적 opt-in 동의가 필요합니다."
+        "Penlight, Garapon, Seatmap, Ticket, MBTI, Mini Games는 로컬 사용 흐름을 유지하며 기존 URL도 계속 사용할 수 있습니다.",
+        "클라우드 지원 도구는 Tool48 Account를 선택형 백업으로 사용합니다. Ticket은 최대 3 cloud slots, Mini Games는 level, XP, 멤버 도감 진행도를 저장할 수 있습니다.",
+        "Garapon / Seatmap 공개 통계는 익명 및 동의된 데이터만 사용하며, 비공개 기록, email, 공개하지 않은 내용은 포함하지 않습니다."
       ]
     },
     "tools": [
-      { "name": "Penlight List", "shortName": "Penlight", "url": "/penlightlist/", "label": "펜라이트", "visual": "light", "desc": "공연 전 멤버 펜라이트 색상을 확인합니다." },
-      { "name": "AKB Garapon", "shortName": "Garapon", "url": "/akb-garapon/", "label": "추첨 기록", "visual": "garapon", "desc": "극장 가라폰 횟수, 결과, 비용, 메모를 기록합니다." },
-      { "name": "AKB Seatmap", "shortName": "Seatmap", "url": "/akb-seatmap/", "label": "좌석 메모", "visual": "seat", "desc": "좌석이나 스탠딩 위치를 저장하고 극장 기억을 돌아봅니다." },
-      { "name": "48 Ticket Generator", "shortName": "Ticket", "url": "/48-ticket-generator/", "label": "기념 티켓", "visual": "ticket", "desc": "추억과 팬아트용 티켓 스타일 이미지를 만듭니다." },
-      { "name": "AKB MBTI with Wota", "shortName": "MBTI", "url": "/AKB-MBTI-with-wota/", "label": "Fan MBTI", "visual": "data", "desc": "멤버 MBTI와 팬 토론용 참고 메모를 정리합니다." },
-      { "name": "AKB Mini Games 2026", "shortName": "Games", "url": "/akb_mini_games_2026/", "label": "대기 게임", "visual": "game", "desc": "AKB48 테마의 작은 인터랙티브 게임입니다." }
+      {
+        "name": "Penlight List",
+        "shortName": "Penlight",
+        "url": "/penlightlist/",
+        "label": "선택형 클라우드 저장",
+        "visual": "light",
+        "desc": "멤버 펜라이트 색상을 확인하고 목록을 로컬 저장합니다. 로그인 후 선택적으로 클라우드 백업할 수 있습니다."
+      },
+      {
+        "name": "AKB Garapon",
+        "shortName": "Garapon",
+        "url": "/akb-garapon/",
+        "label": "Cloud + 익명 통계",
+        "visual": "garapon",
+        "desc": "가라폰 시도, 결과, 비용을 기록합니다. 로컬 우선이며 선택형 자동 백업과 동의된 익명 통계를 지원합니다."
+      },
+      {
+        "name": "AKB Seatmap",
+        "shortName": "Seatmap",
+        "url": "/akb-seatmap/",
+        "label": "Cloud + Entry Dashboard",
+        "visual": "seat",
+        "desc": "좌석 / 스탠딩 메모와 Entry Lottery Dashboard를 저장합니다. 선택형 클라우드 저장과 익명 공개 통계를 지원합니다."
+      },
+      {
+        "name": "48 Ticket Generator",
+        "shortName": "Ticket",
+        "url": "/48-ticket-generator/",
+        "label": "3-slot Cloud Save",
+        "visual": "ticket",
+        "desc": "로그인 없이 티켓 스타일 이미지를 만들고, 로그인 후 최대 3 cloud slots에 저장할 수 있습니다."
+      },
+      {
+        "name": "AKB MBTI with Wota",
+        "shortName": "MBTI",
+        "url": "/AKB-MBTI-with-wota/",
+        "label": "선택형 결과 클라우드 저장",
+        "visual": "data",
+        "desc": "멤버 MBTI와 팬 토론 참고 자료입니다. 결과는 로컬 저장하거나 로그인 후 백업할 수 있습니다."
+      },
+      {
+        "name": "AKB Mini Games 2026",
+        "shortName": "Games",
+        "url": "/akb_mini_games_2026/",
+        "label": "Level / XP cloud save",
+        "visual": "game",
+        "desc": "AKB48 테마의 작은 게임입니다. 로컬로 플레이하고 level, XP, 멤버 도감 진행도를 선택적으로 백업할 수 있습니다."
+      }
     ],
     "privacy": {
       "eyebrow": "About / Privacy / Disclaimer",
@@ -298,10 +566,10 @@
       "body": [
         "Tool48은 팬 창작, 정보 정리, 개인 기록, 이벤트 전후 참고를 위한 비공식 fan-made 사이트입니다.",
         "이 사이트는 AKB48, DH, 공연장, 주최자, 티켓 플랫폼 또는 기타 공식 조직과 관련이 없습니다. 티켓 스타일 이미지, 좌석도, 펜라이트 색상, MBTI 메모 및 기타 데이터는 팬 참고용입니다.",
-        "현재 도구는 계정이 필요하지 않습니다. 언어, 표시 설정 또는 도구 상태가 localStorage를 통해 사용자의 브라우저에 저장될 수 있습니다.",
-        "향후 계정 기능이 추가되면 seatmap, garapon 또는 기타 도구에서 로그인 후 자신의 좌석 기록, 추첨 기록, 가라폰 기록, 설정, 메모를 저장할 수 있게 될 수 있습니다. 각 기능은 사용 전에 저장 내용과 목적을 설명해야 합니다.",
-        "익명 공개 데이터 기능이 추가될 경우 공개 통계, 좌석 또는 추첨 집계, 가라폰 집계, 커뮤니티 참고 데이터 등은 opt-in 방식으로 처리합니다. 데이터가 공개되기 전에 사용자가 명시적으로 동의해야 합니다.",
-        "동의하지 않은 개인 기록은 자신의 계정 또는 브라우저 안에서만 사용되어야 합니다. 향후 클라우드 데이터 기능도 수정, 삭제, 공개 취소 방법을 제공해야 합니다.",
+        "모든 도구는 로그인 없이 사용할 수 있습니다. 언어, 표시 설정, 저장 내용 또는 게임 진행도는 localStorage를 통해 사용자의 브라우저에 저장될 수 있습니다.",
+        "Tool48 Account는 선택 기능이며 클라우드 저장, 기기 간 백업 또는 동기화에 사용됩니다. Penlight, Garapon, Seatmap, Ticket, MBTI, Mini Games는 로그인 장벽이 없습니다.",
+        "클라우드 지원 도구는 저장 내용을 화면에서 설명합니다. Ticket은 최대 3 cloud slots, Mini Games는 level, XP, 멤버 도감 진행도, Garapon / Seatmap은 개인 기록을 저장할 수 있습니다.",
+        "익명 공개 데이터는 Garapon 또는 Seatmap 공개 통계처럼 사용자가 명시적으로 동의한 기능에서만 사용됩니다. 공개하지 않은 기록은 자신의 계정 또는 브라우저 안에서만 사용됩니다.",
         "향후 Google 광고 또는 분석 도구가 추가되면 cookies 또는 유사 기술을 사용할 수 있습니다. cookies는 브라우저 설정에서 관리할 수 있습니다.",
         "수정, 삭제, 게시 중단, 문의는 X: @sorrysir_gomen 으로 DM 해 주세요."
       ]
