@@ -1,6 +1,5 @@
-
 /**
- * Gomensensei AKB Fan Tools - App Layer
+ * Tool48 - App Layer
  * Depends on assets/js/core.js
  * Vanilla JS only. No React / Vue.
  */
@@ -8,18 +7,32 @@
 (() => {
     const SUPPORTED_LANGS = ["zh-HK", "ja", "en", "ko"];
     const DEFAULT_LANG = "zh-HK";
+    const LANG_KEY = "tool48_lang";
+    const LEGACY_LANG_KEY = "gomensensei_fantools_lang";
+    const SUPABASE_URL = "https://jappifgnjssqxvjodgiv.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_oXfJyHkRtn1BHBw-9ictBQ__01qBCZg";
+    const DASHBOARD_CARDS = [
+        { key: "penlight", url: "/penlightlist/" },
+        { key: "garapon", url: "/akb-garapon/" },
+        { key: "seatmap", url: "/akb-seatmap/" },
+        { key: "ticket", url: "/48-ticket-generator/" },
+        { key: "games", url: "/akb_mini_games_2026/" }
+    ];
     let langs = {};
     let currentLang = resolveInitialLang();
-
-    function normalizeString(value = "") {
-        return String(value).replace(/\s+/g, "");
-    }
+    const cloud = {
+        client: null,
+        user: null,
+        busy: false,
+        dashboardLoading: false,
+        summaries: {}
+    };
 
     function getLuminance(hex) {
         const clean = hex.replace("#", "");
         const rgb = clean.length === 3
             ? clean.split("").map(ch => parseInt(ch + ch, 16))
-            : [clean.slice(0,2), clean.slice(2,4), clean.slice(4,6)].map(v => parseInt(v, 16));
+            : [clean.slice(0, 2), clean.slice(2, 4), clean.slice(4, 6)].map(v => parseInt(v, 16));
 
         const [r, g, b] = rgb.map(v => {
             const c = v / 255;
@@ -31,7 +44,7 @@
 
     function resolveInitialLang() {
         const hashLang = getHashParam("lang");
-        const stored = localStorage.getItem("gomensensei_fantools_lang");
+        const stored = localStorage.getItem(LANG_KEY) || localStorage.getItem(LEGACY_LANG_KEY);
         const browser = (navigator.language || "").toLowerCase();
 
         if (SUPPORTED_LANGS.includes(hashLang)) return hashLang;
@@ -59,6 +72,15 @@
         return path.split(".").reduce((acc, key) => acc && acc[key], obj);
     }
 
+    function t(path, vars = {}) {
+        const data = langs[currentLang] || langs[DEFAULT_LANG] || {};
+        let value = getByPath(data, path) || getByPath(langs[DEFAULT_LANG] || {}, path) || path;
+        Object.entries(vars).forEach(([key, replacement]) => {
+            value = String(value).split(`{${key}}`).join(replacement == null ? "" : String(replacement));
+        });
+        return value;
+    }
+
     async function fetchJsonSafe(url, fallback = {}) {
         try {
             const response = await fetch(url, { cache: "no-cache" });
@@ -71,19 +93,14 @@
     }
 
     async function init() {
-        const [langData] = await Promise.all([
-            fetchJsonSafe("assets/data/langs.json?v=20260628c", {})
-        ]);
-
-        langs = langData;
+        langs = await fetchJsonSafe("assets/data/langs.json?v=20260628d", {});
 
         if (!langs[currentLang]) currentLang = DEFAULT_LANG;
         bindEvents();
         applyLanguage(currentLang);
+        initHubAccount();
 
-        if (typeof initSpatialGlass === "function") {
-            initSpatialGlass();
-        }
+        if (typeof initSpatialGlass === "function") initSpatialGlass();
     }
 
     function bindEvents() {
@@ -91,7 +108,8 @@
         if (langSelect) {
             langSelect.addEventListener("change", (event) => {
                 currentLang = event.target.value;
-                localStorage.setItem("gomensensei_fantools_lang", currentLang);
+                localStorage.setItem(LANG_KEY, currentLang);
+                localStorage.setItem(LEGACY_LANG_KEY, currentLang);
                 setHashParam("lang", currentLang);
                 applyLanguage(currentLang);
             });
@@ -105,6 +123,8 @@
                 navToggle.setAttribute("aria-expanded", String(isOpen));
             });
         }
+
+        bindAccountEvents();
 
         window.addEventListener("hashchange", () => {
             const hashLang = getHashParam("lang");
@@ -120,7 +140,8 @@
         if (!data) return;
 
         document.documentElement.lang = lang;
-        localStorage.setItem("gomensensei_fantools_lang", lang);
+        localStorage.setItem(LANG_KEY, lang);
+        localStorage.setItem(LEGACY_LANG_KEY, lang);
 
         const select = document.getElementById("langSelect");
         if (select) select.value = lang;
@@ -130,12 +151,18 @@
             if (typeof text === "string") node.textContent = text;
         });
 
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
+            const text = getByPath(data, node.dataset.i18nPlaceholder);
+            if (typeof text === "string") node.setAttribute("placeholder", text);
+        });
+
         const page = document.documentElement.dataset.page || "home";
         renderPage(data, page);
         updateMeta(data, page);
         updateActiveNav(page);
+        renderAccountPanel();
+        renderDashboard();
 
-        // Smart contrast example for current primary colour.
         const lum = getLuminance("#FF4081");
         document.documentElement.style.setProperty("--smart-on-primary", lum > 0.5 ? "#111111" : "#ffffff");
     }
@@ -148,6 +175,13 @@
         document.title = pageTitle;
         if (title) title.textContent = pageTitle;
         if (desc) desc.setAttribute("content", data.meta.description);
+
+        document.querySelectorAll("meta[property='og:title'], meta[name='twitter:title']").forEach((node) => {
+            node.setAttribute("content", pageTitle);
+        });
+        document.querySelectorAll("meta[property='og:description'], meta[name='twitter:description']").forEach((node) => {
+            node.setAttribute("content", data.meta.description);
+        });
     }
 
     function getPageTitle(data, page) {
@@ -171,6 +205,8 @@
 
         if (page === "home") {
             renderQuickTools(data);
+            renderTimeline(data);
+            renderPrivacyPoints(data);
             return;
         }
 
@@ -179,7 +215,7 @@
 
     function renderQuickTools(data) {
         const root = document.querySelector("[data-quick-tools]");
-        if (!root) return;
+        if (!root || !Array.isArray(data.tools)) return;
 
         root.innerHTML = data.tools.map((tool) => `
             <a class="quick-tool quick-tool-${escapeHtml(tool.visual || "default")}" href="${escapeHtml(tool.url)}" aria-label="${escapeHtml(data.common.open)} ${escapeHtml(tool.name)}">
@@ -192,6 +228,357 @@
                 </span>
             </a>
         `).join("");
+    }
+
+    function renderTimeline(data) {
+        const root = document.querySelector("[data-timeline]");
+        const steps = data.timeline?.steps;
+        if (!root || !Array.isArray(steps)) return;
+
+        root.innerHTML = steps.map((step, index) => `
+            <li class="${index === 0 ? "is-open" : ""}" style="--timeline-index:${index}">
+                <button class="timeline-toggle" type="button" aria-expanded="${index === 0 ? "true" : "false"}">
+                    <span class="timeline-index">${index + 1}</span>
+                    <span class="timeline-phase">${escapeHtml(step.phase)}</span>
+                    <strong>${escapeHtml(step.title)}</strong>
+                </button>
+                <div class="timeline-details">
+                    <div>
+                        <p>${escapeHtml(step.text)}</p>
+                        <a class="timeline-link" href="${escapeHtml(step.url || "#tools")}">${escapeHtml(data.common.open)} ${escapeHtml(step.tool)}</a>
+                    </div>
+                </div>
+            </li>
+        `).join("");
+
+        root.querySelectorAll(".timeline-toggle").forEach((button) => {
+            button.addEventListener("click", () => {
+                const item = button.closest("li");
+                const isOpen = item.classList.toggle("is-open");
+                button.setAttribute("aria-expanded", String(isOpen));
+            });
+        });
+    }
+
+    function renderPrivacyPoints(data) {
+        const root = document.querySelector("[data-privacy-points]");
+        const points = data.privacyNote?.points;
+        if (!root || !Array.isArray(points)) return;
+
+        root.innerHTML = points.map((point) => `<li>${escapeHtml(point)}</li>`).join("");
+    }
+
+    function bindAccountEvents() {
+        const toggle = document.getElementById("accountToggleBtn");
+        const popover = document.getElementById("accountPopover");
+        const loginForm = document.getElementById("cloudLoginForm");
+        const logoutBtn = document.getElementById("cloudLogoutBtn");
+
+        if (toggle && popover) {
+            toggle.addEventListener("click", (event) => {
+                event.stopPropagation();
+                const nextOpen = popover.hidden;
+                popover.hidden = !nextOpen;
+                toggle.setAttribute("aria-expanded", String(nextOpen));
+            });
+            popover.addEventListener("click", (event) => event.stopPropagation());
+            document.addEventListener("click", () => closeAccountPopover());
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") closeAccountPopover();
+            });
+        }
+
+        loginForm?.addEventListener("submit", handleAccountSubmit);
+        logoutBtn?.addEventListener("click", signOutAccount);
+    }
+
+    function closeAccountPopover() {
+        const toggle = document.getElementById("accountToggleBtn");
+        const popover = document.getElementById("accountPopover");
+        if (!popover) return;
+        popover.hidden = true;
+        toggle?.setAttribute("aria-expanded", "false");
+    }
+
+    async function initHubAccount() {
+        if (!window.supabase?.createClient) {
+            setCloudMessage(t("account.unavailable"));
+            renderAccountPanel();
+            renderDashboard();
+            return;
+        }
+
+        cloud.client = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+            auth: {
+                persistSession: true,
+                autoRefreshToken: true,
+                detectSessionInUrl: true
+            }
+        });
+
+        cloud.client.auth.onAuthStateChange((_event, session) => {
+            cloud.user = session?.user || null;
+            if (!cloud.user) cloud.summaries = {};
+            renderAccountPanel();
+            refreshDashboard();
+        });
+
+        try {
+            const { data } = await cloud.client.auth.getSession();
+            cloud.user = data.session?.user || null;
+            renderAccountPanel();
+            await refreshDashboard();
+        } catch (error) {
+            console.warn("Tool48 account init failed:", error);
+            setCloudMessage(t("account.unavailable"));
+            renderAccountPanel();
+            renderDashboard();
+        }
+    }
+
+    function getCloudDisplayName() {
+        return cloud.user?.user_metadata?.display_name || cloud.user?.email || t("account.cloudAccount");
+    }
+
+    function setCloudMessage(message) {
+        const node = document.getElementById("cloudMessage");
+        if (node) node.textContent = message || "";
+    }
+
+    function setAccountBusy(busy) {
+        cloud.busy = busy;
+        document.querySelectorAll("#accountPopover button, #accountPopover input").forEach((node) => {
+            node.disabled = busy;
+        });
+    }
+
+    function renderAccountPanel() {
+        const loggedIn = Boolean(cloud.user);
+        const label = document.getElementById("accountToggleLabel");
+        const status = document.getElementById("accountStatus");
+        const loggedOut = document.getElementById("cloudLoginForm");
+        const actions = document.getElementById("cloudActions");
+        const userLabel = document.getElementById("cloudUserLabel");
+
+        if (label) label.textContent = loggedIn ? getCloudDisplayName() : t("account.navGuest");
+        if (status) {
+            status.textContent = !cloud.client
+                ? t("account.unavailable")
+                : loggedIn
+                    ? t("account.signedIn")
+                    : t("account.localOnly");
+        }
+        if (loggedOut) loggedOut.hidden = loggedIn;
+        if (actions) actions.hidden = !loggedIn;
+        if (userLabel) userLabel.textContent = loggedIn ? getCloudDisplayName() : "";
+    }
+
+    async function handleAccountSubmit(event) {
+        event.preventDefault();
+        if (!cloud.client) {
+            setCloudMessage(t("account.unavailable"));
+            return;
+        }
+
+        const submitter = event.submitter;
+        const action = submitter?.dataset.authAction || "signin";
+        const nickname = document.getElementById("cloudNicknameInput")?.value.trim();
+        const email = document.getElementById("cloudEmailInput")?.value.trim();
+        const password = document.getElementById("cloudPasswordInput")?.value;
+
+        if (!email || !password) {
+            setCloudMessage(t("account.missingEmailPassword"));
+            return;
+        }
+
+        setAccountBusy(true);
+        setCloudMessage(action === "signup" ? t("account.signingUp") : t("account.signingIn"));
+        try {
+            const result = action === "signup"
+                ? await cloud.client.auth.signUp({
+                    email,
+                    password,
+                    options: { data: { display_name: nickname || email.split("@")[0] } }
+                })
+                : await cloud.client.auth.signInWithPassword({ email, password });
+
+            if (result.error) throw result.error;
+            cloud.user = result.data.session?.user || cloud.user;
+            setCloudMessage(cloud.user ? t("account.signedIn") : t("account.signupNeedsConfirm"));
+            if (cloud.user) {
+                closeAccountPopover();
+                await refreshDashboard();
+            }
+        } catch (error) {
+            setCloudMessage(t("account.actionFailed", { message: error.message || "" }));
+        } finally {
+            setAccountBusy(false);
+            renderAccountPanel();
+        }
+    }
+
+    async function signOutAccount() {
+        if (!cloud.client) return;
+        setAccountBusy(true);
+        try {
+            await cloud.client.auth.signOut();
+            cloud.user = null;
+            cloud.summaries = {};
+            setCloudMessage(t("account.signedOut"));
+            closeAccountPopover();
+        } finally {
+            setAccountBusy(false);
+            renderAccountPanel();
+            renderDashboard();
+        }
+    }
+
+    function renderDashboard() {
+        const status = document.querySelector("[data-dashboard-status]");
+        const grid = document.querySelector("[data-dashboard-cards]");
+        if (!status || !grid) return;
+
+        if (!cloud.client) {
+            status.textContent = t("dashboard.unavailable");
+            grid.innerHTML = "";
+            return;
+        }
+
+        if (!cloud.user) {
+            status.textContent = t("dashboard.loggedOut");
+            grid.innerHTML = DASHBOARD_CARDS.map(card => renderDashboardCard({
+                key: card.key,
+                count: "-",
+                detail: t(`dashboard.cards.${card.key}.empty`),
+                url: card.url
+            })).join("");
+            return;
+        }
+
+        status.textContent = cloud.dashboardLoading ? t("dashboard.loading") : t("dashboard.signedIn");
+        grid.innerHTML = DASHBOARD_CARDS.map(card => {
+            const summary = cloud.summaries[card.key] || {
+                key: card.key,
+                count: cloud.dashboardLoading ? "..." : "-",
+                detail: cloud.dashboardLoading ? t("dashboard.loadingShort") : t(`dashboard.cards.${card.key}.empty`),
+                url: card.url
+            };
+            return renderDashboardCard({ ...summary, url: card.url });
+        }).join("");
+    }
+
+    function renderDashboardCard(summary) {
+        const title = t(`dashboard.cards.${summary.key}.title`);
+        const detail = summary.error ? t("dashboard.cardUnavailable") : summary.detail;
+        return `
+            <article class="dashboard-card">
+                <div>
+                    <strong>${escapeHtml(title)}</strong>
+                    <b>${escapeHtml(summary.count)}</b>
+                </div>
+                <div>
+                    <small>${escapeHtml(detail)}</small>
+                    <a href="${escapeHtml(summary.url)}">${escapeHtml(t("dashboard.openTool"))}</a>
+                </div>
+            </article>
+        `;
+    }
+
+    async function refreshDashboard() {
+        if (!cloud.client || !cloud.user) {
+            renderDashboard();
+            return;
+        }
+
+        cloud.dashboardLoading = true;
+        renderDashboard();
+        const fetchers = {
+            penlight: fetchPenlightSummary,
+            garapon: fetchGaraponSummary,
+            seatmap: fetchSeatmapSummary,
+            ticket: fetchTicketSummary,
+            games: fetchGamesSummary
+        };
+
+        const entries = await Promise.all(DASHBOARD_CARDS.map(async (card) => {
+            try {
+                return [card.key, await fetchers[card.key]()];
+            } catch (error) {
+                console.warn(`Dashboard summary failed: ${card.key}`, error);
+                return [card.key, {
+                    key: card.key,
+                    count: "!",
+                    detail: t("dashboard.cardUnavailable"),
+                    error: true
+                }];
+            }
+        }));
+
+        cloud.summaries = Object.fromEntries(entries);
+        cloud.dashboardLoading = false;
+        renderDashboard();
+    }
+
+    async function fetchTicketSummary() {
+        const { data, error, count } = await cloud.client
+            .from("ticket_saves")
+            .select("id,slot_num,title,updated_at", { count: "exact" })
+            .order("updated_at", { ascending: false })
+            .limit(3);
+        if (error) throw error;
+        const latest = (data || []).map(row => row.title || `Slot ${row.slot_num}`).join(" / ");
+        return { key: "ticket", count: count ?? (data || []).length, detail: latest || t("dashboard.cards.ticket.empty") };
+    }
+
+    async function fetchPenlightSummary() {
+        const { data, error, count } = await cloud.client
+            .from("penlight_lists")
+            .select("id,title,performance_id,is_default", { count: "exact" })
+            .limit(4);
+        if (error) throw error;
+        const latest = (data || []).map(row => row.title || row.performance_id || t("dashboard.untitled")).join(" / ");
+        return { key: "penlight", count: count ?? (data || []).length, detail: latest || t("dashboard.cards.penlight.empty") };
+    }
+
+    async function fetchGaraponSummary() {
+        const { data, error, count } = await cloud.client
+            .from("garapon_records")
+            .select("id,event_date,performance_id,spin_count,win_count,created_at", { count: "exact" })
+            .order("created_at", { ascending: false })
+            .limit(3);
+        if (error) throw error;
+        const latest = (data || []).map(row => [row.event_date, row.performance_id].filter(Boolean).join(" ")).filter(Boolean).join(" / ");
+        return { key: "garapon", count: count ?? (data || []).length, detail: latest || t("dashboard.cards.garapon.empty") };
+    }
+
+    async function fetchSeatmapSummary() {
+        const { data, error, count } = await cloud.client
+            .from("seat_memo_records")
+            .select("id,event_date,performance_title,seat_label,created_at", { count: "exact" })
+            .order("created_at", { ascending: false })
+            .limit(3);
+        if (error) throw error;
+        const latest = (data || []).map(row => row.seat_label || row.performance_title || row.event_date).filter(Boolean).join(" / ");
+        return { key: "seatmap", count: count ?? (data || []).length, detail: latest || t("dashboard.cards.seatmap.empty") };
+    }
+
+    async function fetchGamesSummary() {
+        const [profileResult, progressResult] = await Promise.all([
+            cloud.client.from("fan_quest_profiles").select("level,xp,title,updated_at").eq("user_id", cloud.user.id).maybeSingle(),
+            cloud.client.from("fan_quest_progress").select("id,game_slug").eq("user_id", cloud.user.id)
+        ]);
+
+        if (profileResult.error) throw profileResult.error;
+        if (progressResult.error) throw progressResult.error;
+
+        const profile = profileResult.data;
+        const progressCount = progressResult.data?.length || 0;
+        const detail = profile
+            ? t("dashboard.gameDetail", { level: profile.level || 1, xp: profile.xp || 0 })
+            : progressCount
+                ? t("dashboard.progressDetail", { count: progressCount })
+                : t("dashboard.cards.games.empty");
+        return { key: "games", count: profile?.level || progressCount || 0, detail };
     }
 
     function renderBodyList(pageData) {
