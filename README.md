@@ -1,51 +1,48 @@
 # Tool48 | AKB48 Theater Day Logbook & Fan Tools
 
-![Version](https://img.shields.io/badge/Version-2026.06.28-pink)
+![Version](https://img.shields.io/badge/Version-2026.07.03-pink)
 ![License](https://img.shields.io/badge/License-Non--Commercial-blue)
 ![Platform](https://img.shields.io/badge/Platform-Web-orange)
+![Account](https://img.shields.io/badge/Tool48%20Account-Optional-lightblue)
 ![Mobile](https://img.shields.io/badge/Mobile-Optimized-ff69b4)
 
 ---
 
-## Project Overview | 項目概覽
+## Project Overview | 專案簡介 | プロジェクト概要
 
-**[ZH]**  
-Tool48 是非官方 AKB48 fan-made 工具入口頁，定位為 **AKB48 Theater Day Logbook & Fan Tools**。  
-首頁集中整理劇場日前後常用工具：Penlight List、Garapon Log、Seatmap、Ticket Generator、MBTI Test 及 Mini Games。  
-本 repo 的 Phase 0 只處理公開 landing page、語言文字、導覽及靜態頁面整理，不加入登入、Supabase 或帳戶功能。
+**[ZH]** Tool48 是非官方 AKB48 Theater Day fan tools hub。它把出發前 check 出場名單、劇場 garapon 紀錄、抽選後座位備忘、等候時 MBTI / mini games、以及生誕祭紀念 ticket 連成一條 theater-day timeline。
 
-**[EN]**  
-Tool48 is an unofficial AKB48 fan-made tools hub positioned as **AKB48 Theater Day Logbook & Fan Tools**.  
-The homepage collects six theater-day tools: Penlight List, Garapon Log, Seatmap, Ticket Generator, MBTI Test, and Mini Games.  
-Phase 0 is a static front-end hub update only; it does not add login, Supabase, or account features.
+**[EN]** Tool48 is an unofficial AKB48 theater-day fan tools hub. It connects the fan journey: check cast lists before leaving, log garapon at the theater, save seat results after entry draw, play MBTI / mini games while waiting, and create birthday-show ticket memories.
+
+**[JP]** Tool48 は AKB48 劇場日のための非公式ファンツール hub です。出発前の出演リスト確認、劇場でのガラポン記録、座席メモ、待機中の MBTI / mini games、生誕祭の記念 ticket までを theater-day timeline としてつなぎます。
 
 ---
 
-## Highlights | 重點
+## Main Features | 功能說明 | 主な機能
 
-### 1. Theater Day Flow | 劇場日流程
+### 1. Theater Day Timeline
+* **[ZH]** 以真實使用場景排列工具：出發前、到達劇場、抽選後、等候/未中選、生誕祭/回憶。
+* **[EN]** Organizes tools by real fan moments: before leaving, at the theater, after seat draw, waiting/no win, and birthday/memory.
+* **[JP]** 出発前、劇場到着、座席抽選後、待機/落選時、生誕祭/思い出という実際の流れでツールを整理します。
 
-* **[ZH]** 首頁按一般 fan 的使用場景排列：公演前查應援色、劇場附近記錄 Garapon、等候時使用 MBTI 或小遊戲、入場後保存座位、完場後製作紀念票券。
-* **[EN]** The homepage explains tools by real theater-day moments instead of internal architecture.
+### 2. Direct Tool Cards
+* **[ZH]** 首頁提供 Penlight、Garapon、Seatmap、Ticket、MBTI、Mini Games 入口，每張卡都有對應 infographic。
+* **[EN]** The homepage links directly to Penlight, Garapon, Seatmap, Ticket, MBTI, and Mini Games with tool-specific infographics.
+* **[JP]** Penlight、Garapon、Seatmap、Ticket、MBTI、Mini Games へ直接移動できる infographic card を表示します。
 
-### 2. Six Direct Tool Cards | 六格直接入口
+### 3. Optional Tool48 Account Dashboard
+* **[ZH]** 登入後可在 hub 預覽已保存資料摘要，例如應援名單、garapon、座位、ticket slots 與遊戲進度。
+* **[EN]** Signed-in users can preview saved summaries such as penlight lists, garapon records, seat memos, ticket slots, and game progress.
+* **[JP]** ログイン後は、ペンライトリスト、ガラポン記録、座席メモ、ticket slots、ゲーム進行の概要を hub で確認できます。
 
-* **[ZH]** Hero 右側直接顯示六個工具入口，每格都有對應 infographic icon，不再另設大型下方清單。
-* **[EN]** The hero contains six direct tool cards with tool-specific infographic icons.
-
-### 3. Multi-language Hub | 多語言入口
-
-* **[ZH]** Hub 支援 `zh-HK`、`ja`、`en`、`ko`。繁體中文使用正式書面語，不使用廣東話口語。
-* **[EN]** The hub supports `zh-HK`, `ja`, `en`, and `ko`. Traditional Chinese copy is written in formal written style.
-
-### 4. Privacy Direction | 私隱與資料方向
-
-* **[ZH]** 現階段工具維持免登入。日後 seatmap、garapon 或其他工具可能支援帳戶保存個人資料；不記名公開統計或社群參考資料必須由用戶主動 opt-in。
-* **[EN]** Current tools remain usable without login. Future account-saved records and anonymous public stats must be clearly explained and opt-in.
+### 4. Local-first Principle
+* **[ZH]** 所有工具仍可免登入使用。Tool48 Account 只作可選雲端保存、跨裝置備份與 dashboard 摘要。
+* **[EN]** Every tool remains usable without login. Tool48 Account only adds optional cloud save, cross-device backup, and dashboard previews.
+* **[JP]** 全ツールはログインなしで利用できます。Tool48 Account は任意の cloud save、端末間 backup、dashboard preview のためだけに使います。
 
 ---
 
-## Public Tool URLs | 公開工具 URL
+## Public Tool URLs | 公開工具 URL | 公開 URL
 
 These paths are intentionally preserved:
 
@@ -58,21 +55,27 @@ These paths are intentionally preserved:
 
 ---
 
-## Quick Start | 快速開始
+## Technical Highlights | 技術亮點 | 技術的特徴
 
-### Open Directly
+* **JSON-driven i18n**: `assets/data/langs.json` renders copy, tools, timeline, privacy text, and dashboard labels.
+* **Progressive Disclosure Timeline**: Theater-day steps expand inline with clear CTAs.
+* **Optional Supabase Auth**: Uses only public URL and publishable key for account dashboard summaries.
+* **Responsive Tool Cards**: Mobile layout keeps infographic cards readable instead of compressing into unreadable columns.
+* **Privacy-first Design**: We will not disclose personal data without explicit consent.
+
+---
+
+## Quick Start | 快速開始 | クイックスタート
 
 1. Keep all files in the same folder.
-2. Open `index.html`.
-3. Choose a language and select a tool.
-
-### Local Server
+2. Open `index.html`, or start a local server for fetch-friendly behavior.
+3. Choose a language, select a tool, or sign into Tool48 Account for dashboard preview.
 
 ```bash
 python -m http.server 4173
 ```
 
-Then open:
+Open:
 
 ```text
 http://127.0.0.1:4173/
@@ -80,131 +83,40 @@ http://127.0.0.1:4173/
 
 ---
 
-## Built With | 使用技術
+## File Structure | 檔案結構 | ファイル構成
 
-* HTML5
-* CSS3
-* Vanilla JavaScript
-* JSON i18n dictionary
-* Static hosting compatible structure
-
----
-
-## File Structure | 檔案結構
-
-* `index.html`  
-  **[ZH]** 主要 landing page：header、hero、六格工具入口、劇場日 timeline、重要說明、資料方向、聯絡及 footer。  
-  **[EN]** Main landing page: header, hero, six tool cards, theater-day timeline, notice, data direction, contact, and footer.
-
-* `privacy.html`  
-  **[ZH]** 唯一維護的說明頁，合併關於、免責、私隱、日後帳戶資料及 opt-in 公開資料方向。  
-  **[EN]** Maintained policy page combining about, disclaimer, privacy, future account data, and opt-in public-data direction.
-
-* `about.html`, `contact.html`, `guide.html`, `terms.html`, `disclaimer.html`, `updates.html`  
-  **[ZH]** 舊 URL redirect stub，保留是為了避免舊連結 404。  
-  **[EN]** Redirect stubs kept so old links do not break.
-
-* `assets/data/langs.json`  
-  **[ZH]** 多語言文字、工具名稱、工具 URL、timeline 及資料方向內容。  
-  **[EN]** Translation text, tool names, URLs, timeline, and data-direction content.
-
-* `assets/js/app.js`  
-  **[ZH]** 語言切換、六格工具入口、timeline、私隱重點及內容頁 render。  
-  **[EN]** Language switching and rendering for tool cards, timeline, privacy points, and policy body.
-
-* `assets/css/core.css`  
-  **[ZH]** 共用背景、基礎 UI、互動效果及 native-feel 設定。  
-  **[EN]** Shared background, base UI, interaction effects, and native-feel settings.
-
-* `assets/css/app.css`  
-  **[ZH]** Hub 專用 layout、工具 infographic、mobile density 及 header 穩定處理。  
-  **[EN]** Hub layout, tool infographics, mobile density, and header stability styles.
+* `index.html` - Header, account popover, hero, tool cards, dashboard, timeline, privacy note, contact, footer.
+* `privacy.html` - Maintained privacy / disclaimer page rendered from `langs.json`.
+* `about.html`, `contact.html`, `guide.html`, `terms.html`, `disclaimer.html`, `updates.html` - Redirect stubs kept to avoid old-link 404s.
+* `assets/data/langs.json` - Multilingual content, tool URLs, dashboard copy, timeline, privacy body.
+* `assets/js/app.js` - Language switching, tool card rendering, account auth, dashboard summary, timeline disclosure.
+* `assets/css/core.css` - Shared background, base UI, interaction effects.
+* `assets/css/app.css` - Hub layout, account UI, dashboard, tool infographics, responsive rules.
 
 ---
 
-## Maintenance | 維護
+## Maintenance | 維護 | メンテナンス
 
-### Updating Tool Links | 更新工具連結
-
-Edit the `tools` array in:
-
-```text
-assets/data/langs.json
-```
-
-Keep the existing public URLs unless there is a planned redirect.
-
-### Updating Text | 更新文字
-
-Most page text lives in:
-
-```text
-assets/data/langs.json
-```
-
-### Updating Mobile Layout | 更新手機版 layout
-
-Mobile-specific rules are mainly in:
-
-```text
-assets/css/app.css
-```
-
-### Adding Google AdSense | 加入 Google AdSense
-
-After AdSense approval, add the ownership meta tag to maintained pages:
-
-```html
-<meta name="google-adsense-account" content="ca-pub-xxxxxxxxxxxxxxxx">
-```
-
-Use top or bottom horizontal ad bars first. Avoid placing ads between the hero and the six tool cards.
-
-### Moving to a Custom Domain | 遷移至自訂 domain
-
-When moving from GitHub Pages to a custom domain such as `tool48.com`, update:
-
-* `sitemap.xml`
-* Open Graph URLs in HTML
-* absolute links in `TOOL_FOOTER_SNIPPET.html`
-* any future canonical URL settings
+* Update tool links and timeline content in `assets/data/langs.json`.
+* Keep public URLs stable unless redirects are planned.
+* Keep account and dashboard copy multilingual.
+* Do not add service-role Supabase keys to frontend files.
+* Keep no-login use available across all tools.
+* Verify mobile cards around narrow widths such as `390x844`.
 
 ---
 
-## Phase Notes | 階段說明
+## Disclaimer | 免責聲明 | 免責事項
 
-### Phase 0
+**[ZH]** 本項目是非官方、非商業 fan-made project，只供 fan 創作、資料整理、個人紀錄及參考用途。本站與 AKB48、DH、場地、主辦單位、票務平台或任何官方機構無關。票券風圖片並非真實票券、官方文件或入場憑證；座位圖、penlight 顏色、MBTI 筆記及其他資料均屬 fan reference。
 
-* Static hub only
-* No login wall
-* No Supabase integration
-* No account creation
-* Existing tool URLs preserved
+**[EN]** This is an unofficial, non-commercial fan-made project for fan creation, information organisation, personal records, and reference only. It is not affiliated with AKB48, DH, venues, organisers, ticketing platforms, or any official organisation. Ticket-style images are not real tickets, official documents, or entry passes; seat maps, penlight colors, MBTI notes, and other data are fan references.
 
-### Future Phase
-
-* Optional accounts may be added
-* Seatmap, Garapon, and other tools may support saved personal records
-* Anonymous public stats must be explicit opt-in
-* Existing no-login tool use should remain available where possible
+**[JP]** 本プロジェクトは、ファン創作、情報整理、個人記録、参考を目的とした非公式・非商用 fan-made project です。AKB48、DH、会場、主催者、チケットサービス、その他公式組織とは関係ありません。ticket-style 画像は実際のチケット、公式書類、入場証ではありません。座席図、penlight color、MBTI メモなどは fan reference です。
 
 ---
 
-## Disclaimer | 免責說明
-
-**[ZH]**  
-本項目是非官方、非商業 fan-made project，只供 fan 創作、資料整理、個人紀錄及參考用途。  
-本站與 AKB48、DH、場地、主辦單位、票務平台或任何官方機構無關。  
-票券風圖片並非真實票券、官方文件或入場憑證；座位圖、penlight 顏色、MBTI 筆記及其他資料均屬 fan reference。
-
-**[EN]**  
-This project is an unofficial, non-commercial fan-made work for fan creation, information organisation, personal records, and reference use only.  
-It is not affiliated with AKB48, DH, venues, organisers, ticketing platforms, or any official organisation.  
-Ticket-style images are not real tickets, official documents, or entry passes. Seat maps, penlight colors, MBTI notes, and other data are fan references only.
-
----
-
-## Created by | 製作
+## Created by | 製作 | 制作
 
 **Gomensensei**
 

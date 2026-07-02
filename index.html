@@ -46,15 +46,38 @@
         <a href="#contact" data-i18n="nav.contact">聯絡</a>
     </nav>
 
-    <label class="lang-wrap">
-        <span class="sr-only" data-i18n="common.language">語言</span>
-        <select id="langSelect" aria-label="Language">
-            <option value="zh-HK">繁中</option>
-            <option value="ja">日本語</option>
-            <option value="en">English</option>
-            <option value="ko">한국어</option>
-        </select>
-    </label>
+    <div class="hub-actions">
+        <label class="lang-wrap">
+            <span class="sr-only" data-i18n="common.language">語言</span>
+            <select id="langSelect" aria-label="Language">
+                <option value="zh-HK">繁中</option>
+                <option value="ja">日本語</option>
+                <option value="en">English</option>
+                <option value="ko">한국어</option>
+            </select>
+        </label>
+        <div class="account-shell">
+            <button class="account-toggle" id="accountToggleBtn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="accountPopover">
+                <span class="account-icon" aria-hidden="true"></span>
+                <span id="accountToggleLabel" data-i18n="account.navGuest">Account</span>
+            </button>
+            <div class="account-popover" id="accountPopover" role="dialog" aria-labelledby="accountToggleLabel" hidden>
+                <p class="account-status" id="accountStatus" data-i18n="account.localOnly">Local-first. Login is optional.</p>
+                <form class="cloud-login-form" id="cloudLoginForm">
+                    <input id="cloudNicknameInput" class="cloud-input" type="text" autocomplete="nickname" data-i18n-placeholder="account.nicknamePlaceholder" placeholder="nickname">
+                    <input id="cloudEmailInput" class="cloud-input" type="email" inputmode="email" autocomplete="email" data-i18n-placeholder="account.emailPlaceholder" placeholder="Tool48 Account email">
+                    <input id="cloudPasswordInput" class="cloud-input" type="password" autocomplete="current-password" minlength="6" data-i18n-placeholder="account.passwordPlaceholder" placeholder="6+ characters">
+                    <button class="account-form-button primary" id="cloudSignInBtn" type="submit" data-auth-action="signin" data-i18n="account.signIn">Sign in</button>
+                    <button class="account-form-button" id="cloudSignUpBtn" type="submit" data-auth-action="signup" data-i18n="account.createAccount">Create account</button>
+                </form>
+                <div class="cloud-actions" id="cloudActions" hidden>
+                    <span class="cloud-user-pill" id="cloudUserLabel"></span>
+                    <button class="account-form-button" id="cloudLogoutBtn" type="button" data-i18n="account.signOut">Sign out</button>
+                </div>
+                <p class="account-message" id="cloudMessage"></p>
+            </div>
+        </div>
+    </div>
 </header>
 
 <main id="main" class="page-shell">
@@ -71,6 +94,16 @@
         </div>
 
         <aside id="tools" class="hero-panel" aria-label="Quick tool links" data-quick-tools></aside>
+    </section>
+
+    <section class="dashboard-section" data-dashboard>
+        <div class="section-head compact-head">
+            <p class="eyebrow" data-i18n="dashboard.eyebrow">Tool48 Account Dashboard</p>
+            <h2 data-i18n="dashboard.title">你的劇場日快速預覽</h2>
+            <p data-i18n="dashboard.lead">登入後可在 hub 先睇最近保存：應援名單、garapon、座位、ticket slots 同小遊戲進度。</p>
+        </div>
+        <p class="dashboard-status" data-dashboard-status data-i18n="dashboard.loggedOut">登入 Tool48 Account 後，這裡會顯示你已保存的資料摘要。</p>
+        <div class="dashboard-grid" data-dashboard-cards></div>
     </section>
 
     <section id="timeline" class="timeline-section">
@@ -110,6 +143,7 @@
     <div>
         <strong data-i18n="siteName">Tool48</strong>
         <p data-i18n="common.fanMade">非官方 fan-made project，與 AKB48、DH、場地、主辦單位或票務平台無關。</p>
+        <p class="privacy-promise" data-i18n="common.privacyPromise">未經你明確同意，不會披露你的個人資料。</p>
     </div>
     <div class="footer-links">
         <a href="index.html" data-i18n="nav.home">首頁</a>
@@ -120,7 +154,8 @@
     <p class="copyright" data-i18n="common.copyright">© 2026 Tool48 / Gomensensei. Unofficial fan-made tools.</p>
 </footer>
 
-    <script src="assets/js/core.js?v=20260628d" defer></script>
-    <script src="assets/js/app.js?v=20260628d" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="assets/js/core.js?v=20260703a" defer></script>
+    <script src="assets/js/app.js?v=20260703a" defer></script>
 </body>
 </html>
