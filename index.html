@@ -19,8 +19,8 @@
     <meta name="google-adsense-account" content="ca-pub-xxxxxxxxxxxxxxxx">
     -->
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/css/core.css?v=20260703b">
-    <link rel="stylesheet" href="assets/css/app.css?v=20260703b">
+    <link rel="stylesheet" href="assets/css/core.css?v=20260703c">
+    <link rel="stylesheet" href="assets/css/app.css?v=20260703c">
 </head>
 <body class="native-feel">
     <a href="#main" class="skip-link">Skip to content</a>
@@ -30,7 +30,7 @@
         <span class="brand-mark">48</span>
         <span class="brand-text">
             <strong data-i18n="siteName">Tool48</strong>
-            <small data-i18n="tagline">AKB48 Theater Day Logbook & Fan Tools</small>
+            <small data-i18n="tagline">粉絲工具入口</small>
         </span>
     </a>
 
@@ -40,7 +40,7 @@
 
     <nav id="siteNav" class="site-nav" aria-label="Primary navigation">
         <a href="index.html" data-nav="home" data-i18n="nav.home">首頁</a>
-        <a href="#timeline" data-i18n="nav.timeline">劇場日流程</a>
+        <a href="#timeline" data-i18n="nav.timeline">使用流程</a>
         <a href="#tools" data-i18n="nav.tools">工具</a>
         <a href="privacy.html" data-nav="privacy" data-i18n="nav.privacy">私隱與說明</a>
         <a href="#contact" data-i18n="nav.contact">聯絡</a>
@@ -59,20 +59,20 @@
         <div class="account-shell">
             <button class="account-toggle" id="accountToggleBtn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="accountPopover">
                 <span class="account-icon" aria-hidden="true"></span>
-                <span id="accountToggleLabel" data-i18n="account.navGuest">Account</span>
+                <span id="accountToggleLabel" data-i18n="account.navGuest">帳號</span>
             </button>
             <div class="account-popover" id="accountPopover" role="dialog" aria-labelledby="accountToggleLabel" hidden>
-                <p class="account-status" id="accountStatus" data-i18n="account.localOnly">Local-first. Login is optional.</p>
+                <p class="account-status" id="accountStatus" data-i18n="account.localOnly">本機優先，登入只係可選。</p>
                 <form class="cloud-login-form" id="cloudLoginForm">
                     <input id="cloudNicknameInput" class="cloud-input" type="text" autocomplete="nickname" data-i18n-placeholder="account.nicknamePlaceholder" placeholder="nickname">
                     <input id="cloudEmailInput" class="cloud-input" type="email" inputmode="email" autocomplete="email" data-i18n-placeholder="account.emailPlaceholder" placeholder="Tool48 Account email">
                     <input id="cloudPasswordInput" class="cloud-input" type="password" autocomplete="current-password" minlength="6" data-i18n-placeholder="account.passwordPlaceholder" placeholder="6+ characters">
-                    <button class="account-form-button primary" id="cloudSignInBtn" type="submit" data-auth-action="signin" data-i18n="account.signIn">Sign in</button>
-                    <button class="account-form-button" id="cloudSignUpBtn" type="submit" data-auth-action="signup" data-i18n="account.createAccount">Create account</button>
+                    <button class="account-form-button primary" id="cloudSignInBtn" type="submit" data-auth-action="signin" data-i18n="account.signIn">登入</button>
+                    <button class="account-form-button" id="cloudSignUpBtn" type="submit" data-auth-action="signup" data-i18n="account.createAccount">建立帳號</button>
                 </form>
                 <div class="cloud-actions" id="cloudActions" hidden>
                     <span class="cloud-user-pill" id="cloudUserLabel"></span>
-                    <button class="account-form-button" id="cloudLogoutBtn" type="button" data-i18n="account.signOut">Sign out</button>
+                    <button class="account-form-button" id="cloudLogoutBtn" type="button" data-i18n="account.signOut">登出</button>
                 </div>
                 <p class="account-message" id="cloudMessage"></p>
             </div>
@@ -83,30 +83,30 @@
 <main id="main" class="page-shell">
     <section class="hero-grid">
         <div class="hero-copy">
-            <p class="eyebrow" data-i18n="home.eyebrow">AKB48 Theater Day</p>
+            <p class="eyebrow" data-i18n="home.eyebrow">粉絲工具入口</p>
             <h1 data-i18n="home.heroTitle">Tool48</h1>
-            <p class="hero-kicker" data-i18n="home.heroKicker">AKB48 Theater Day Logbook & Fan Tools</p>
-            <p class="hero-lead" data-i18n="home.heroLead">由查應援色、抽選紀錄、座位備忘到紀念票券，一頁整理劇場日前後常用工具。</p>
+            <p class="hero-kicker" data-i18n="home.heroKicker">出發、記錄、創作，一頁完成</p>
+            <p class="hero-lead" data-i18n="home.heroLead">由出發前準備、公演當日記錄，到日常應援創作同小遊戲，一頁整理常用 Tool48 工具。</p>
             <div class="cta-row">
                 <a class="app-button primary hover-glow" href="#tools" data-i18n="home.primaryCta">選擇工具</a>
                 <a class="app-button secondary hover-glow" href="privacy.html" data-i18n="home.secondaryCta">資料與私隱</a>
             </div>
             <nav class="hero-journey" aria-label="Tool48 quick path">
                 <button class="journey-chip" type="button" data-open-account>
-                    <span>01</span>
+                    <span class="journey-icon journey-icon-account" aria-hidden="true"></span>
                     <b data-i18n="account.cloudAccount">Tool48 Account</b>
                 </button>
                 <a class="journey-chip" href="#dashboard">
-                    <span>02</span>
-                    <b data-i18n="dashboard.eyebrow">Tool48 Account Dashboard</b>
+                    <span class="journey-icon journey-icon-dashboard" aria-hidden="true"></span>
+                    <b data-i18n="dashboard.eyebrow">保存預覽</b>
                 </a>
                 <a class="journey-chip" href="#timeline">
-                    <span>03</span>
-                    <b data-i18n="timeline.eyebrow">Theater Day Timeline</b>
+                    <span class="journey-icon journey-icon-flow" aria-hidden="true"></span>
+                    <b data-i18n="timeline.eyebrow">流程</b>
                 </a>
                 <a class="journey-chip" href="#tools">
-                    <span>04</span>
-                    <b data-i18n="nav.tools">Tools</b>
+                    <span class="journey-icon journey-icon-tools" aria-hidden="true"></span>
+                    <b data-i18n="nav.tools">工具</b>
                 </a>
             </nav>
         </div>
@@ -116,9 +116,9 @@
 
     <section id="dashboard" class="dashboard-section" data-dashboard>
         <div class="section-head compact-head">
-            <p class="eyebrow" data-i18n="dashboard.eyebrow">Tool48 Account Dashboard</p>
-            <h2 data-i18n="dashboard.title">你的劇場日快速預覽</h2>
-            <p data-i18n="dashboard.lead">登入後可在 hub 先睇最近保存：應援名單、garapon、座位、ticket slots 同小遊戲進度。</p>
+            <p class="eyebrow" data-i18n="dashboard.eyebrow">保存預覽</p>
+            <h2 data-i18n="dashboard.title">已保存資料快速預覽</h2>
+            <p data-i18n="dashboard.lead">登入後先顯示最近保存摘要；未登入時不顯示預覽格。</p>
         </div>
         <p class="dashboard-status" data-dashboard-status data-i18n="dashboard.loggedOut">登入 Tool48 Account 後，這裡會顯示你已保存的資料摘要。</p>
         <div class="dashboard-grid" data-dashboard-cards></div>
@@ -126,23 +126,23 @@
 
     <section id="timeline" class="timeline-section">
         <div class="section-head compact-head">
-            <p class="eyebrow" data-i18n="timeline.eyebrow">Theater Day Timeline</p>
-            <h2 data-i18n="timeline.title">以劇場日流程選工具</h2>
-            <p data-i18n="timeline.lead">按實際使用場景排列：出發前、等候中、入場後、完場後。</p>
+            <p class="eyebrow" data-i18n="timeline.eyebrow">流程</p>
+            <h2 data-i18n="timeline.title">按情境選工具</h2>
+            <p data-i18n="timeline.lead">用簡單流程搵入口；日後新增工具都可以放入同一條路徑。</p>
         </div>
         <ol class="timeline-list" data-timeline></ol>
     </section>
 
     <section class="notice-box">
         <p class="eyebrow" data-i18n="common.important">重要說明</p>
-        <p data-i18n="home.notice">本站是非官方 fan-made 網站。票券風圖片只供應援創作、紀念及設計參考，並非真實票券、官方文件或入場憑證。</p>
+        <p data-i18n="home.notice">本站是非官方 fan-made 網站。所有工具均可本機使用而無需登入；雲端保存、跨裝置同步及匿名公開統計只會在你選擇使用相關功能時啟用。</p>
     </section>
 
     <section class="privacy-note">
         <div class="section-head compact-head">
-            <p class="eyebrow" data-i18n="privacyNote.eyebrow">Data Direction</p>
-            <h2 data-i18n="privacyNote.title">日後資料功能方向</h2>
-            <p data-i18n="privacyNote.lead">目前工具維持免登入使用。日後如加入帳戶、雲端保存或公開統計，會以清楚提示及主動選擇為前提。</p>
+            <p class="eyebrow" data-i18n="privacyNote.eyebrow">資料</p>
+            <h2 data-i18n="privacyNote.title">資料原則</h2>
+            <p data-i18n="privacyNote.lead">登入、雲端與公開統計都保持可選；本機使用不受影響。</p>
         </div>
         <ul class="info-list" data-privacy-points></ul>
     </section>
@@ -158,22 +158,31 @@
 </main>
 
 <footer class="footer-shell">
-    <div>
+    <div class="footer-copy">
         <strong data-i18n="siteName">Tool48</strong>
         <p data-i18n="common.fanMade">非官方 fan-made project，與 AKB48、DH、場地、主辦單位或票務平台無關。</p>
-        <p class="privacy-promise" data-i18n="common.privacyPromise">未經你明確同意，不會披露你的個人資料。</p>
+        <p class="privacy-promise" data-i18n="common.privacyPromise">未經你同意，不會公開你的資料。</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links footer-nav">
         <a href="index.html" data-i18n="nav.home">首頁</a>
         <a href="#tools" data-i18n="nav.tools">工具</a>
         <a href="privacy.html" data-i18n="nav.privacy">私隱與說明</a>
-        <a href="#contact" data-i18n="nav.contact">聯絡</a>
     </div>
-    <p class="copyright" data-i18n="common.copyright">© 2026 Tool48 / Gomensensei. Unofficial fan-made tools.</p>
+    <div class="footer-links footer-actions">
+        <a href="https://x.com/sorrysir_gomen" target="_blank" rel="noopener">
+            <span class="footer-link-icon footer-link-icon-bug" aria-hidden="true"></span>
+            <span data-i18n="common.reportBug">回報錯誤</span>
+        </a>
+        <a href="https://www.paypal.com/paypalme/gomensensei" target="_blank" rel="noopener">
+            <span class="footer-link-icon footer-link-icon-heart" aria-hidden="true"></span>
+            <span data-i18n="common.donate">捐款支持</span>
+        </a>
+    </div>
+    <p class="copyright" data-i18n="common.copyright">本非官方粉絲網站由粉絲 Gomen Sensei (gomensensei) 製作。圖片及相關素材版權屬於 AKB48 與 DH Co., Ltd.</p>
 </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-    <script src="assets/js/core.js?v=20260703b" defer></script>
-    <script src="assets/js/app.js?v=20260703b" defer></script>
+    <script src="assets/js/core.js?v=20260703c" defer></script>
+    <script src="assets/js/app.js?v=20260703c" defer></script>
 </body>
 </html>

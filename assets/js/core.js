@@ -33,12 +33,14 @@ document.addEventListener('touchstart', (e) => {
 // ==========================================
 function initSpatialGlass() {
     document.querySelectorAll('.apple-glass-3d').forEach(card => {
+        if (card.dataset.spatialBound === 'true' || card.classList.contains('top-shell')) return;
+        card.dataset.spatialBound = 'true';
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left; const y = e.clientY - rect.top;
             const centerX = rect.width / 2; const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -10; 
-            const rotateY = ((x - centerX) / centerX) * 10;
+            const rotateX = ((y - centerY) / centerY) * -4;
+            const rotateY = ((x - centerX) / centerX) * 4;
             
             card.style.setProperty('--rx', `${rotateX}deg`); card.style.setProperty('--ry', `${rotateY}deg`);
             card.style.setProperty('--glare-x', `${x}px`); card.style.setProperty('--glare-y', `${y}px`);
@@ -192,4 +194,3 @@ function triggerDownload(dataUrl, filename) {
     link.href = dataUrl;
     link.click();
 }
-

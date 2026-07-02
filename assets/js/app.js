@@ -93,7 +93,7 @@
     }
 
     async function init() {
-        langs = await fetchJsonSafe("assets/data/langs.json?v=20260628d", {});
+        langs = await fetchJsonSafe("assets/data/langs.json?v=20260703c", {});
 
         if (!langs[currentLang]) currentLang = DEFAULT_LANG;
         bindEvents();
@@ -125,6 +125,13 @@
         }
 
         bindAccountEvents();
+
+        document.querySelectorAll("[data-open-account]").forEach((button) => {
+            button.addEventListener("click", (event) => {
+                event.stopPropagation();
+                openAccountPopover();
+            });
+        });
 
         window.addEventListener("hashchange", () => {
             const hashLang = getHashParam("lang");
@@ -238,9 +245,13 @@
         root.innerHTML = steps.map((step, index) => `
             <li class="${index === 0 ? "is-open" : ""}" style="--timeline-index:${index}">
                 <button class="timeline-toggle" type="button" aria-expanded="${index === 0 ? "true" : "false"}">
-                    <span class="timeline-index">${index + 1}</span>
-                    <span class="timeline-phase">${escapeHtml(step.phase)}</span>
-                    <strong>${escapeHtml(step.title)}</strong>
+                    <span class="timeline-icon tool-visual tool-visual-${escapeHtml(step.visual || "default")}" aria-hidden="true">
+                        <i></i><i></i><i></i><i></i><i></i><i></i>
+                    </span>
+                    <span>
+                        <span class="timeline-phase">${escapeHtml(step.phase)}</span>
+                        <strong>${escapeHtml(step.title)}</strong>
+                    </span>
                 </button>
                 <div class="timeline-details">
                     <div>
@@ -298,6 +309,15 @@
         if (!popover) return;
         popover.hidden = true;
         toggle?.setAttribute("aria-expanded", "false");
+    }
+
+    function openAccountPopover() {
+        const toggle = document.getElementById("accountToggleBtn");
+        const popover = document.getElementById("accountPopover");
+        if (!popover) return;
+        popover.hidden = false;
+        toggle?.setAttribute("aria-expanded", "true");
+        toggle?.focus({ preventScroll: true });
     }
 
     async function initHubAccount() {
@@ -434,27 +454,26 @@
     }
 
     function renderDashboard() {
+        const section = document.querySelector("[data-dashboard]");
         const status = document.querySelector("[data-dashboard-status]");
         const grid = document.querySelector("[data-dashboard-cards]");
         if (!status || !grid) return;
 
         if (!cloud.client) {
+            if (section) section.hidden = true;
             status.textContent = t("dashboard.unavailable");
             grid.innerHTML = "";
             return;
         }
 
         if (!cloud.user) {
+            if (section) section.hidden = true;
             status.textContent = t("dashboard.loggedOut");
-            grid.innerHTML = DASHBOARD_CARDS.map(card => renderDashboardCard({
-                key: card.key,
-                count: "-",
-                detail: t(`dashboard.cards.${card.key}.empty`),
-                url: card.url
-            })).join("");
+            grid.innerHTML = "";
             return;
         }
 
+        if (section) section.hidden = false;
         status.textContent = cloud.dashboardLoading ? t("dashboard.loading") : t("dashboard.signedIn");
         grid.innerHTML = DASHBOARD_CARDS.map(card => {
             const summary = cloud.summaries[card.key] || {
@@ -547,8 +566,8 @@
             .order("created_at", { ascending: false })
             .limit(3);
         if (error) throw error;
-        const latest = (data || []).map(row => [row.event_date, row.performance_id].filter(Boolean).join(" ")).filter(Boolean).join(" / ");
-        return { key: "garapon", count: count ?? (data || []).length, detail: latest || t("dashboard.cards.garapon.empty") };
+        const total = count ?? (data || []).length;
+        return { key: "garapon", count: total, detail: total ? t("dashboard.garaponDetail", { count: total }) : t("dashboard.cards.garapon.empty") };
     }
 
     async function fetchSeatmapSummary() {
