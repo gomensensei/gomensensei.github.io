@@ -19,8 +19,8 @@
     <meta name="google-adsense-account" content="ca-pub-xxxxxxxxxxxxxxxx">
     -->
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/css/core.css?v=20260628d">
-    <link rel="stylesheet" href="assets/css/app.css?v=20260628d">
+    <link rel="stylesheet" href="assets/css/core.css?v=20260703b">
+    <link rel="stylesheet" href="assets/css/app.css?v=20260703b">
 </head>
 <body class="native-feel">
     <a href="#main" class="skip-link">Skip to content</a>
@@ -91,12 +91,30 @@
                 <a class="app-button primary hover-glow" href="#tools" data-i18n="home.primaryCta">選擇工具</a>
                 <a class="app-button secondary hover-glow" href="privacy.html" data-i18n="home.secondaryCta">資料與私隱</a>
             </div>
+            <nav class="hero-journey" aria-label="Tool48 quick path">
+                <button class="journey-chip" type="button" data-open-account>
+                    <span>01</span>
+                    <b data-i18n="account.cloudAccount">Tool48 Account</b>
+                </button>
+                <a class="journey-chip" href="#dashboard">
+                    <span>02</span>
+                    <b data-i18n="dashboard.eyebrow">Tool48 Account Dashboard</b>
+                </a>
+                <a class="journey-chip" href="#timeline">
+                    <span>03</span>
+                    <b data-i18n="timeline.eyebrow">Theater Day Timeline</b>
+                </a>
+                <a class="journey-chip" href="#tools">
+                    <span>04</span>
+                    <b data-i18n="nav.tools">Tools</b>
+                </a>
+            </nav>
         </div>
 
         <aside id="tools" class="hero-panel" aria-label="Quick tool links" data-quick-tools></aside>
     </section>
 
-    <section class="dashboard-section" data-dashboard>
+    <section id="dashboard" class="dashboard-section" data-dashboard>
         <div class="section-head compact-head">
             <p class="eyebrow" data-i18n="dashboard.eyebrow">Tool48 Account Dashboard</p>
             <h2 data-i18n="dashboard.title">你的劇場日快速預覽</h2>
@@ -155,7 +173,7 @@
 </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-    <script src="assets/js/core.js?v=20260703a" defer></script>
-    <script src="assets/js/app.js?v=20260703a" defer></script>
+    <script src="assets/js/core.js?v=20260703b" defer></script>
+    <script src="assets/js/app.js?v=20260703b" defer></script>
 </body>
 </html>
