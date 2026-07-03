@@ -245,6 +245,7 @@
                     <strong>${escapeHtml(tool.shortName || tool.name)}</strong>
                     <small>${escapeHtml(tool.label)}</small>
                 </span>
+                <span class="quick-entry-icon" aria-hidden="true"></span>
             </a>
         `).join("");
     }
@@ -254,7 +255,11 @@
         const steps = data.timeline?.steps;
         if (!root || !Array.isArray(steps)) return;
 
-        root.innerHTML = steps.map((step, index) => `
+        root.innerHTML = steps.map((step, index) => {
+            const links = Array.isArray(step.links) && step.links.length
+                ? step.links
+                : [{ label: step.tool, url: step.url || "#tools" }];
+            return `
             <li class="${index === 0 ? "is-open" : ""}" style="--timeline-index:${index}">
                 <button class="timeline-toggle" type="button" aria-expanded="${index === 0 ? "true" : "false"}">
                     <span class="timeline-icon tool-visual tool-visual-${escapeHtml(step.visual || "default")}" aria-hidden="true">
@@ -268,11 +273,14 @@
                 <div class="timeline-details">
                     <div>
                         <p>${escapeHtml(step.text)}</p>
-                        <a class="timeline-link" href="${escapeHtml(step.url || "#tools")}">${escapeHtml(data.common.open)} ${escapeHtml(step.tool)}</a>
+                        <div class="timeline-link-row">
+                            ${links.map((link) => `<a class="timeline-link" href="${escapeHtml(link.url || step.url || "#tools")}">${escapeHtml(data.common.open)} ${escapeHtml(link.label || step.tool)}</a>`).join("")}
+                        </div>
                     </div>
                 </div>
             </li>
-        `).join("");
+        `;
+        }).join("");
 
         root.querySelectorAll(".timeline-toggle").forEach((button) => {
             button.addEventListener("click", () => {

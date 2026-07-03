@@ -66,8 +66,18 @@
           "title": "輕量互動消磨時間",
           "text": "等候入場、排隊或未中選時，可以使用 MBTI 或小遊戲。",
           "tool": "MBTI / 小遊戲",
-          "url": "/akb_mini_games_2026/",
-          "visual": "game"
+          "url": "/AKB-MBTI-with-wota/",
+          "visual": "game",
+          "links": [
+            {
+              "label": "MBTI",
+              "url": "/AKB-MBTI-with-wota/"
+            },
+            {
+              "label": "小遊戲",
+              "url": "/akb_mini_games_2026/"
+            }
+          ]
         },
         {
           "phase": "紀念場合",
@@ -278,8 +288,18 @@
           "title": "轻量互动消磨时间",
           "text": "等候入场、排队或未中选时，可以使用 MBTI 或小游戏。",
           "tool": "MBTI / 小游戏",
-          "url": "/akb_mini_games_2026/",
-          "visual": "game"
+          "url": "/AKB-MBTI-with-wota/",
+          "visual": "game",
+          "links": [
+            {
+              "label": "MBTI",
+              "url": "/AKB-MBTI-with-wota/"
+            },
+            {
+              "label": "小游戏",
+              "url": "/akb_mini_games_2026/"
+            }
+          ]
         },
         {
           "phase": "纪念场合",
@@ -490,8 +510,18 @@
           "title": "Quick interaction",
           "text": "Use MBTI or mini games while waiting, queuing, or when you did not win a show.",
           "tool": "MBTI / Games",
-          "url": "/akb_mini_games_2026/",
-          "visual": "game"
+          "url": "/AKB-MBTI-with-wota/",
+          "visual": "game",
+          "links": [
+            {
+              "label": "MBTI",
+              "url": "/AKB-MBTI-with-wota/"
+            },
+            {
+              "label": "Games",
+              "url": "/akb_mini_games_2026/"
+            }
+          ]
         },
         {
           "phase": "Memory moment",
@@ -702,8 +732,18 @@
           "title": "軽いインタラクション",
           "text": "入場待ち、列待ち、落選時に MBTI やミニゲームを使えます。",
           "tool": "MBTI / ミニゲーム",
-          "url": "/akb_mini_games_2026/",
-          "visual": "game"
+          "url": "/AKB-MBTI-with-wota/",
+          "visual": "game",
+          "links": [
+            {
+              "label": "MBTI",
+              "url": "/AKB-MBTI-with-wota/"
+            },
+            {
+              "label": "ミニゲーム",
+              "url": "/akb_mini_games_2026/"
+            }
+          ]
         },
         {
           "phase": "記念",
@@ -914,8 +954,18 @@
           "title": "가벼운 인터랙션",
           "text": "입장 대기, 줄 서기, 낙선 후 시간에 MBTI나 미니 게임을 사용할 수 있습니다.",
           "tool": "MBTI / 미니 게임",
-          "url": "/akb_mini_games_2026/",
-          "visual": "game"
+          "url": "/AKB-MBTI-with-wota/",
+          "visual": "game",
+          "links": [
+            {
+              "label": "MBTI",
+              "url": "/AKB-MBTI-with-wota/"
+            },
+            {
+              "label": "미니 게임",
+              "url": "/akb_mini_games_2026/"
+            }
+          ]
         },
         {
           "phase": "기념",
@@ -1126,8 +1176,18 @@
           "title": "เล่นสั้น ๆ",
           "text": "ใช้ MBTI หรือมินิเกมระหว่างรอ เข้าแถว หรือเมื่อไม่ได้สิทธิ์เข้าชม",
           "tool": "MBTI / Games",
-          "url": "/akb_mini_games_2026/",
-          "visual": "game"
+          "url": "/AKB-MBTI-with-wota/",
+          "visual": "game",
+          "links": [
+            {
+              "label": "MBTI",
+              "url": "/AKB-MBTI-with-wota/"
+            },
+            {
+              "label": "Games",
+              "url": "/akb_mini_games_2026/"
+            }
+          ]
         },
         {
           "phase": "เก็บความทรงจำ",
@@ -1338,8 +1398,18 @@
           "title": "Interaksi ringan",
           "text": "Gunakan MBTI atau mini games saat menunggu, antre, atau tidak mendapat show.",
           "tool": "MBTI / Games",
-          "url": "/akb_mini_games_2026/",
-          "visual": "game"
+          "url": "/AKB-MBTI-with-wota/",
+          "visual": "game",
+          "links": [
+            {
+              "label": "MBTI",
+              "url": "/AKB-MBTI-with-wota/"
+            },
+            {
+              "label": "Games",
+              "url": "/akb_mini_games_2026/"
+            }
+          ]
         },
         {
           "phase": "Momen kenangan",

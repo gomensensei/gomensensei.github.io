@@ -119,6 +119,11 @@ p { margin-top: 0; }
     text-wrap: pretty;
 }
 
+body {
+    font-size: 14px;
+    line-height: 1.48;
+}
+
 .site-nav {
     display: flex;
     justify-content: center;
@@ -465,12 +470,12 @@ h2 {
 }
 
 .quick-tool {
-    min-height: 72px;
+    min-height: 66px;
     display: grid;
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 9px;
+    grid-template-columns: 44px minmax(0, 1fr) 18px;
+    gap: 8px;
     align-items: center;
-    padding: 9px;
+    padding: 8px;
     border: 1px solid rgba(255, 255, 255, 0.64);
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.58);
@@ -489,21 +494,56 @@ h2 {
 .quick-copy strong {
     display: block;
     color: var(--primary-hover);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 1000;
-    line-height: 1.12;
+    line-height: 1.08;
 }
 
 .quick-copy small {
     display: block;
     color: var(--text-sec);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 900;
-    line-height: 1.2;
-    margin-top: 3px;
+    line-height: 1.14;
+    margin-top: 2px;
     white-space: normal;
     overflow-wrap: anywhere;
     text-wrap: pretty;
+}
+
+.quick-entry-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    border: 1.5px solid currentColor;
+    color: var(--primary-hover);
+    opacity: 0.86;
+    position: relative;
+}
+
+.quick-entry-icon::before,
+.quick-entry-icon::after {
+    content: "";
+    position: absolute;
+    background: currentColor;
+}
+
+.quick-entry-icon::before {
+    width: 7px;
+    height: 1.5px;
+    left: 4px;
+    top: 7px;
+}
+
+.quick-entry-icon::after {
+    width: 5px;
+    height: 5px;
+    right: 4px;
+    top: 5px;
+    border-top: 1.5px solid currentColor;
+    border-right: 1.5px solid currentColor;
+    background: transparent;
+    transform: rotate(45deg);
 }
 
 .timeline-section,
@@ -523,9 +563,9 @@ h2 {
 .dashboard-status {
     margin: 0 0 12px;
     color: var(--ink-soft);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 800;
-    line-height: 1.5;
+    line-height: 1.42;
 }
 
 .dashboard-grid {
@@ -678,15 +718,15 @@ h2 {
 .timeline-list strong {
     display: block;
     color: var(--ink);
-    font-size: 15px;
-    line-height: 1.22;
+    font-size: 13px;
+    line-height: 1.16;
 }
 
 .timeline-list p {
     margin: 0;
     color: var(--ink-soft);
-    font-size: 12px;
-    line-height: 1.45;
+    font-size: 11px;
+    line-height: 1.34;
 }
 
 .timeline-details {
@@ -716,11 +756,17 @@ h2 {
 
 .timeline-link {
     display: inline-flex;
-    margin-top: 8px;
     color: var(--primary-hover);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 1000;
     text-decoration: none;
+}
+
+.timeline-link-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 9px;
+    margin-top: 8px;
 }
 
 @keyframes timeline-rise {
@@ -950,6 +996,10 @@ h2 {
     flex: 1 1 420px;
 }
 
+.footer-copy p {
+    margin: 0;
+}
+
 .footer-links {
     display: flex;
     flex-wrap: wrap;
@@ -983,14 +1033,20 @@ h2 {
 .copyright {
     margin: 0;
     font-size: 12px;
-    flex: 1 0 100%;
+    flex: initial;
+    display: inline;
 }
 
 .privacy-promise {
-    margin: 4px 0 0;
+    margin: 0;
+    display: inline;
     font-size: 12px;
     font-weight: 800;
     line-height: 1.5;
+}
+
+.privacy-promise::before {
+    content: " ";
 }
 
 .sr-only {
@@ -1175,8 +1231,8 @@ h2 {
     }
 
     .quick-tool {
-        min-height: 76px;
-        grid-template-columns: 38px minmax(0, 1fr);
+        min-height: 66px;
+        grid-template-columns: 36px minmax(0, 1fr) 16px;
         gap: 7px;
         justify-items: start;
         text-align: left;
@@ -1196,6 +1252,12 @@ h2 {
 
     .quick-copy small {
         font-size: 10px;
+    }
+
+    .quick-entry-icon {
+        width: 16px;
+        height: 16px;
+        align-self: center;
     }
 
     .timeline-section,
@@ -1247,7 +1309,7 @@ h2 {
         flex-wrap: wrap;
         gap: 6px 10px;
         padding: 8px 10px;
-        font-size: 11px;
+        font-size: 0.6rem;
         line-height: 1.35;
     }
 
@@ -1261,14 +1323,14 @@ h2 {
         flex: 1 1 220px;
     }
 
-    .footer-copy strong,
+    .footer-copy .copyright,
     .footer-copy .privacy-promise {
         display: inline;
     }
 
     .footer-copy .privacy-promise {
         margin-top: 0;
-        font-size: 11px;
+        font-size: 0.6rem;
     }
 
     .footer-copy .privacy-promise::before {
@@ -1277,8 +1339,7 @@ h2 {
 
     .copyright {
         margin-top: 0;
-        flex-basis: 100%;
-        font-size: 10px;
+        font-size: 0.6rem;
         line-height: 1.35;
     }
 }
