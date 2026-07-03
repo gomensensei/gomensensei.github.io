@@ -5,7 +5,7 @@
  */
 
 (() => {
-    const SUPPORTED_LANGS = ["zh-HK", "ja", "en", "ko"];
+    const SUPPORTED_LANGS = ["zh-HK", "zh-Hans", "en", "ja", "ko", "th", "id"];
     const DEFAULT_LANG = "zh-HK";
     const LANG_KEY = "tool48_lang";
     const LEGACY_LANG_KEY = "gomensensei_fantools_lang";
@@ -20,6 +20,7 @@
     ];
     let langs = {};
     let currentLang = resolveInitialLang();
+    let timelineObserver = null;
     const cloud = {
         client: null,
         user: null,
@@ -43,16 +44,27 @@
     }
 
     function resolveInitialLang() {
-        const hashLang = getHashParam("lang");
-        const stored = localStorage.getItem(LANG_KEY) || localStorage.getItem(LEGACY_LANG_KEY);
+        const hashLang = normalizeLangCode(getHashParam("lang"));
+        const stored = normalizeLangCode(localStorage.getItem(LANG_KEY) || localStorage.getItem(LEGACY_LANG_KEY));
         const browser = (navigator.language || "").toLowerCase();
 
         if (SUPPORTED_LANGS.includes(hashLang)) return hashLang;
         if (SUPPORTED_LANGS.includes(stored)) return stored;
+        if (browser.startsWith("zh-cn") || browser.startsWith("zh-sg") || browser.startsWith("zh-hans")) return "zh-Hans";
+        if (browser.startsWith("zh")) return "zh-HK";
+        if (browser.startsWith("en")) return "en";
         if (browser.startsWith("ja")) return "ja";
         if (browser.startsWith("ko")) return "ko";
-        if (browser.startsWith("en")) return "en";
+        if (browser.startsWith("th")) return "th";
+        if (browser.startsWith("id")) return "id";
         return DEFAULT_LANG;
+    }
+
+    function normalizeLangCode(lang) {
+        if (!lang) return lang;
+        if (["zh-CN", "zh-SG", "zh-Hans", "zh-Hans-CN"].includes(lang)) return "zh-Hans";
+        if (["zh-TW", "zh-HK", "zh-MO", "zh-Hant", "zh-Hant-HK"].includes(lang)) return "zh-HK";
+        return lang;
     }
 
     function getHashParam(key) {
@@ -93,7 +105,7 @@
     }
 
     async function init() {
-        langs = await fetchJsonSafe("assets/data/langs.json?v=20260703c", {});
+        langs = await fetchJsonSafe("assets/data/langs.json?v=20260703d", {});
 
         if (!langs[currentLang]) currentLang = DEFAULT_LANG;
         bindEvents();
@@ -134,7 +146,7 @@
         });
 
         window.addEventListener("hashchange", () => {
-            const hashLang = getHashParam("lang");
+            const hashLang = normalizeLangCode(getHashParam("lang"));
             if (SUPPORTED_LANGS.includes(hashLang) && hashLang !== currentLang) {
                 currentLang = hashLang;
                 applyLanguage(currentLang);
@@ -269,6 +281,33 @@
                 button.setAttribute("aria-expanded", String(isOpen));
             });
         });
+
+        revealTimelineOnScroll(root);
+    }
+
+    function revealTimelineOnScroll(root) {
+        const items = Array.from(root.querySelectorAll("li"));
+        if (timelineObserver) {
+            timelineObserver.disconnect();
+            timelineObserver = null;
+        }
+        if (!items.length) return;
+
+        const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+        if (reducedMotion || !("IntersectionObserver" in window)) {
+            items.forEach((item) => item.classList.add("is-visible"));
+            return;
+        }
+
+        timelineObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
+
+        items.forEach((item) => timelineObserver.observe(item));
     }
 
     function renderPrivacyPoints(data) {

@@ -111,9 +111,12 @@ p { margin-top: 0; }
 
 .brand-text small {
     display: block;
+    max-width: 180px;
     color: var(--text-sec);
     font-size: 10px;
     line-height: 1.25;
+    white-space: normal;
+    text-wrap: pretty;
 }
 
 .site-nav {
@@ -144,7 +147,7 @@ p { margin-top: 0; }
 }
 
 .lang-wrap select {
-    width: 94px;
+    width: 124px;
     border: 1px solid rgba(255, 255, 255, 0.62);
     border-radius: 999px;
     padding: 7px 9px;
@@ -346,11 +349,14 @@ h2 {
 }
 
 .hero-kicker {
+    max-width: 22rem;
     margin-bottom: 8px;
     color: var(--primary-hover);
     font-size: clamp(15px, 1.6vw, 18px);
     font-weight: 1000;
     line-height: 1.35;
+    white-space: pre-line;
+    text-wrap: balance;
 }
 
 .hero-lead,
@@ -366,6 +372,7 @@ h2 {
     margin-bottom: 0;
     font-size: clamp(14px, 1.45vw, 16px);
     line-height: 1.5;
+    text-wrap: pretty;
 }
 
 .cta-row {
@@ -419,12 +426,13 @@ h2 {
 
 .journey-chip b {
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
     color: var(--primary);
     font-size: 12px;
     line-height: 1.15;
+    text-wrap: balance;
 }
 
 .app-button {
@@ -493,6 +501,9 @@ h2 {
     font-weight: 900;
     line-height: 1.2;
     margin-top: 3px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
 }
 
 .timeline-section,
@@ -571,6 +582,12 @@ h2 {
     margin-bottom: 12px;
 }
 
+.compact-head p {
+    max-width: 42rem;
+    line-height: 1.55;
+    text-wrap: pretty;
+}
+
 .timeline-list {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -587,9 +604,19 @@ h2 {
     padding: 0;
     border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-    animation: timeline-rise 0.45s ease both;
-    animation-delay: calc(var(--timeline-index, 0) * 70ms);
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+    transition:
+        opacity 0.28s ease,
+        transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+    transition-delay: calc(var(--timeline-index, 0) * 55ms);
+}
+
+.timeline-list li.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .timeline-list li::after {
@@ -676,6 +703,9 @@ h2 {
 .timeline-list li.is-open {
     background: rgba(255, 255, 255, 0.68);
     box-shadow: 0 12px 26px rgba(38, 56, 74, 0.12);
+}
+
+.timeline-list li.is-visible.is-open {
     transform: translateY(-1px);
 }
 
@@ -700,7 +730,9 @@ h2 {
 
 @media (prefers-reduced-motion: reduce) {
     .timeline-list li {
-        animation: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 
     .timeline-details {
@@ -1063,7 +1095,7 @@ h2 {
     }
 
     .lang-wrap select {
-        width: 78px;
+        width: 96px;
         padding: 7px;
     }
 
@@ -1210,12 +1242,44 @@ h2 {
     }
 
     .footer-shell {
-        align-items: flex-start;
-        flex-direction: column;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px 10px;
+        padding: 8px 10px;
+        font-size: 11px;
+        line-height: 1.35;
     }
 
     .footer-links {
-        width: 100%;
+        width: auto;
+        gap: 8px 10px;
+        flex: 0 0 auto;
+    }
+
+    .footer-copy {
+        flex: 1 1 220px;
+    }
+
+    .footer-copy strong,
+    .footer-copy .privacy-promise {
+        display: inline;
+    }
+
+    .footer-copy .privacy-promise {
+        margin-top: 0;
+        font-size: 11px;
+    }
+
+    .footer-copy .privacy-promise::before {
+        content: " ";
+    }
+
+    .copyright {
+        margin-top: 0;
+        flex-basis: 100%;
+        font-size: 10px;
+        line-height: 1.35;
     }
 }
 
