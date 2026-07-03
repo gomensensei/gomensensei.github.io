@@ -120,6 +120,7 @@ p { margin-top: 0; }
 }
 
 body {
+    font-family: 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', 'Noto Sans SC', 'Microsoft YaHei', 'KozGoPr6N', 'AR ADGothicJP', 'Noto Sans JP', sans-serif;
     font-size: 14px;
     line-height: 1.48;
 }
