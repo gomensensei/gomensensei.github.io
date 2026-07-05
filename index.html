@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="tool48-turnstile-site-key" content="">
     <title data-title>Tool48</title>
     <meta name="description" content="Tool48 is an unofficial AKB48 Theater Day fan tools hub. Every tool works without login; Tool48 Account is optional cloud save and backup." data-meta-description>
     <meta name="theme-color" content="#FF4081">
@@ -21,6 +22,7 @@
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/css/core.css?v=20260703d">
     <link rel="stylesheet" href="assets/css/app.css?v=20260703d">
+    <link rel="stylesheet" href="tool48-install.css?v=20260706-security">
 </head>
 <body class="native-feel">
     <a href="#main" class="skip-link">Skip to content</a>
@@ -72,6 +74,7 @@
                     <input id="cloudPasswordInput" class="cloud-input" type="password" autocomplete="current-password" minlength="6" data-i18n-placeholder="account.passwordPlaceholder" placeholder="6+ characters">
                     <button class="account-form-button primary" id="cloudSignInBtn" type="submit" data-auth-action="signin" data-i18n="account.signIn">登入</button>
                     <button class="account-form-button" id="cloudSignUpBtn" type="submit" data-auth-action="signup" data-i18n="account.createAccount">建立帳號</button>
+                    <button class="tool48-reset-link" id="cloudResetPasswordBtn" type="button" data-tool48-reset-password>Forgot password</button>
                 </form>
                 <div class="cloud-actions" id="cloudActions" hidden>
                     <span class="cloud-user-pill" id="cloudUserLabel"></span>
@@ -174,6 +177,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
     <script src="assets/js/core.js?v=20260703d" defer></script>
+    <script src="tool48-security.js?v=20260706-security" defer></script>
     <script src="assets/js/app.js?v=20260703d" defer></script>
+    <script src="tool48-install.js?v=20260706-security" defer></script>
 </body>
 </html>

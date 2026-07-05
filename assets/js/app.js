@@ -330,6 +330,7 @@
         const toggle = document.getElementById("accountToggleBtn");
         const popover = document.getElementById("accountPopover");
         const loginForm = document.getElementById("cloudLoginForm");
+        const resetPasswordBtn = document.getElementById("cloudResetPasswordBtn");
         const logoutBtn = document.getElementById("cloudLogoutBtn");
 
         if (toggle && popover) {
@@ -347,6 +348,7 @@
         }
 
         loginForm?.addEventListener("submit", handleAccountSubmit);
+        resetPasswordBtn?.addEventListener("click", resetCloudPassword);
         logoutBtn?.addEventListener("click", signOutAccount);
     }
 
@@ -461,15 +463,25 @@
         setAccountBusy(true);
         setCloudMessage(action === "signup" ? t("account.signingUp") : t("account.signingIn"));
         try {
+            const captchaToken = await window.Tool48Security?.getCaptchaToken(action, event.currentTarget);
             const result = action === "signup"
                 ? await cloud.client.auth.signUp({
                     email,
                     password,
-                    options: { data: { display_name: nickname || email.split("@")[0] } }
+                    options: window.Tool48Security?.authOptions({
+                        data: { display_name: nickname || email.split("@")[0] },
+                        emailRedirectTo: window.location.href
+                    }, captchaToken) || {
+                        data: { display_name: nickname || email.split("@")[0] },
+                        emailRedirectTo: window.location.href
+                    }
                 })
-                : await cloud.client.auth.signInWithPassword({ email, password });
+                : await cloud.client.auth.signInWithPassword(
+                    window.Tool48Security?.signInPayload(email, password, captchaToken) || { email, password }
+                );
 
             if (result.error) throw result.error;
+            window.Tool48Security?.clearAuthFailures(email);
             cloud.user = result.data.session?.user || cloud.user;
             setCloudMessage(cloud.user ? t("account.signedIn") : t("account.signupNeedsConfirm"));
             if (cloud.user) {
@@ -477,7 +489,39 @@
                 await refreshDashboard();
             }
         } catch (error) {
+            window.Tool48Security?.recordAuthFailure(email);
+            window.Tool48Security?.resetCaptcha(event.currentTarget);
             setCloudMessage(t("account.actionFailed", { message: error.message || "" }));
+        } finally {
+            setAccountBusy(false);
+            renderAccountPanel();
+        }
+    }
+
+    async function resetCloudPassword(event) {
+        if (!cloud.client) {
+            setCloudMessage(t("account.unavailable"));
+            return;
+        }
+        const form = event.currentTarget.closest("form") || document.getElementById("cloudLoginForm");
+        const email = document.getElementById("cloudEmailInput")?.value.trim() || "";
+        if (!email) {
+            setCloudMessage(window.Tool48Security?.text("resetMissingEmail") || t("account.missingEmailPassword"));
+            return;
+        }
+        setAccountBusy(true);
+        setCloudMessage(window.Tool48Security?.text("resetSending") || "");
+        try {
+            if (window.Tool48Security?.requestPasswordReset) {
+                await window.Tool48Security.requestPasswordReset(cloud.client, email, form);
+            } else {
+                await cloud.client.auth.resetPasswordForEmail(email, { redirectTo: window.location.href });
+            }
+            setCloudMessage(window.Tool48Security?.text("resetSent") || "");
+        } catch (error) {
+            window.Tool48Security?.recordAuthFailure(email);
+            window.Tool48Security?.resetCaptcha(form);
+            setCloudMessage(error.message || (window.Tool48Security?.text("authFailed") || t("account.actionFailed", { message: "" })));
         } finally {
             setAccountBusy(false);
             renderAccountPanel();
