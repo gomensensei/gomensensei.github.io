@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d7a67">
+    <meta name="description" content="將 Telegram sticker pack 一鍵轉換成 WhatsApp .wastickers；自動處理動態貼圖及每 30 張分 Part。">
+    <meta property="og:title" content="Telegram Sticker → WhatsApp Sticker | Tool48">
+    <meta property="og:description" content="Windows 一鍵轉換工具：支援 WEBP、PNG、TGS、WEBM，自動分 Part，完成後可直接下載 .wastickers。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tool48.com/telegram-sticker-to-whatsapp/">
+    <meta property="og:image" content="https://tool48.com/assets/img/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://tool48.com/telegram-sticker-to-whatsapp/">
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css?v=20260727a">
+    <script src="https://tool48.com/assets/js/tool48-metrics.js?v=20260727a" defer></script>
+    <title>Telegram Sticker → WhatsApp Sticker | Tool48</title>
+</head>
+<body>
+    <a class="skip-link" href="#main">跳至主要內容</a>
+
+    <header class="site-header">
+        <a class="brand" href="../" aria-label="返回 Tool48">
+            <span class="brand-mark">48</span>
+            <span>
+                <strong>Tool48</strong>
+                <small>Fan-made utility</small>
+            </span>
+        </a>
+        <nav aria-label="頁面連結">
+            <a href="#steps">使用方法</a>
+            <a href="https://github.com/gomensensei/telegram-sticker-to-whatsapp" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">WINDOWS · v1.2.0</p>
+                <h1>Telegram Sticker<br><span>→ WhatsApp Sticker</span></h1>
+                <p class="hero-lead">貼上 Telegram 貼圖包連結，一鍵輸出可匯入 WhatsApp 的 <code>.wastickers</code>。超過 30 張會自動分成 Part 1、Part 2、Part 3，直至全部完成。</p>
+
+                <div class="hero-actions">
+                    <a class="button button-primary" href="https://github.com/gomensensei/telegram-sticker-to-whatsapp/releases/latest/download/Telegram-Sticker-to-WhatsApp-v1.2.0.zip">
+                        <span>直接下載 Windows ZIP</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"></path>
+                        </svg>
+                    </a>
+                    <a class="button button-secondary" href="https://github.com/gomensensei/telegram-sticker-to-whatsapp" target="_blank" rel="noopener">查看原始碼</a>
+                </div>
+
+                <ul class="hero-facts" aria-label="主要功能">
+                    <li>免費使用</li>
+                    <li>無需登入</li>
+                    <li>Bot Token 本機加密</li>
+                </ul>
+            </div>
+
+            <div class="converter-preview" aria-label="轉換流程示意">
+                <div class="preview-top">
+                    <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <strong>TG → WA</strong>
+                    <span class="ready-pill">READY</span>
+                </div>
+                <div class="route">
+                    <div class="app-node telegram-node">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m4 11.3 14.7-5.7c.7-.3 1.3.2 1.1.9l-2.5 11.8c-.2.8-.9 1-1.6.6l-3.8-2.8-1.8 1.8c-.2.2-.4.4-.8.4l.3-4 7.3-6.6c.3-.3-.1-.4-.5-.2l-9 5.7-3.9-1.2c-.8-.3-.8-.8.5-1.3Z"></path>
+                        </svg>
+                        <span>Telegram pack</span>
+                    </div>
+                    <div class="route-arrow" aria-hidden="true">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="app-node whatsapp-node">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 11.8a8 8 0 0 1-11.8 7L4 20l1.2-4A8 8 0 1 1 20 11.8Z"></path>
+                            <path d="M8.5 8.2c.3-.6.6-.6 1-.6h.3c.2 0 .4.1.5.5l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.2.2-.3.4-.1.7.5 1 1.3 1.8 2.3 2.3.3.2.5.2.7-.1l.8-1c.2-.3.4-.3.7-.2l1.8.9c.3.2.5.2.5.4.1.2.1 1-.2 1.8-.3.8-1.5 1.5-2.2 1.6-.6 0-1.4.2-3.9-.8-3.2-1.4-5.3-4.7-5.5-4.9-.1-.2-1.3-1.8-1.3-3.4 0-1.6.8-2.4 1.2-2.8Z"></path>
+                        </svg>
+                        <span>WhatsApp packs</span>
+                    </div>
+                </div>
+                <div class="pack-list">
+                    <div><b>Part 1</b><span>30 張</span><i>完成</i></div>
+                    <div><b>Part 2</b><span>30 張</span><i>完成</i></div>
+                    <div><b>Part 3</b><span>5 張</span><i>完成</i></div>
+                </div>
+                <div class="preview-action">
+                    <span>輸出 .wastickers</span>
+                    <strong>直接下載</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-grid" aria-label="功能">
+            <article>
+                <span class="feature-number">01</span>
+                <h2>自動分 Part</h2>
+                <p>每個 WhatsApp 貼圖包最多 30 張；數量超出時自動分拆及命名，無需逐次重做。</p>
+            </article>
+            <article>
+                <span class="feature-number">02</span>
+                <h2>支援動態貼圖</h2>
+                <p>兼容 Telegram 的 WEBP、PNG、TGS 及 WEBM，並按 WhatsApp 規格轉換。</p>
+            </article>
+            <article>
+                <span class="feature-number">03</span>
+                <h2>直接下載</h2>
+                <p>完成後可逐個 Part 直接下載 <code>.wastickers</code>，不必依賴 QR Code。</p>
+            </article>
+            <article>
+                <span class="feature-number">04</span>
+                <h2>資料留在本機</h2>
+                <p>轉換在你的 Windows 電腦完成；Bot Token 以 Windows DPAPI 加密保存。</p>
+            </article>
+        </section>
+
+        <section class="steps-section" id="steps">
+            <div class="section-heading">
+                <p class="eyebrow">QUICK START</p>
+                <h2>四步完成轉換</h2>
+            </div>
+            <ol class="steps">
+                <li>
+                    <b>1</b>
+                    <div>
+                        <h3>下載及解壓</h3>
+                        <p>下載 Windows ZIP，將整個資料夾解壓到電腦。</p>
+                    </div>
+                </li>
+                <li>
+                    <b>2</b>
+                    <div>
+                        <h3>雙擊啟動</h3>
+                        <p>開啟「啟動轉換工具.bat」。首次使用會自動安裝轉換元件。</p>
+                    </div>
+                </li>
+                <li>
+                    <b>3</b>
+                    <div>
+                        <h3>貼上連結</h3>
+                        <p>輸入 Telegram sticker pack 連結及 Bot Token，按一鍵轉換。</p>
+                    </div>
+                </li>
+                <li>
+                    <b>4</b>
+                    <div>
+                        <h3>加入 WhatsApp</h3>
+                        <p>下載 <code>.wastickers</code>，傳送到手機後以 Sticker Maker 開啟。</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="network-note">
+            <div class="network-icon" aria-hidden="true">
+                <span></span><span></span><i></i>
+            </div>
+            <div>
+                <p class="eyebrow">不同 Wi-Fi？</p>
+                <h2>改用「直接下載」即可</h2>
+                <p>QR Code 是電腦本機分享，所以手機與電腦需要在同一個 Wi-Fi。若不在同一網絡，請在轉換完成頁按「直接下載」，再經 AirDrop、Quick Share、雲端硬碟、Telegram Saved Messages 或 USB 將 <code>.wastickers</code> 傳到手機。</p>
+            </div>
+        </section>
+
+        <section class="requirements">
+            <div>
+                <p class="eyebrow">REQUIREMENTS</p>
+                <h2>使用前準備</h2>
+            </div>
+            <ul>
+                <li><strong>系統</strong><span>Windows 10 / 11</span></li>
+                <li><strong>環境</strong><span>Python 3.10 或以上</span></li>
+                <li><strong>網絡</strong><span>下載 Telegram 貼圖及首次安裝元件</span></li>
+                <li><strong>手機 App</strong><span>Sticker Maker 或兼容 .wastickers 的 App</span></li>
+            </ul>
+        </section>
+
+        <section class="final-cta">
+            <p class="eyebrow">VERSION 1.2.0</p>
+            <h2>準備好就開始轉換</h2>
+            <p>下載、解壓、雙擊啟動；不會上載你的貼圖包到 Tool48。</p>
+            <a class="button button-primary" href="https://github.com/gomensensei/telegram-sticker-to-whatsapp/releases/latest/download/Telegram-Sticker-to-WhatsApp-v1.2.0.zip">
+                <span>直接下載 Windows ZIP</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"></path></svg>
+            </a>
+            <small>SHA-256: 8837E7E555348639E909D0899FAA1054E1A4C7D573022B8434F2E52BF034E2CD</small>
+        </section>
+    </main>
+
+    <footer>
+        <a class="brand footer-brand" href="../">
+            <span class="brand-mark">48</span>
+            <span><strong>Tool48</strong><small>Unofficial fan-made tools</small></span>
+        </a>
+        <p>本工具與 Telegram、WhatsApp、Meta 並無關聯。商標及相關素材版權屬其擁有人。</p>
+        <div>
+            <a href="https://github.com/gomensensei/telegram-sticker-to-whatsapp" target="_blank" rel="noopener">GitHub</a>
+            <a href="../privacy.html">私隱</a>
+            <a href="https://x.com/sorrysir_gomen" target="_blank" rel="noopener">回報問題</a>
+        </div>
+    </footer>
+</body>
+</html>
