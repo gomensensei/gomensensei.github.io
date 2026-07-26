@@ -1,3 +1,4 @@
+// Privacy-aware usage metrics shared by all Tool48 tools.
 (function () {
     'use strict';
 
