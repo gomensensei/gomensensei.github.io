@@ -420,6 +420,7 @@
     function startInterface() {
         if (!consent) showConsentBanner(false);
         addManageButton();
+        window.setTimeout(addManageButton, 0);
     }
 
     if (document.readyState === 'loading') {
