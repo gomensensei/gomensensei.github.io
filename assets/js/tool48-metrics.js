@@ -409,7 +409,7 @@
         shadow.querySelector('button').addEventListener('click', function () {
             showConsentBanner(true);
         });
-        target.appendChild(manageHost);
+        target.insertAdjacentElement('afterend', manageHost);
         updateManageCopy();
     }
 
